@@ -2,7 +2,7 @@ import React from "react";
 import HeroSliderTwentyEight from "../../wrappers/hero-slider/HeroSliderTwentyEight";
 //  import FirstSectiontree from "../../wrappers/content-home/FirstSectiontree";
 import SecondSection from "../../wrappers/content-home/SecondSection";
-import ByCategory from "../../wrappers/content-home/ByCategory";
+// import ByCategory from "../../wrappers/content-home/ByCategory";
 import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
 
 
@@ -29,7 +29,7 @@ const HomeFurnitureTwo = () => {
       {/* Product slider */}
       <SecondSection />
       {/* Browse by category */}
-      <ByCategory />
+      {/* <ByCategory /> */}
       {/* newsletter */}
       {/* <NewsletterTwo spaceBottomClass="pb-100" /> */}
     </LayoutOne>

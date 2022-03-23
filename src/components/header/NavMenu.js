@@ -164,9 +164,7 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link >Services</Link>
           </li>
           <li>
-            <Link to={process.env.PUBLIC_URL + "/shop-grid-two-column"}>
-              {strings["products"]}
-            </Link>
+            <Link >Product</Link>
           </li>
           <li>
             <Link to={process.env.PUBLIC_URL + "/about"}>

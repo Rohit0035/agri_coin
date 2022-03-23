@@ -139,6 +139,7 @@ const Water = lazy(() => import("./components/agricoinpage/Water.js"));
 const shoppingBill = lazy(() => import("./components/agricoinpage/shoppingBill.js"));
 const Wallet = lazy(() => import("./components/agricoinpage/wallet.js"));
 const TableHistory = lazy(() => import("./components/agricoinpage/TableHistory.js"));
+const Dashboard = lazy(() => import("./components/agricoinpage/Dashboard.js"));
 
 
 
@@ -368,9 +369,13 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/wallet"}
                   component={Wallet}
                 />
-                  <Route
+                <Route
                   path={process.env.PUBLIC_URL + "/tablehistory"}
                   component={TableHistory}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/dashboard"}
+                  component={Dashboard}
                 />
                
                 {/* Shop pages */}
