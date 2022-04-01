@@ -5,7 +5,7 @@
   &.header-absolute {
     position: absolute;
     z-index: 99;
-
+    background-color: #fff;
     width: 100%;
 
     @media #{$md-layout,

@@ -1,16 +1,14 @@
 [
   {
     "id": 1,
-    "title": "Furniture <br /> Collection <span>2020</span>",
-    "subtitle": "Sale up to <span>40% off</span>",
-    "image": "/assets/img/slider/slider-31.jpg",
-    "url": "/shop-grid-standard"
+    "title": "Apparel Stores Online mobile </br>recharge And bill payment",
+    "image": "/assets/img/slider/slider-31.jpg"
   },
   {
     "id": 2,
-    "title": "Furniture <br /> Collection <span>2020</span>",
-    "subtitle": "Sale up to <span>30% off</span>",
-    "image": "/assets/img/slider/slider-31.jpg",
-    "url": "/shop-grid-standard"
+    "title": "Apparel Stores Online Shoping </br> And bill payment",
+    "image": "/assets/img/slider/slider-34.jpg"
+    
   }
+  
 ]

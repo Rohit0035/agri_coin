@@ -48,7 +48,7 @@ const Wallet = ({ data, spaceBottomClass }) => {
             </Col>
             <Col md="6">
                 <div className="sr-3">
-                   <h4 className="sr-h">Transaction History </h4>
+                   <h4 className="sr-h">Recent Transaction </h4>
                    <TableHistory/>
                 </div>
             </Col>

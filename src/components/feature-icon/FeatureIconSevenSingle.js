@@ -4,6 +4,7 @@ import React from "react";
 const FeatureIconSevenSingle = ({ data, spaceBottomClass, textAlignClass }) => {
   return (
     <div className="col-md-4">
+      <div className="icon-features">
       <div
         className={`support-wrap-6 support-shape ${
           spaceBottomClass ? spaceBottomClass : ""
@@ -15,6 +16,7 @@ const FeatureIconSevenSingle = ({ data, spaceBottomClass, textAlignClass }) => {
           <p>{data.subtitle}</p>
         </div>
       </div>
+      </div> 
     </div>
   );
 };

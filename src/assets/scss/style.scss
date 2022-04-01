@@ -39,11 +39,13 @@
 
 
 // rohit css
-
+.slider-content-brown h3, .slider-content-brown .h3{
+    color: #fff !important;
+}
 li.st-1 {
     display: inline-block;
     text-align: center;
-    margin: 0 20px;
+    margin: 0 18px;
 }
 .circle-1 {
     font-size: 35px;
@@ -67,12 +69,7 @@ li.st-1 {
 .bx1 p{
     color: #fff;
 }
-section.st-p {
-    position: absolute;
-    z-index: 111111111;
-    left: 75px;
-    bottom: -300px;
-}
+
 .bx-2 {
     background-color: #fff;
     padding: 30px;
@@ -96,11 +93,12 @@ button.btn-s {
 
 // section service
 section.srevicegrid {
-    margin-top: 300px;
-    width: 100%;
-    display: inline-block;
     background-color: #F6F7F9;
     padding: 70px 0px;
+}
+.icon-features {
+    border: 1px solid#7ccc5d;
+    padding: 30px;
 }
 section.srevicegrid h1{
     font-weight: 700;
@@ -224,13 +222,7 @@ i.pe-7s-phone.circle-1.active {
 
 @media only screen and (max-width: 600px) {
 
-    section.st-p {
-        position: unset;
-        z-index: 111111111;
-        left: 0px;
-        bottom: 0px;
-        margin-top: 30px;
-    }
+   
     li.st-1 {
         display: inline-block;
         text-align: center;

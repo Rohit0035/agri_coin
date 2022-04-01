@@ -51,7 +51,7 @@ class ByCategory extends React.Component {
                 width="250px"
               />
             </Link>
-          </Col>{" "}
+          </Col>
           <Col lg="4"></Col>
         </div>
       );
@@ -62,13 +62,7 @@ class ByCategory extends React.Component {
         <Jumbotron className="mb-5">
           <Row className="m-2">
             <Col>
-              <h1
-                sm="6"
-                className="fw-bolder text-primary"
-                style={{ color: "#1877f2" }}
-              >
-                Browse By Category
-              </h1>
+                <h1 style={{fontWeight:"bold"}}>Browse By Category</h1>
             </Col>
             <Col className="d-flex justify-content-end">
               <Button

@@ -1,9 +1,10 @@
 import React from "react";
-import HeroSliderTwentyEight from "../../wrappers/hero-slider/HeroSliderTwentyEight";
-//  import FirstSectiontree from "../../wrappers/content-home/FirstSectiontree";
+import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNine";
+// import FirstSectiontree from "../../wrappers/content-home/FirstSectiontree";
 import SecondSection from "../../wrappers/content-home/SecondSection";
-// import ByCategory from "../../wrappers/content-home/ByCategory";
+import ByCategory from "../../wrappers/content-home/ByCategory";
 import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
+import FeatureIcon from "../../wrappers/feature-icon/FeatureIcon";
 
 
 // import NewsletterTwo from "../../wrappers/newsletter/NewsletterTwo";
@@ -21,17 +22,24 @@ const HomeFurnitureTwo = () => {
   return (
     <LayoutOne>
       {/* hero slider */}
-      <HeroSliderTwentyEight />
+      {/* <HeroSliderTwentyEight /> */}
       {/* First Section */}
       {/* Second Store */}
-      {/* <FirstSectiontree />  */}
-      <CategoryFiveGrid  />
+       {/* <FirstSectiontree /> */}
+      {/* hero slider */}
+      <HeroSliderTwentyNine />
+        {/* category grid */}
+        <CategoryFiveGrid spaceBottomClass="pb-70" />
       {/* Product slider */}
-      <SecondSection />
-      {/* Browse by category */}
-      {/* <ByCategory /> */}
+       <SecondSection />
+
+       {/* featured icon */}
+       <FeatureIcon spaceTopClass="pt-100" spaceBottomClass="pb-60" />
+
+      {/* Browse by categor */}
+      <ByCategory /> 
       {/* newsletter */}
-      {/* <NewsletterTwo spaceBottomClass="pb-100" /> */}
+     {/* <NewsletterTwo spaceBottomClass="pb-100" />  */}
     </LayoutOne>
   );
 };

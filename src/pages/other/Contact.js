@@ -1,10 +1,13 @@
 import PropTypes from "prop-types";
 import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
-import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
+// import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import LayoutOne from "../../layouts/LayoutOne";
-import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
+// import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import LocationMap from "../../components/contact/LocationMap";
+import { Row } from "reactstrap";
+import Cloth from "../../assets/img/Cloth.jpg";
+
 
 const Contact = ({ location }) => {
   const { pathname } = location;
@@ -12,19 +15,34 @@ const Contact = ({ location }) => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Flone | Contact</title>
+        <title>Agricoin</title>
         <meta
           name="description"
-          content="Contact of flone react minimalist eCommerce template."
+          content=""
         />
       </MetaTags>
-      <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
+      {/* <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
       <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
         Contact
-      </BreadcrumbsItem>
+      </BreadcrumbsItem> */}
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
-        <Breadcrumb />
+        {/* <Breadcrumb /> */}
+        <Row className="mb-5">
+        <div
+          className="d-flex justify-content-center align-items-center"
+          style={{
+            backgroundImage: `url(${Cloth})`,
+            width: "100%",
+            padding:"100px 0px",
+            backgroundSize:"cover"
+          }}
+        >
+          <div className="">
+            <h1 className="text-light text-center">Contact Us</h1>
+          </div>
+        </div>
+      </Row>
         <div className="contact-area pt-100 pb-100">
           <div className="container">
             <div className="contact-map mb-10">

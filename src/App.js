@@ -31,7 +31,7 @@ const HomeFurnitureTwo = lazy(() => import("./pages/home/HomeFurnitureTwo"));
 // const HomeFurnitureThree = lazy(() =>
 //   import("./pages/home/HomeFurnitureThree")
 // );
-// const HomeFurnitureFour = lazy(() => import("./pages/home/HomeFurnitureFour"));
+ const HomeFurnitureFour = lazy(() => import("./pages/home/HomeFurnitureFour"));
 // const HomeFurnitureFive = lazy(() => import("./pages/home/HomeFurnitureFive"));
 // const HomeFurnitureSix = lazy(() => import("./pages/home/HomeFurnitureSix"));
 // const HomeFurnitureSeven = lazy(() =>
@@ -140,6 +140,8 @@ const shoppingBill = lazy(() => import("./components/agricoinpage/shoppingBill.j
 const Wallet = lazy(() => import("./components/agricoinpage/wallet.js"));
 const TableHistory = lazy(() => import("./components/agricoinpage/TableHistory.js"));
 const Dashboard = lazy(() => import("./components/agricoinpage/Dashboard.js"));
+const ServiceAgri = lazy(() => import("./components/agricoinpage/ServiceAgricoin.js"));
+
 
 
 
@@ -181,7 +183,7 @@ const App = (props) => {
                 <Route
                   exact
                   path={process.env.PUBLIC_URL + "/"}
-                  component={HomeFurnitureTwo}
+                  component={HomeFurnitureFour}
                 />
 
                 {/* Homepages */}
@@ -339,6 +341,11 @@ const App = (props) => {
                   component={HomeValentinesDay}
                 /> */}
 
+               <Route
+                  path={process.env.PUBLIC_URL + "/home-furniture-four"}
+                  component={HomeFurnitureFour}
+                />
+
                 {/* agriconpagesroute */}
 
                 <Route
@@ -376,6 +383,10 @@ const App = (props) => {
                 <Route
                   path={process.env.PUBLIC_URL + "/dashboard"}
                   component={Dashboard}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/serviceagri"}
+                  component={ServiceAgri}
                 />
                
                 {/* Shop pages */}

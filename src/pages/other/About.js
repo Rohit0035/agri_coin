@@ -19,10 +19,10 @@ const About = ({ location }) => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Flone | About us</title>
+        <title>Agricoin</title>
         <meta
           name="description"
-          content="About page of flone react minimalist eCommerce template."
+          content=""
         />
       </MetaTags>
       {/* <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>

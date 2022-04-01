@@ -42,7 +42,7 @@ const columns = [
   
   export default function StickyHeadTable() {
     const [page, setPage] = React.useState(0);
-    const [rowsPerPage, setRowsPerPage] = React.useState(10);
+    const [rowsPerPage, setRowsPerPage] = React.useState(5);
   
     const handleChangePage = (event, newPage) => {
       setPage(newPage);
