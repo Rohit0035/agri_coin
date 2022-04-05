@@ -141,6 +141,12 @@ const Wallet = lazy(() => import("./components/agricoinpage/wallet.js"));
 const TableHistory = lazy(() => import("./components/agricoinpage/TableHistory.js"));
 const Dashboard = lazy(() => import("./components/agricoinpage/Dashboard.js"));
 const ServiceAgri = lazy(() => import("./components/agricoinpage/ServiceAgricoin.js"));
+const SoxiService = lazy(() => import("./components/agricoinpage/SoxiService.js"));
+const MobileRecharge = lazy(() => import("./components/agricoinpage/MobileRecharge"));
+const WalletHeader = lazy(() => import("./components/agricoinpage/WalletHeader.js"));
+const OrderRecharge = lazy(() => import("./components/agricoinpage/OrderRecharge.js"));
+const DepositForm = lazy(() => import("./components/agricoinpage/DepositForm.js"));
+
 
 
 
@@ -388,6 +394,28 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/serviceagri"}
                   component={ServiceAgri}
                 />
+                 <Route
+                  path={process.env.PUBLIC_URL + "/soxiservice"}
+                  component={SoxiService}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/mobilerecharge"}
+                  component={MobileRecharge}
+                />
+                 <Route
+                  path={process.env.PUBLIC_URL + "/orderrecharge"}
+                  component={OrderRecharge}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/depositform"}
+                  component={DepositForm}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/walletheader"}
+                  component={WalletHeader}
+                /> 
                
                 {/* Shop pages */}
                 <Route

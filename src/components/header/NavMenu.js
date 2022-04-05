@@ -161,16 +161,20 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link to={process.env.PUBLIC_URL + "/"}>{strings["home"]}</Link>
           </li>
           <li>
-            <Link >Services</Link>
+              <Link to={process.env.PUBLIC_URL + "/soxiservice"}>{strings["soxiservice"]}
+                 Services
+              </Link>
           </li>
           <Link to={process.env.PUBLIC_URL + "/shop-grid-two-column"}>
             {strings["products"]}
+            
           </Link>
           <li>
             <Link to={process.env.PUBLIC_URL + "/about"}>
               {strings["about_us"]}
             </Link>
           </li>
+          
           {/* {sidebarMenu ? (
                 <span>
                    <i className="fa fa-angle-right"></i> 
@@ -510,6 +514,9 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             <Link to={process.env.PUBLIC_URL + "/contact"}>
               {strings["contact_us"]}
             </Link>
+          </li>
+          <li>
+             <Link className="darktext">Seller Login</Link>
           </li>
         </ul>
       </nav>

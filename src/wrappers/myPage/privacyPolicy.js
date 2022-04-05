@@ -9,25 +9,26 @@ export default class privacyPolicy extends Component {
       <LayoutOne>
         <Container fluid>
           <Row className="mb-5">
-            <div
-              className="d-flex justify-content-center align-items-center"
-              style={{
-                backgroundImage: `url(${Cloth})`,
-                height: "70vh",
-                width: "100%",
-              }}
-            >
-              <div className="">
-                <h2 className="text-light text-center">PrivacyPolicy</h2>
-              </div>
-            </div>
+          <div
+          className="d-flex justify-content-center align-items-center"
+          style={{
+            backgroundImage: `url(${Cloth})`,
+            width: "100%",
+            padding:"100px 0px",
+            backgroundSize:"cover"
+          }}
+        >
+          <div className="">
+            <h1 className="text-light text-center">privacy Policy</h1>
+          </div>
+        </div>
           </Row>
           <Container>
             <Row>
               <ListGroup>
                 <h2 style={{ fontWeight: "500" }}>Privacy Policy</h2>
                 <p>
-                  Buynaa, C/O, Brizebond Technologies Private Limited (“Buynaa”)
+                  Soxycoin, C/O, Brizebond Technologies Private Limited (Soxycoin)
                   takes your privacy very seriously. This Privacy Policy
                   (“Privacy Policy”) explains the details of our collection, use
                   and disclosure of information, including your personal
@@ -46,13 +47,13 @@ export default class privacyPolicy extends Component {
                   communications, or services.
                 </li>
                 <li>
-                  By accessing, or using the Buynaa website (“Website”), and/or
+                  By accessing, or using the Soxycoin website (“Website”), and/or
                   its applications (“App/Application”) you expressly agree and
                   consent to be bound by the terms of this Privacy Policy.
                 </li>
                 <li>
-                  The terms "WE", "OUR" and "US" refer to Buynaa and the terms "
-                  YOU", "YOUR" and "USER" refer to you, as a user of Buynaa.
+                  The terms "WE", "OUR" and "US" refer to Soxycoin and the terms "
+                  YOU", "YOUR" and "USER" refer to you, as a user of Soxycoin.
                 </li>
                 <li>
                   Personal Information refers to any information about a living
@@ -85,7 +86,7 @@ export default class privacyPolicy extends Component {
                   e-mails sent to you by us. We use your mobile numbers to send
                   you transaction alerts and SMS alerts based on your
                   preferences. If you do not wish to receive such SMSs from us,
-                  please notify us at support@buynaa.com to stop receiving SMSs
+                  please notify us at support@Soxycoin.com to stop receiving SMSs
                   from us. Please note that it may take about 14 days to process
                   your request. Please keep in mind that we will continue to
                   notify you by email /SMS/via phone calls regarding your
@@ -99,7 +100,7 @@ export default class privacyPolicy extends Component {
                   Scope of Policy and Terms{" "}
                 </h2>
                 <p>
-                  1. This Privacy Policy applies to the Buynaa Website, or any
+                  1. This Privacy Policy applies to the Soxycoin Website, or any
                   online/web application that refers to or links to this Privacy
                   Policy. This Privacy Policy applies regardless of whether you
                   have downloaded or accessed the Website or Application onto
@@ -112,14 +113,14 @@ export default class privacyPolicy extends Component {
                   group of individuals.{" "}
                 </p>
                 <p>
-                  3. This Privacy Policy governs the use of any and all Buynaa
+                  3. This Privacy Policy governs the use of any and all Soxycoin
                   Services availed by you.{" "}
                 </p>
                 <h2 style={{ fontWeight: "500" }}>Information We Collect</h2>
                 <p>
-                  4. Buynaa collects, processes and retains information, i.e.
+                  4. Soxycoin collects, processes and retains information, i.e.
                   Personal Information (including Sensitive Personal
-                  Information) about you when you visit “www.buynaa.com”. In
+                  Information) about you when you visit “www.Soxycoin.com”. In
                   course of your use and transactions on the Website and
                   Application, we collect the following information:
                 </p>
@@ -133,7 +134,7 @@ export default class privacyPolicy extends Component {
                   your date of birth.
                 </p>
                 <p>
-                  3. Your correspondence with Buynaa, including but not limited
+                  3. Your correspondence with Soxycoin, including but not limited
                   to customer support.
                 </p>
                 <p>
@@ -180,7 +181,7 @@ export default class privacyPolicy extends Component {
                 </p>
                 <p>b) Information we collect about you</p>
                 <p>
-                  Buynaa collects your Device information, including but not
+                  Soxycoin collects your Device information, including but not
                   limited to, IP address, browsing data, Device ID or Unique
                   identifier, device type, geo-location, computer and internet
                   information, mobile network information, statistics on page
@@ -202,7 +203,7 @@ export default class privacyPolicy extends Component {
                   Why We Collect Information{" "}
                 </h3>
                 <p>
-                  5. Buynaa collects information (including Sensitive Personal
+                  5. Soxycoin collects information (including Sensitive Personal
                   Information) to provide the services and for the purposes as
                   outlined below:-
                 </p>
@@ -211,7 +212,7 @@ export default class privacyPolicy extends Component {
                   Website/App.
                 </p>
                 <p>
-                  2. To provide you with access to Buynaa Services and Customer
+                  2. To provide you with access to Soxycoin Services and Customer
                   Support.
                 </p>
                 <p>3. To process and notify you of your transactions.</p>
@@ -241,21 +242,21 @@ export default class privacyPolicy extends Component {
                   Disclosure of your Information{" "}
                 </h3>
                 <p>
-                  6. Buynaa does not share, sell, rent or trade personal
-                  information collected through “www.buynaa.com” with third
+                  6. Soxycoin does not share, sell, rent or trade personal
+                  information collected through “www.Soxycoin.com” with third
                   parties for their sole promotional purposes or otherwise than
                   as outlined in this Privacy Policy.
                 </p>
                 <p>
-                  7. Buynaa may share the Personal Information (and other
+                  7. Soxycoin may share the Personal Information (and other
                   information including Sensitive Personal Information) with
                   selected third parties as described below:-
                 </p>
                 <p>
-                  1. Members of the Buynaa corporate family, affiliates, group
+                  1. Members of the Soxycoin corporate family, affiliates, group
                   companies.
                 </p>
-                <p>2. Service providers under contract with Buynaa.</p>
+                <p>2. Service providers under contract with Soxycoin.</p>
                 <p>
                   8. We may also disclose your Personal Information (and other
                   information including Sensitive Personal Information):-
@@ -266,12 +267,12 @@ export default class privacyPolicy extends Component {
                   authority, or by other legal process.
                 </p>
                 <p>
-                  2. When Buynaa believes in good faith that disclosure is
+                  2. When Soxycoin believes in good faith that disclosure is
                   necessary to protect our legal rights, protect your safety or
                   the safety of others, or investigate fraud or crime.
                 </p>
                 <p>
-                  3. If Buynaa (or any of our affiliates) is involved in a
+                  3. If Soxycoin (or any of our affiliates) is involved in a
                   merger, acquisition, or sale of all or substantially all its
                   assets or equity.{" "}
                 </p>
@@ -290,7 +291,7 @@ export default class privacyPolicy extends Component {
                 <p>
                   10. At times, express written consent from the individual may
                   be required based on the information processing activity.
-                  Buynaa receives consent from individuals prior to:
+                  Soxycoin receives consent from individuals prior to:
                 </p>
                 <p>
                   1. collecting, using, or processing their personal
@@ -326,19 +327,19 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Marketing and Analytics </h3>
                 <p>
-                  14. Buynaa will send you messages and e-mails or contact you
+                  14. Soxycoin will send you messages and e-mails or contact you
                   through voice call or robotic calling to carry to your
                   promotional offers.{" "}
                 </p>
                 <p>
-                  15. Buynaa and our third-party service providers, including
+                  15. Soxycoin and our third-party service providers, including
                   our marketing partners and analytics providers, may use mobile
                   tracking technologies and/or website cookies to distinguish
                   and/or identify you from other users of the Website or
                   Application.
                 </p>
                 <p>
-                  16. This helps Buynaa to improve the Website and Application
+                  16. This helps Soxycoin to improve the Website and Application
                   thereby providing you with a good experience. We may use the
                   analytics tools and software in order to develop and analyse
                   use of the Service.
@@ -372,9 +373,9 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Data Storage </h3>
                 <p>
-                  19. Buynaa may transfer your information from “www.
-                  buynaa.com” to other databases and store it on Buynaa or other
-                  supplier systems. Buynaa ensures appropriate security controls
+                  19. Soxycoin may transfer your information from “www.
+                  Soxycoin.com” to other databases and store it on Soxycoin or other
+                  supplier systems. Soxycoin ensures appropriate security controls
                   while storing data on its or its suppliers’ systems.
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Retention Policy</h3>
@@ -441,14 +442,14 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Changes</h3>
                 <p>
-                  28.Buynaa reserves the right to change this policy from time
+                  28.Soxycoin reserves the right to change this policy from time
                   to time. Any changes shall be effective immediately upon the
                   posting of the revised Privacy Policy. We encourage you to
                   periodically review this page for latest information on our
                   privacy practices.
                 </p>
                 <p>
-                  29.Buynaa trusts you to be conscious of the Policy and any
+                  29.Soxycoin trusts you to be conscious of the Policy and any
                   changes to it at all time, thus maintaining that it cannot be
                   made liable if you misunderstand or ignore the Privacy Policy.
                 </p>

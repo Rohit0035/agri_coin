@@ -71,6 +71,7 @@ const IconGroup = ({
     <div
       className={`header-right-wrap ${iconWhiteClass ? iconWhiteClass : ""}`}
     >
+
       {/* <div className="same-style header-search d-none d-lg-block">
         <button className="search-active" onClick={(e) => handleClick(e)}>
           <i className="pe-7s-search" />
@@ -118,16 +119,14 @@ const IconGroup = ({
                 <li>
                   <Link to={process.env.PUBLIC_URL + "/KycVerification"}>Kyc Verification</Link>
                 </li>
-                <li>
-                  <Link to={process.env.PUBLIC_URL + "/Dashboard"}>Dashboard</Link>
-                </li>
+              
                 <li>
                   <Link to={process.env.PUBLIC_URL + "/my-account"}>
                     My Account
                   </Link>
                 </li>
                 <li>
-                  <Link
+                  <Link to={process.env.PUBLIC_URL + "/"}
                     onClick={(e) =>
                       window.localStorage.removeItem("auth-token")
                     }

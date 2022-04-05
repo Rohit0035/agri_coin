@@ -5,6 +5,7 @@ import NavMenu from "../../components/header/NavMenu";
 import IconGroup from "../../components/header/IconGroup";
 import MobileMenu from "../../components/header/MobileMenu";
 import HeaderTop from "../../components/header/HeaderTop";
+import WalletHeader from "../../components/agricoinpage/WalletHeader";
 
 const HeaderOne = ({
   layout,
@@ -64,12 +65,13 @@ const HeaderOne = ({
                 <Logo imageUrl="/assets/img/logo/logo.png"  />
               </div>
             </div>
-            <div className="col-xl-8 col-lg-8 d-none d-lg-block">
+            <div className="col-xl-7 col-lg-7 d-none d-lg-block">
               {/* Nav menu */}
               <NavMenu />
             </div>
-            <div className="col-xl-2 col-lg-2 col-md-6 col-8">
+            <div className="col-xl-3 col-lg-3 col-md-6 col-8">
               {/* Icon group */}
+              <WalletHeader/>
               <IconGroup />
             </div>
           </div>

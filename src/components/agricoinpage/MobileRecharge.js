@@ -3,11 +3,10 @@ import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col, Input, InputGroup, Form } from "reactstrap";
+import { Button } from "react-scroll";
 
 
-
-
-const shoppingBill = ({ data, spaceBottomClass }) => {
+const MobileRecharge = ({ data, spaceBottomClass }) => {
     
   return (
     <LayoutOne>
@@ -23,7 +22,7 @@ const shoppingBill = ({ data, spaceBottomClass }) => {
           }}
         >
           <div className="">
-            <h1 className="text-light text-center">Hospital Bills</h1>
+            <h1 className="text-light text-center">Mobile Recharge</h1>
           </div>
         </div>
       </Row>
@@ -33,36 +32,24 @@ const shoppingBill = ({ data, spaceBottomClass }) => {
         <Row>
             <Col md="6">
                 <Row>
-                  <h4 className="sr-h4">Pay For Shopping Bill</h4>
+                  <h4 className="sr-h4">DTH Recharge</h4>
                   <div className="sr-1">
                     <Form>
                     <Col md="12">
-                        {/* <Input type="text"
+                        <Input type="text"
                         className="form-control"
                         placeholder="Select Operator"
-                          /> */}
-                          <select className="form-control" >
-                             <option>Select State</option>
-                             <option>MP</option>
-                             <option>UP</option>
-                          </select>
+                          />
                     </Col>
                     <br></br>
                     <Col md="12">
                         <Input type="text"
                         className="form-control"
-                        placeholder="Consumer Number"
+                        placeholder="Registered Mobile No./Subscriber ID/Customer Id"
                           />
                     </Col>
                     <small style={{color:"red",}}>(Subscriber ID starts with 1 and is 10 digits long. To locate it, press the home button on remote.)</small>
                     <br></br>
-                    <br></br>
-                    <Col md="12">
-                        <Input type="text"
-                        className="form-control"
-                        placeholder="Store Name"
-                          />
-                    </Col>
                     <br></br>
                     <Col md="12">
                         <InputGroup>
@@ -73,9 +60,9 @@ const shoppingBill = ({ data, spaceBottomClass }) => {
                             />
                         </InputGroup>
                     </Col>
-                    </Form>
                     <br></br>
-                    <button className="sr-btn">Proceed</button>
+                    <button className="sr-btn">Proceed to Recharge</button>
+                    </Form>
                   </div>
                 </Row>
             </Col>
@@ -83,9 +70,8 @@ const shoppingBill = ({ data, spaceBottomClass }) => {
                 <div className="sr-3">
                    <h4 className="sr-h">Consumer Details</h4>
                       <ul className="sr-ul">
-                      <li className="sr-li">Consumer Number: <span className="sr-span">44545</span></li>
-                      <li  className="sr-li">State: <span  className="sr-span">MP</span></li>
-                      <li  className="sr-li">Store Name: <span  className="sr-span">Lorem</span></li>
+                      <li className="sr-li">DTH Number: <span className="sr-span">44545</span></li>
+                      <li  className="sr-li">Operator: <span  className="sr-span">Vodafone</span></li>
                       <li  className="sr-li">Amount: <span  className="sr-span">100rs</span></li>
                       <li  className="sr-li dr">Amount: <span  className="sr-span">Rs:100</span></li>
                     </ul>
@@ -105,9 +91,9 @@ const shoppingBill = ({ data, spaceBottomClass }) => {
 
 };
 
-shoppingBill.propTypes = {
+MobileRecharge.propTypes = {
   data: PropTypes.object,
   spaceBottomClass: PropTypes.string
 };
 
-export default shoppingBill;
+export default MobileRecharge;

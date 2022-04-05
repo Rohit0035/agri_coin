@@ -3,6 +3,7 @@ import Logo from "../../components/header/Logo";
 import IconGroup from "../../components/header/IconGroup";
 import MobileMenu from "../../components/header/MobileMenu";
 import NavMenu from "../../components/header/NavMenu";
+import WalletHeader from "../../components/agricoinpage/WalletHeader";
 
 const HeaderFive = () => {
   return (
@@ -35,8 +36,9 @@ const HeaderFive = () => {
               {/* header logo */}
               <Logo imageUrl="/assets/img/logo/logo.png" logoClass="logo" />
             </div>
-            <div className="col-xl-10 col-lg-102 col-md-6 col-8">
+            <div className="col-xl-10 col-lg-10 col-md-6 col-8">
               {/* Icon group */}
+              <WalletHeader/>
               <IconGroup />
             </div>
           </div>

@@ -4,6 +4,8 @@ import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col, Input, InputGroup, Form } from "reactstrap";
 import TableHistory from "../agricoinpage/TableHistory"
+import { Link } from "react-router-dom";
+import { Button } from "react-scroll";
 
 
 
@@ -39,7 +41,9 @@ const Wallet = ({ data, spaceBottomClass }) => {
                       <li  className="sr-li dr">Available Balance : <span  className="sr-span">INR:100</span></li>
                     </ul>
                     <div className="sr-div">
-                        <button className="sr-btn1">Deposit to Wallet</button>
+                        <Link to="/depositform">
+                        <button className="sr-btn1" >Deposit to Wallet</button>
+                        </Link>
                     </div>
                     <div className="sr-div">
                         <button className="sr-btn1">Send Money to Bank</button>
