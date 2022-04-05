@@ -38,7 +38,7 @@ const Wallet = ({ data, spaceBottomClass }) => {
                 <div className="sr-3">
                    <h4 className="sr-h">Wallet Details </h4>
                       <ul className="sr-ul">
-                      <li  className="sr-li dr">Available Balance : <span  className="sr-span">INR:100</span></li>
+                      <li  className="sr-li dr">Available Wallet Balance : <span  className="sr-span">INR:100</span></li>
                     </ul>
                     <div className="sr-div">
                         <Link to="/depositform">
