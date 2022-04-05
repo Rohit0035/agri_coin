@@ -58,8 +58,8 @@
           color: #1877f2;
           span {
             &.count-style {
-              color: #fff;
-              background-color: #1877f2;
+              color: #000;
+              background-color: #f7b011;
             }
           }
         }
@@ -598,9 +598,9 @@
 
         text-align: center;
 
-        color: #fff;
+        color: #000;
         border-radius: 100%;
-        background-color: #1877f2;
+        background-color: #f7b011 ;
         @media #{$xl-layout} {
           right: -5px;
         }

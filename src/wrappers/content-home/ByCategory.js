@@ -61,13 +61,12 @@ class ByCategory extends React.Component {
       <Container className="main mb-2">
         <Jumbotron className="mb-5">
           <Row className="m-2">
-            <Col>
+            <Col lg="12">
                 <h1 style={{fontWeight:"bold"}}>Browse By Category</h1>
-            </Col>
-            <Col className="d-flex justify-content-end">
-              <Button
-                color="primary"
-                className=""
+                <span className="ex-btn">
+                <Button
+                color=""
+                className="btn-expand"
                 onClick={(event) => {
                   window.location.href = "/shop-grid-two-column";
                   console.log("ok");
@@ -75,6 +74,7 @@ class ByCategory extends React.Component {
               >
                 Explore All
               </Button>
+                </span>
             </Col>
           </Row>
         </Jumbotron>

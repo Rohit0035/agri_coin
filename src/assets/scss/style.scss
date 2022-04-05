@@ -266,7 +266,7 @@ i.pe-7s-phone.circle-1.active {
  i {
     font-size: 25px;
     font-weight: 700;
-    color: #1877f2;
+    color: #f7b011;
     margin-right: 4px;
   }
  span {
@@ -295,7 +295,7 @@ i.pe-7s-phone.circle-1.active {
 a.darktext {
     font-weight: bold  !important;
     font-size: 15px  !important;
-    color: #1877f2 !important;
+    color:#f7b011!important;
     
 }
 
@@ -306,6 +306,56 @@ a.darktext {
     background: #fff;
     padding: 40px;
     border-radius: 5px;
+}
+
+span.ex-btn {
+    float: right;
+}
+button.btn-expand.btn.btn- {
+    background: #f7b011;
+    color: #fff;
+    font-weight: 600;
+    border: none;
+
+}
+select.form-control.select-st{
+    padding: 8px 7px;
+    color: #7c779f;
+    border: 2px solid #eceff8;
+    background: #eceff8;
+    box-shadow: none;
+}
+.qr-box {
+    padding: 15px 0px;
+}
+.qr-box ol{
+    padding: 0px;
+    margin-top: 12px;
+}
+.qr-box ol li {
+   
+        line-height: 18px;
+        font-size: 12px;
+}
+.cod-1{
+    p{
+        font-size: 12px;
+    background: #f7b011;
+    width: fit-content;
+    color: #fff;
+    padding: 2px 6px;
+    border-radius: 10px;
+    }
+}
+.cod-1{
+    button{
+    background: #f7b011;
+    color: #fff;
+    font-size: 14px;
+    border: none;
+    padding: 4px 6px;
+    border-radius: 4px;
+    }
 }
 // media query css 17/3/22
 

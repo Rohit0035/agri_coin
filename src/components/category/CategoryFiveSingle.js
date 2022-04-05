@@ -100,20 +100,20 @@ const CategoryFiveSingle = ({ spaceBottomClass }) => {
                   <FormControlLabel control={<Checkbox />} label="Postpaid" />
                 </div>
                 <Row>
-                  <Col md="3" className="mt-3">
+                  <Col md="3" className="mb-2">
                     <Input
                       type="text"
                       className="form-control mb-st"
                       placeholder="Enter Mobile Number "
                     ></Input>
                   </Col>
-                  <Col md="3" className="mt-3">
+                  <Col md="3" className="mb-2">
                     <Input type="text" className="form-control" placeholder="Select Operator">
                       <option>Idea</option>
                       <option>Jio</option>
                     </Input>
                   </Col>
-                  <Col md="3" className="mt-3">
+                  <Col md="3" className="mb-2">
                     <Input type="text" className="form-control mb-st" placeholder="Amount"></Input>
                   </Col>
                   <Col md="3">
