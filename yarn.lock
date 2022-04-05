@@ -9637,7 +9637,7 @@
     "iconv-lite" "0.4.24"
     "unpipe" "1.0.0"
 
-"react-app-polyfill@^1.0.4":
+"react-app-polyfill@^1.0.4", "react-app-polyfill@^1.0.6":
   "integrity" "sha512-OfBnObtnGgLGfweORmdZbyEz+3dgVePQBb3zipiaDsMHV1NpWm0rDFYIVXFV/AK+x4VIIfWHhrdMIeoTLyRr2g=="
   "resolved" "https://registry.npmjs.org/react-app-polyfill/-/react-app-polyfill-1.0.6.tgz"
   "version" "1.0.6"
