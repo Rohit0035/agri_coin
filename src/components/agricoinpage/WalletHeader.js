@@ -6,6 +6,9 @@ import { Link } from "react-router-dom";
 const WalletHeader = ({ data, spaceBottomClass }) => {
     
     return (
+           
+     
+        
         <Link to="/wallet">
         <div className="wt-text">
            <i className="pe-7s-wallet" />
@@ -13,6 +16,8 @@ const WalletHeader = ({ data, spaceBottomClass }) => {
         </div>
         </Link>
       );
+
+      
 
 };
 

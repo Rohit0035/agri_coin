@@ -2,9 +2,10 @@ import PropTypes from "prop-types";
 import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Dpositbanner from "../../assets/img/dpositbanner.jpg";
-import { Container, Row,  Col, Input, InputGroup, Form } from "reactstrap";
+import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstrap";
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Qrcode from '../../assets/img/qr-code.jpeg';
+import Logo from '../../assets/img/logo/logo.png';
 
 
 
@@ -23,12 +24,14 @@ const DepositForm = ({ data, spaceBottomClass }) => {
           style={{
             backgroundImage: `url(${Dpositbanner})`,
             width: "100%",
-            padding:"100px 0px",
+            padding:"35px 0px",
             backgroundSize:"cover"
           }}
         >
           <div className="deposit-form">
-              <h4 className="mt-3 mb-4" style={{fontWeight:600}}>Soxycoin Deposit Form</h4>
+              <div className="dpositlogo mb-4">
+                <img src= {Logo}   width="150px" />
+              </div>
               <form>
                    <div className="col-lg-12 mb-3">
                      <input
@@ -76,7 +79,7 @@ const DepositForm = ({ data, spaceBottomClass }) => {
                        <Row>
                           <Col lg="4">
                              <div className="cod-2">
-                               <img src={Qrcode}   width="100%" />
+                               <img src= {Qrcode}   width="100%" />
                              </div>
                           </Col>
                           <Col lg="8">
@@ -96,7 +99,18 @@ const DepositForm = ({ data, spaceBottomClass }) => {
                           </Col>
                        </Row>
                     </div>
+                    <div className="col-lg-12 mb-3">
+                     <label>DEPOSIT SCREEN SHOT*</label>
+                     <input
+                         name="File"
+                         placeholder=""
+                         type="file"
+                        />
+                    </div>
               </form>
+              <Button className="dp-submit mt-3">
+                  Submit Details
+              </Button>
           </div>
         </div>
       </Row>

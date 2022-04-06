@@ -378,10 +378,7 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/water"}
                   component={Water}
                 />
-                 <Route
-                  path={process.env.PUBLIC_URL + "/wallet"}
-                  component={Wallet}
-                />
+                
                 <Route
                   path={process.env.PUBLIC_URL + "/tablehistory"}
                   component={TableHistory}
@@ -411,11 +408,16 @@ const App = (props) => {
                   path={process.env.PUBLIC_URL + "/depositform"}
                   component={DepositForm}
                 />
-
-                <Route
-                  path={process.env.PUBLIC_URL + "/walletheader"}
-                  component={WalletHeader}
-                /> 
+                 
+                 <Route
+                     path={process.env.PUBLIC_URL + "/walletheader"}
+                     component={WalletHeader}
+                 /> 
+               
+                 <Route
+                       path={process.env.PUBLIC_URL + "/wallet"}
+                       component={Wallet}
+                  />
                
                 {/* Shop pages */}
                 <Route
@@ -584,6 +586,8 @@ const App = (props) => {
                           path={process.env.PUBLIC_URL + "/my-account"}
                           component={MyAccount}
                         />
+                       
+
                       </>
                     ) : (
                       <Redirect

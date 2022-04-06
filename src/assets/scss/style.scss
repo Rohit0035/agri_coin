@@ -326,7 +326,9 @@ select.form-control.select-st{
     box-shadow: none;
 }
 .qr-box {
-    padding: 15px 0px;
+    padding: 20px 20px;
+    border: 1px solid #f7b011;
+    margin-bottom: 20px;
 }
 .qr-box ol{
     padding: 0px;
@@ -356,6 +358,16 @@ select.form-control.select-st{
     padding: 4px 6px;
     border-radius: 4px;
     }
+}
+.cod-2 {
+    margin-bottom: 30px;
+}
+button.dp-submit.btn.btn-secondary {
+    background: #000;
+    padding: 10px 20px;
+}
+.dpositlogo{
+    text-align: center;
 }
 // media query css 17/3/22
 
