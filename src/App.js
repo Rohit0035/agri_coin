@@ -587,7 +587,6 @@ const App = (props) => {
                           component={MyAccount}
                         />
                        
-
                       </>
                     ) : (
                       <Redirect
