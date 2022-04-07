@@ -46,7 +46,9 @@ const Wallet = ({ data, spaceBottomClass }) => {
                         </Link>
                     </div>
                     <div className="sr-div">
-                        <button className="sr-btn1">Send Money to Bank</button>
+                        <Link to="/walletwithdraw">
+                        <button className="sr-btn1">Withdraw to Wallet</button>
+                        </Link>
                     </div>
                 </div>
             </Col>

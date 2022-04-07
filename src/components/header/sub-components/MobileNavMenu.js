@@ -159,8 +159,9 @@ const MobileNavMenu = ({ strings }) => {
               </Link>
           </li>  
         <li>
-          <Link to={process.env.PUBLIC_URL + "/shop-grid-two-column"}>
-            {strings["products"]}
+         <Link to={process.env.PUBLIC_URL + "/shop-grid-two-column"}>
+            {strings["shop-grid-two-column"]}
+               Products
           </Link>
         </li>
         <li>

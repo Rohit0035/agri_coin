@@ -146,6 +146,8 @@ const MobileRecharge = lazy(() => import("./components/agricoinpage/MobileRechar
 const WalletHeader = lazy(() => import("./components/agricoinpage/WalletHeader.js"));
 const OrderRecharge = lazy(() => import("./components/agricoinpage/OrderRecharge.js"));
 const DepositForm = lazy(() => import("./components/agricoinpage/DepositForm.js"));
+const WalletWithdraw = lazy(() => import("./components/agricoinpage/WalletWithdraw.js"));
+
 
 
 
@@ -407,6 +409,11 @@ const App = (props) => {
                 <Route
                   path={process.env.PUBLIC_URL + "/depositform"}
                   component={DepositForm}
+                />
+
+                <Route
+                  path={process.env.PUBLIC_URL + "/walletwithdraw"}
+                  component={WalletWithdraw}
                 />
                  
                  <Route

@@ -214,7 +214,7 @@ const ShopGridTwoColumn = ({
         Shop
       </BreadcrumbsItem>
 
-      <LayoutOne headerTop="visible">
+      <LayoutOne headerTop="unvisible">
         {/* breadcrumb */}
         <Breadcrumb />
 
