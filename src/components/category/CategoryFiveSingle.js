@@ -1,12 +1,69 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Col, Container, Form, Input, Row } from "reactstrap";
 import FormGroup from "@mui/material/FormGroup";
 import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { string } from "prop-types";
+import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
+import axios from "axios";
+class CategoryFiveSingle extends React.Component {
 
-const CategoryFiveSingle = ({ spaceBottomClass }) => {
+  constructor(props) {
+    super(props);
+    this.state = {
+      //service: "",
+      code: "",
+      re_type: "",
+      allService:[],
+      MobileNo:8121787777,
+      APIKey: "vzfWPhGe8GQRWHarKgzFVXJYxmkgFLdZrUG",
+      REQTYPE: "RECH",
+      SERCODE: "",
+      CUSTNO: "",
+      REFMOBILENO: "",
+      AMT: "",
+      STV: "",
+      RESPTYPE: "",
+      serviceR:[]
+    };
+  } 
+  componentDidMount() {
+    axios
+      .get("http://35.154.134.118/api/admin/getOperators")
+      .then((response) => {
+         console.log(response.data.data);
+        this.setState({ serviceR: response.data.data});
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    }
+  
+
+  changeHandler = (e) => {
+    this.setState({ [e.target.name]: e.target.value });
+  };
+
+  submitHandler = (e) => {
+    e.preventDefault();
+    // let { id } = this.props.match.params;
+    axios
+      .post(`http://35.154.134.118/api/admin/moRecharge/`, this.state)
+      
+      .then((response) => {
+        console.log(response.data);
+
+        // swal("Success!", "Submitted SuccessFull!", "success");
+        // this.props.history.push("/app/shiftmanagement/retailSellingPriceList");
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+  };
+
+
+// const CategoryFiveSingle = ({ spaceBottomClass }) => {
+  render() {
   return (
     <div className="col-lg-12 col-md-12 mb-30">
       <div className="category-grid">
@@ -89,7 +146,7 @@ const CategoryFiveSingle = ({ spaceBottomClass }) => {
             </Col>
             <div className="bx-2">
               <h3 className="mb-3 bold">Quick Recharge</h3>
-              <Form>
+              <Form onSubmit={this.submitHandler}>
                 <div className="int-box">
                   <FormControlLabel
                     control={<Checkbox defaultChecked />}
@@ -101,25 +158,42 @@ const CategoryFiveSingle = ({ spaceBottomClass }) => {
                 </div>
                 <Row>
                   <Col md="3" className="mb-2">
-                    <Input
-                      type="text"
-                      className="form-control mb-st"
-                      placeholder="Enter Mobile Number "
-                    ></Input>
+                  <Input
+                  type="select"
+                  name="SERCODE"
+                  className="st-select"
+                  value={this.state.SERCODE}
+                  onChange={this.changeHandler}>
+                  <option>Choose an operator</option>
+                   {this.state.serviceR?.map((servicep) => (
+                  <option value={servicep.code} key={servicep._id}>
+                    {servicep.service}
+                  </option>
+                ))}</Input>
                   </Col>
                   <Col md="3" className="mb-2">
-                    <Input type="text" className="form-control" placeholder="Select Operator">
-                      <option>Idea</option>
-                      <option>Jio</option>
-                    </Input>
+                  <Input type="number"
+                        name="CUSTNO"
+                        value={this.state.CUSTNO}
+                        onChange={this.changeHandler}
+                        className="form-control"
+                        placeholder="Registered Mobile No."
+                          />
                   </Col>
                   <Col md="3" className="mb-2">
-                    <Input type="text" className="form-control mb-st" placeholder="Amount"></Input>
+                       <Input 
+                              className="form-control"
+                              placeholder="Amount"
+                              name="AMT"
+                              type="number"
+                              value={this.state.AMT}
+                              onChange={this.changeHandler}
+                            />
                   </Col>
                   <Col md="3">
-                    <button type="button" class="btn-s mb-st">
+                    <Button type="button" className="btn-s mb-st">
                       Continue
-                    </button>
+                    </Button>
                   </Col>
                 </Row>
               </Form>
@@ -130,8 +204,9 @@ const CategoryFiveSingle = ({ spaceBottomClass }) => {
     </section>
     </div>
     </div>
-  
   );
-};
+  }
+}
+
 
 export default CategoryFiveSingle;
