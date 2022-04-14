@@ -8,6 +8,7 @@ import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap
 import axios from "axios";
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
+import swal from "sweetalert";
 
 class HomeCategory extends React.Component {
   constructor(props) {
@@ -54,8 +55,15 @@ class HomeCategory extends React.Component {
       
       .then((response) => {
         console.log(response.data);
-        // swal("Success!", "Recharge SuccessFull!", "success");
-        // this.props.history.push("/app/shiftmanagement/retailSellingPriceList");
+        console.log(response.data.STATUSMSG);
+        if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG != "Failed" ){
+          swal("Success!", "Recharge SuccessFull!", "success");
+
+        }
+        else {
+          swal("Error!", "Recharge UnsuccssFull!", "error");
+
+        }
       })
       .catch((error) => {
         console.log(error.response);
@@ -64,7 +72,7 @@ class HomeCategory extends React.Component {
 
   render() {
 
-    const notify = () => toast.success("Recharge Successful!");
+    // const notify = () => toast.success("Recharge Successful!");
 
   return (
     <div className="col-lg-12 col-md-12 mb-30">
@@ -176,6 +184,7 @@ class HomeCategory extends React.Component {
                   <Col md="3" className="mb-2">
                   <Input type="number"
                         name="CUSTNO"
+                        required
                         value={this.state.CUSTNO}
                         onChange={this.changeHandler}
                         className="form-control"
@@ -186,6 +195,7 @@ class HomeCategory extends React.Component {
                        <Input 
                               className="form-control"
                               placeholder="Amount"
+                              required
                               name="AMT"
                               type="number"
                               value={this.state.AMT}
@@ -193,15 +203,22 @@ class HomeCategory extends React.Component {
                             />
                   </Col>
                   <Col md="3">
-                    <Button  className="btn-s mb-st">
-                      Continue
-                    </Button>
-                    <ToastContainer  />
+                        {localStorage.getItem("auth-token") ? (
+                            <Button className="btn-s mb-st">Continue</Button>
+                          ) : (
+                            <Button
+                              className="btn-s mb-st"
+                              onClick={(e) =>
+                                (window.location.href = "/login-register")
+                              }
+                            >
+                              Continue
+                            </Button>
+                          )}
                   </Col>
-                  <div>
-        <button onClick={notify}>Notify!</button>
-        
-      </div>
+                    {/* <div>
+                      <button onClick={notify}>Notify!</button>
+                    </div> */}
                 </Row>
               </Form>
             </div>

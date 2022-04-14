@@ -165,8 +165,18 @@ class MobileRecharge extends React.Component {
                         </InputGroup>
                     </Col>
                     <br></br>
-                    <Button className="sr-btn"
-                    >Proceed to Recharge</Button>
+                     {localStorage.getItem("auth-token") ? (
+                        <Button className="sr-btn">Proceed to Recharge</Button>
+                      ) : (
+                        <Button
+                          className="sr-btn"
+                          onClick={(e) =>
+                            (window.location.href = "/login-register")
+                          }
+                        >
+                          Proceed to Recharge
+                        </Button>
+                      )}
                     </Form>
                   </div>
                 </Row>
