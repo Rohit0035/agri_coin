@@ -147,6 +147,8 @@ const WalletHeader = lazy(() => import("./components/agricoinpage/WalletHeader.j
 const OrderRecharge = lazy(() => import("./components/agricoinpage/OrderRecharge.js"));
 const DepositForm = lazy(() => import("./components/agricoinpage/DepositForm.js"));
 const WalletWithdraw = lazy(() => import("./components/agricoinpage/WalletWithdraw.js"));
+const HomeCategory = lazy(() => import("./components/agricoinpage/HomeCategory.js"));
+
 
 
 
@@ -425,6 +427,11 @@ const App = (props) => {
                        path={process.env.PUBLIC_URL + "/wallet"}
                        component={Wallet}
                   />
+
+                  <Route
+                       path={process.env.PUBLIC_URL + "/homecategory"}
+                       component={HomeCategory}
+                  />
                
                 {/* Shop pages */}
                 <Route
@@ -573,6 +580,7 @@ const App = (props) => {
                   render={() =>
                     localStorage.getItem("auth-token") ? (
                       <>
+                      
                         <Route
                           path={process.env.PUBLIC_URL + "/cart"}
                           component={Cart}

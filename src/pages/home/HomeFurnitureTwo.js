@@ -3,12 +3,13 @@ import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNin
 // import FirstSectiontree from "../../wrappers/content-home/FirstSectiontree";
 import SecondSection from "../../wrappers/content-home/SecondSection";
 import ByCategory from "../../wrappers/content-home/ByCategory";
-import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
+// import CategoryFiveSingle from "../../components/category/CategoryFiveSingle";
 import FeatureIcon from "../../wrappers/feature-icon/FeatureIcon";
 
 
 // import NewsletterTwo from "../../wrappers/newsletter/NewsletterTwo";
 import LayoutOne from "../../layouts/LayoutOne";
+import HomeCategory from "../../components/agricoinpage/HomeCategory";
 // import CategoryTwoSlider from "../../wrappers/category/CategoryTwoSlider";
 // import TabProductSix from "../../wrappers/product/TabProductSix";
 // import FirstSection from "../../wrappers/content-home/FirstSection";
@@ -29,7 +30,7 @@ const HomeFurnitureTwo = () => {
       {/* hero slider */}
       <HeroSliderTwentyNine />
         {/* category grid */}
-        <CategoryFiveGrid spaceBottomClass="pb-70" />
+        <HomeCategory spaceBottomClass="pb-70" />
       {/* Product slider */}
        <SecondSection />
 

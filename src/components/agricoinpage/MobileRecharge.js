@@ -6,8 +6,6 @@ import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap
 import axios from "axios";
 import swal from 'sweetalert';
 
-
-
 class MobileRecharge extends React.Component {
 
 // const MobileRecharge = ({ data, spaceBottomClass }) => {
@@ -43,11 +41,12 @@ class MobileRecharge extends React.Component {
         console.log(error);
       });
     }
+    
     changeHandler = (e) => {
       this.setState({ [e.target.name]: e.target.value });
     };
 
-    submitHandler = (e) => {
+     submitHandler = (e) => {
       e.preventDefault();
       // let { id } = this.props.match.params;
       axios
@@ -55,16 +54,23 @@ class MobileRecharge extends React.Component {
         
         .then((response) => {
           console.log(response.data);
+          console.log(response.data.STATUSMSG);
+          if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG != "Failed" ){
+            swal("Success!", "Recharge SuccessFull!", "success");
 
-          swal("Success!", "Recharge SuccessFull!", "success");
-          // this.props.history.push("/app/shiftmanagement/retailSellingPriceList");
+          }
+          else {
+            swal("Error!", "Recharge UnsuccssFull!", "error");
+
+          }
         })
         .catch((error) => {
           console.log(error.response);
         });
-    };
+    }
+   
 
-    render() {
+  render() {
   return (
     <LayoutOne>
     <Container fluid className="mb-4">
@@ -134,6 +140,7 @@ class MobileRecharge extends React.Component {
                     <Col md="12">
                         <Input type="number"
                         name="CUSTNO"
+                        required
                         value={this.state.CUSTNO}
                         onChange={this.changeHandler}
                         className="form-control"
@@ -151,6 +158,7 @@ class MobileRecharge extends React.Component {
                               placeholder="Amount"
                               name="AMT"
                               type="number"
+                              required
                               value={this.state.AMT}
                               onChange={this.changeHandler}
                             />

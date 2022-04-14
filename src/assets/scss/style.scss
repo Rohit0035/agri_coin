@@ -376,7 +376,15 @@ select.st-select.form-control {
     padding: 9px 15px;
 }
 
-
+// home category 
+.category-home{
+    margin-top: -100px;
+}
+section.st-p {
+    position: relative;
+    z-index: 999999;
+    margin-bottom: 80px;
+}
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {

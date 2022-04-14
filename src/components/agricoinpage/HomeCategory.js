@@ -6,10 +6,10 @@ import Checkbox from "@mui/material/Checkbox";
 import { string } from "prop-types";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import axios from "axios";
-import swal from 'sweetalert';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
-class CategoryFiveSingle extends React.Component {
-
+class HomeCategory extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -45,7 +45,7 @@ class CategoryFiveSingle extends React.Component {
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
-
+  
   submitHandler = (e) => {
     e.preventDefault();
     // let { id } = this.props.match.params;
@@ -54,8 +54,7 @@ class CategoryFiveSingle extends React.Component {
       
       .then((response) => {
         console.log(response.data);
-
-        swal("Success!", "Recharge SuccessFull!", "success");
+        // swal("Success!", "Recharge SuccessFull!", "success");
         // this.props.history.push("/app/shiftmanagement/retailSellingPriceList");
       })
       .catch((error) => {
@@ -63,12 +62,13 @@ class CategoryFiveSingle extends React.Component {
       });
   };
 
-
-// const CategoryFiveSingle = ({ spaceBottomClass }) => {
   render() {
+
+    const notify = () => toast.success("Recharge Successful!");
+
   return (
     <div className="col-lg-12 col-md-12 mb-30">
-      <div className="category-grid">
+      <div className="category-home">
       <section className="st-p">
       <Container>
         <div className="bx1">
@@ -193,10 +193,15 @@ class CategoryFiveSingle extends React.Component {
                             />
                   </Col>
                   <Col md="3">
-                    <Button type="button" className="btn-s mb-st">
+                    <Button  className="btn-s mb-st">
                       Continue
                     </Button>
+                    <ToastContainer  />
                   </Col>
+                  <div>
+        <button onClick={notify}>Notify!</button>
+        
+      </div>
                 </Row>
               </Form>
             </div>
@@ -211,4 +216,4 @@ class CategoryFiveSingle extends React.Component {
 }
 
 
-export default CategoryFiveSingle;
+export default HomeCategory;

@@ -11,6 +11,7 @@ import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
 import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNine";
 import ByCategory from "../../wrappers/content-home/ByCategory";
 import ServiceAgricoin from "../../components/agricoinpage/ServiceAgricoin";
+import HomeCategory from "../../components/agricoinpage/HomeCategory";
 // import SecondSection from "../../wrappers/content-home/SecondSection";
 
 
@@ -32,7 +33,7 @@ const HomeFurnitureFour = () => {
         {/* hero slider */}
         <HeroSliderTwentyNine />
         {/* category grid */}
-        <CategoryFiveGrid spaceBottomClass="pb-70" />
+        <HomeCategory spaceBottomClass="pb-70" />
 
         {/* <SecondSection /> */}
 

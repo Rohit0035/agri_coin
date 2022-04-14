@@ -9,7 +9,7 @@ class WalletHeader extends React.Component {
     this.state = {
     MobileNo: 8121787777,
     APIKey: "vzfWPhGe8GQRWHarKgzFVXJYxmkgFLdZrUG",
-    REQTYPE: "BAL",
+    REQTYPE: "0.00",
     RESPTYPE: "JSON"
     };
   } 
