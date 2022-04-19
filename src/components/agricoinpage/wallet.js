@@ -45,11 +45,11 @@ const Wallet = ({ data, spaceBottomClass }) => {
                         <button className="sr-btn1" >Deposit to Wallet</button>
                         </Link>
                     </div>
-                    <div className="sr-div">
+                    {/* <div className="sr-div">
                         <Link to="/walletwithdraw">
                         <button className="sr-btn1">Withdraw to Wallet</button>
                         </Link>
-                    </div>
+                    </div> */}
                 </div>
             </Col>
             <Col md="6">

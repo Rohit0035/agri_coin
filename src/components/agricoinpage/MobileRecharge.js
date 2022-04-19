@@ -5,6 +5,7 @@ import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import axios from "axios";
 import swal from 'sweetalert';
+import Billpay from '../../assets/img/billpay.png';
 
 class MobileRecharge extends React.Component {
 
@@ -183,7 +184,7 @@ class MobileRecharge extends React.Component {
             </Col>
             <Col md="6">
                 <div className="sr-3">
-                   <h4 className="sr-h">Consumer Details</h4>
+                    <h4 className="sr-h">Consumer Details</h4>
                       <ul className="sr-ul">
                       <li className="sr-li">DTH Number: <span className="sr-span">44545</span></li>
                       <li  className="sr-li">Operator: <span  className="sr-span">Vodafone</span></li>
@@ -192,7 +193,8 @@ class MobileRecharge extends React.Component {
                     </ul>
                     <div className="sr-div">
                         <button className="sr-btn1">Make Payment</button>
-                    </div>
+                    </div> 
+                     {/* <img src= {Billpay}   style={{width:"100%"}} /> */}
                 </div>
             </Col>
         </Row>

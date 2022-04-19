@@ -59,7 +59,7 @@ const HeaderOne = ({
       >
         <div className={layout === "container-fluid" ? layout : "container"}>
           <div className="row" style={{ marginBottom: "-10px" }}>
-            <div className="col-xl-2 col-lg-2 col-md-6 col-4">
+            <div className="col-xl-2 col-lg-2 col-md-6 col-4 ts-1">
               {/* header logo */}
               <div style={{ paddingTop:0, paddingBottom:10, }}>
                 <Logo imageUrl="/assets/img/logo/logo.png"  />
@@ -69,7 +69,7 @@ const HeaderOne = ({
               {/* Nav menu */}
               <NavMenu />
             </div>
-            <div className="col-xl-3 col-lg-3 col-md-6 col-8">
+            <div className="col-xl-3 col-lg-3 col-md-6 col-8 ts-2">
               {/* Icon group */}
               <WalletHeader/>
               <IconGroup />

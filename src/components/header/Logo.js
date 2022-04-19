@@ -6,7 +6,7 @@ const Logo = ({ imageUrl, logoClass }) => {
   return (
     <div className={`${logoClass ? logoClass : ""}`}>
       <Link to={process.env.PUBLIC_URL + "/"}>
-    <img alt="" src={process.env.PUBLIC_URL + imageUrl} style={{width:150,marginTop:20}}/>
+    <img alt="" src={process.env.PUBLIC_URL + imageUrl} className="stbrand"/>
       </Link>
     </div>
   );

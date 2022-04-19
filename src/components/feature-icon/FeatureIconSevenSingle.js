@@ -3,7 +3,7 @@ import React from "react";
 
 const FeatureIconSevenSingle = ({ data, spaceBottomClass, textAlignClass }) => {
   return (
-    <div className="col-md-4">
+    <div className="col-md-4 mb-2">
       <div className="icon-features">
       <div
         className={`support-wrap-6 support-shape ${
