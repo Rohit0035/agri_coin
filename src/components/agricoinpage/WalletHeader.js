@@ -1,33 +1,44 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+import { useHistory } from "react-router-dom";
 
 class WalletHeader extends React.Component {
   
   constructor(props) {
     super(props);
     this.state = {
-    MobileNo: 8121787777,
-    APIKey: "vzfWPhGe8GQRWHarKgzFVXJYxmkgFLdZrUG",
-    REQTYPE: "0.00",
-    RESPTYPE: "JSON"
+    amount: 0,
+    responseData:{}
     };
   } 
 
   componentDidMount() {
     
-    // let { id } = this.props.match.params;
-    axios
-      .get("http://35.154.134.118/api/admin/balanceApi")
+     //let { id } = this.props.match.params;
+     //let userInfo = localStorage.getItem( JSON.parse("userInfo"));
+     let userInfo ={};
+      userInfo = JSON.parse( localStorage.getItem('userInfo') );
+    console.log('@@@@@',userInfo)
+     if(userInfo === null){
+            // const history = useHistory();
+            // //history.push("/cart");
+            // history.push("/login-register");
+     } else{
+      axios
+      .get(`http://35.154.134.118/api/admin/getone/`+userInfo._id)
       .then((response) => {
-         console.log(response.data.data);
-        this.setState({
-           REQTYPE: response.data.data});
+         console.log(response.data);
+        this.setState({responseData: response.data.data});
+        this.setState({ amount: response.data.data.amount });
       })
       .catch((error) => {
         console.log(error);
       });
+     }
+    
     }
+  
 
     changeHandler = (e) => {
       this.setState({ [e.target.name]: e.target.value });
@@ -41,12 +52,12 @@ class WalletHeader extends React.Component {
               <div className="wt-text">
                 <i className="pe-7s-wallet" />
                 {/* <span>INR:{this.state.data.data}</span> */}
-                <span>INR:{this.state.REQTYPE}</span>
+                <span>INR:{this.state.amount}</span>
               </div>
         </Link>
       );
-
+     };
     }
-}
+
 
 export default WalletHeader;

@@ -49,7 +49,7 @@ img.stbrand {
 li.st-1 {
     display: inline-block;
     text-align: center;
-    margin: 0 18px;
+    margin: 0 21px;
 }
 .circle-1 {
     font-size: 35px;
@@ -81,7 +81,7 @@ li.st-1 {
     margin-top: 35px;
 }
 .bx1 {
-    padding: 50px 25px;
+    padding: 60px  25px;
     border-radius: 10px;
     background-image: linear-gradient(#f7b401, #040708);
 }
@@ -182,8 +182,10 @@ h4.sr-h {
     font-weight: 500;
 }
 .sr-3 {
-    border: 1px solid #cccccc38;
+    padding-bottom: 30px;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
 }
+
 li.sr-li {
     font-size: 18px;
 }
@@ -197,6 +199,8 @@ span.sr-span {
 h4.sr-h4 {
     font-size: 22px;
     margin-bottom: 10px;
+    margin-top: 20px;
+    font-weight: 600;
 }
 button.sr-btn1 {
     color: #fff;
@@ -212,7 +216,7 @@ button.sr-btn1 {
     margin: 0 auto;
 }
 .sr-1 {
-    padding-right: 100px;
+    padding-right: 0px;
 }
 li.sr-li.dr {
     font-weight: 700;
@@ -392,6 +396,46 @@ section.st-p {
     z-index: 999999;
     margin-bottom: 80px;
 }
+
+// recharge form
+
+.text-box {
+    padding: 20px;
+    background: #cccccc1f;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+}
+
+// tab css
+p.ftt-2 {
+    font-size: 12px;
+    font-weight: 600;
+}
+
+.ftt-3.tab-content {
+    margin-top: 20px;
+}
+.cart-table-content.tt-1 table thead > tr th {
+    padding: 15px;
+    font-size: 14px;
+}
+.cart-table-content.tt-1 table tbody > tr td {
+    padding: 15px;
+    font-size: 12px;
+}
+.cart-table-content.tt-2 table tbody > tr td {
+    padding: 15px;
+    font-size: 12px;
+    text-align: center;
+}
+.sttt.nav.nav-pills .nav-link.active, .nav-pills .show > .nav-link {
+    color: #fff;
+    background-color: #f7b401;
+}
+// tab css close
+
+// checkbox
+
+
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {
@@ -447,5 +491,8 @@ section.st-p {
     }
     .stick .logo, .stick .wt-text {
         margin-top: 0px;
+    }
+    .sr-3 img{
+        width: 100%;
     }
 }

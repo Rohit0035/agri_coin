@@ -4,7 +4,6 @@ import LayoutOne from "../../layouts/LayoutOne";
 // import CountDownFive from "../../wrappers/countdown/CountDownFive";
 import BrandLogoSliderOne from "../../wrappers/brand-logo/BrandLogoSliderOne";
 // import ImageSliderTwo from "../../wrappers/image-slider/ImageSliderTwo";
-// import TabProductNineteen from "../../wrappers/product/TabProductNineteen";
 // import VideoPopupTwo from "../../components/video-popup/VideoPopupTwo";
 import FeatureIconSeven from "../../wrappers/feature-icon/FeatureIconSeven";
 import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
@@ -12,6 +11,8 @@ import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNin
 import ByCategory from "../../wrappers/content-home/ByCategory";
 import ServiceAgricoin from "../../components/agricoinpage/ServiceAgricoin";
 import HomeCategory from "../../components/agricoinpage/HomeCategory";
+import SoxyPayTab from "../../components/agricoinpage/SoxyPayTab";
+
 // import SecondSection from "../../wrappers/content-home/SecondSection";
 
 
@@ -43,15 +44,12 @@ const HomeFurnitureFour = () => {
         <ServiceAgricoin/>
 
         <ByCategory /> 
+        <SoxyPayTab/>
 
         {/* video popup */}
         {/* <VideoPopupTwo /> */}
         {/* tab product */}
-        {/* <TabProductNineteen
-          spaceTopClass="pt-95"
-          spaceBottomClass="pb-100"
-          category="furniture"
-        /> */}
+        
         {/* countdown */}
         {/* <CountDownFive
           spaceTopClass="pt-115"

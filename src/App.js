@@ -149,11 +149,9 @@ const DepositForm = lazy(() => import("./components/agricoinpage/DepositForm.js"
 const WalletWithdraw = lazy(() => import("./components/agricoinpage/WalletWithdraw.js"));
 const HomeCategory = lazy(() => import("./components/agricoinpage/HomeCategory.js"));
 
-
-
-
-
-
+const HideShowDiv = lazy(() => import("./components/agricoinpage/HideShowDiv.js"));
+const SoxyPayTab = lazy(() => import("./components/agricoinpage/SoxyPayTab.js"));
+const DepositList = lazy(() => import("./components/agricoinpage/DepositList.js"));
 
 
 
@@ -431,6 +429,20 @@ const App = (props) => {
                   <Route
                        path={process.env.PUBLIC_URL + "/homecategory"}
                        component={HomeCategory}
+                  />
+
+                   <Route
+                       path={process.env.PUBLIC_URL + "/HideShowDiv"}
+                       component={HideShowDiv}
+                  />
+                  <Route
+                       path={process.env.PUBLIC_URL + "/SoxyPayTab"}
+                       component={SoxyPayTab}
+                  />
+
+                  <Route
+                       path={process.env.PUBLIC_URL + "/DepositList"}
+                       component={DepositList}
                   />
                
                 {/* Shop pages */}

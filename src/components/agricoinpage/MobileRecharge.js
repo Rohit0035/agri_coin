@@ -5,7 +5,10 @@ import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import axios from "axios";
 import swal from 'sweetalert';
-import Billpay from '../../assets/img/billpay.png';
+import SoxyPayTab from "../agricoinpage/SoxyPayTab";
+import FormGroup from "@mui/material/FormGroup";
+import FormControlLabel from "@mui/material/FormControlLabel";
+import Checkbox from "@mui/material/Checkbox";
 
 class MobileRecharge extends React.Component {
 
@@ -94,12 +97,21 @@ class MobileRecharge extends React.Component {
       <section style={{margin:"70px 0px"}}>
         <Container>
         <Row>
-            <Col md="6">
+            <Col md="5">
+                <div className="text-box">
                 <Row>
-                  <h4 className="sr-h4">Mobile Recharge</h4>
+                  <h4 className="sr-h4 pb-2">Mobile Recharge</h4>
                   <div className="sr-1">
                   <Form className="m-1" onSubmit={this.submitHandler}>
-
+                      <div className="int-box">
+                          <FormControlLabel
+                            control={<Checkbox defaultChecked />}
+                            label="Prepaid"
+                          />
+                      </div>
+                      <div className="int-box">
+                        <FormControlLabel control={<Checkbox />} label="Postpaid" />
+                      </div>
                  
                     <Col md="12">
                         {/* <Input type="text"
@@ -152,6 +164,18 @@ class MobileRecharge extends React.Component {
                     <br></br>
                     <br></br>
                     <Col md="12">
+                            <Input 
+                              className="form-control"
+                              placeholder="Circle"
+                              name="Circle"
+                              type="text"
+                              required
+                              value={this.state.AMT}
+                              onChange={this.changeHandler}
+                            />
+                    </Col>
+                    <br></br>
+                    <Col md="12">
                         <InputGroup>
                             <span className="sr-2">Rs.</span>
                             <Input 
@@ -181,20 +205,12 @@ class MobileRecharge extends React.Component {
                     </Form>
                   </div>
                 </Row>
+                </div>
             </Col>
-            <Col md="6">
+            <Col md="7">
                 <div className="sr-3">
-                    <h4 className="sr-h">Consumer Details</h4>
-                      <ul className="sr-ul">
-                      <li className="sr-li">DTH Number: <span className="sr-span">44545</span></li>
-                      <li  className="sr-li">Operator: <span  className="sr-span">Vodafone</span></li>
-                      <li  className="sr-li">Amount: <span  className="sr-span">100rs</span></li>
-                      <li  className="sr-li dr">Amount: <span  className="sr-span">Rs:100</span></li>
-                    </ul>
-                    <div className="sr-div">
-                        <button className="sr-btn1">Make Payment</button>
-                    </div> 
-                     {/* <img src= {Billpay}   style={{width:"100%"}} /> */}
+                   <h4 className="sr-h">Plan Details</h4>
+                   <SoxyPayTab/>
                 </div>
             </Col>
         </Row>

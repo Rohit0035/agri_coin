@@ -114,7 +114,7 @@ class HomeCategory extends React.Component {
                 <li className="st-1">
                   <Link>
                     <i className="pe-7s-cash circle-1" />
-                    <p>Fastag</p>
+                    <p>Emi Pay</p>
                   </Link>
                 </li>
                
@@ -136,14 +136,14 @@ class HomeCategory extends React.Component {
                 <li className="st-1">
                   <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
                     {string["shoppingbill"]}
-                    <i className="pe-7s-home circle-1" />
-                    <p>Hospital Bill</p>
+                    <i className="pe-7s-diamond circle-1" />
+                    <p>Digi Gold</p>
                   </Link>
                 </li>
                 <li className="st-1">
                   <Link>
-                    <i className="pe-7s-clock circle-1" />
-                    <p>Municipality</p>
+                    <i className="pe-7s-gift circle-1" />
+                    <p>Giftcard</p>
                   </Link>
                 </li>
                 <li className="st-1">
@@ -154,7 +154,7 @@ class HomeCategory extends React.Component {
                 </li>
               </ul>
             </Col>
-            <div className="bx-2">
+            {/* <div className="bx-2">
               <h3 className="mb-3 bold">Quick Recharge</h3>
               <Form onSubmit={this.submitHandler}>
                 <div className="int-box">
@@ -216,12 +216,9 @@ class HomeCategory extends React.Component {
                             </Button>
                           )}
                   </Col>
-                    {/* <div>
-                      <button onClick={notify}>Notify!</button>
-                    </div> */}
                 </Row>
               </Form>
-            </div>
+            </div> */}
           </Row>
         </div>
       </Container>

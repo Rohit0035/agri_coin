@@ -20,8 +20,8 @@ export default class LoginRegister extends Component {
       email: "",
       mobile: "",
       password: "",
-      otp: true,
-      otpnumber: "",
+      // otp: true,
+      // otpnumber: "",
       token: "",
     };
     // this.state = {
@@ -31,37 +31,37 @@ export default class LoginRegister extends Component {
     // };
   }
 
-  otpHandler = (e) => {
-    e.preventDefault();
-    console.log(this.state);
-    axios
-      .post("http://35.154.86.59/api/user/verifyotp", {
-        mobile: this.state.mobile,
-        //customer_email: this.state.email,
-        otp: this.state.otpnumber,
-      })
-      .then((response) => {
-        console.log(response);
-        //localStorage.setItem("user", response.data.data._id);
-        localStorage.setItem("auth-token", this.state.token);
-        // const location = this.props.location;
-        // if (location.state && location.state.nextPathname) {
-        //   History.push("/login-register");
-        // } else {
-        //   History.push("/cart");
-        // }
-        // const history = useHistory();
-        // history.push("/cart");
+  // otpHandler = (e) => {
+  //   e.preventDefault();
+  //   console.log(this.state);
+  //   axios
+  //     .post("http://35.154.86.59/api/user/verifyotp", {
+  //       mobile: this.state.mobile,
+  //       //customer_email: this.state.email,
+  //       otp: this.state.otpnumber,
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
+  //       //localStorage.setItem("user", response.data.data._id);
+  //       localStorage.setItem("auth-token", this.state.token);
+  //       // const location = this.props.location;
+  //       // if (location.state && location.state.nextPathname) {
+  //       //   History.push("/login-register");
+  //       // } else {
+  //       //   History.push("/cart");
+  //       // }
+  //       // const history = useHistory();
+  //       // history.push("/cart");
 
-        this.props.history.push({
-          pathname: `/cart`,
-        });
-      })
-      .catch((error) => {
-        console.log(error.response);
-        //this.setState({ errormsg: error });
-      });
-  };
+  //       this.props.history.push({
+  //         pathname: `/cart`,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response);
+  //       //this.setState({ errormsg: error });
+  //     });
+  // };
 
   handlechange = (e) => {
     e.preventDefault();
@@ -72,7 +72,7 @@ export default class LoginRegister extends Component {
     e.preventDefault();
 
     axios
-      .post("http://35.154.86.59/api/user/login", {
+      .post("http://35.154.134.118/api/user/login", {
         mobile:
           parseInt(this.state.email) != NaN
             ? parseInt(this.state.email)
@@ -81,10 +81,13 @@ export default class LoginRegister extends Component {
         password: this.state.password,
       })
       .then((response) => {
-        console.log(response);
+        console.log('@@@####',response.data);
+        let userInfo = response.data.user;
+        
         //localStorage.setItem("authec", response.data.token);
         localStorage.setItem("auth-token", response.data.token);
-        this.props.history.push("/cart");
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error);
@@ -98,37 +101,37 @@ export default class LoginRegister extends Component {
   };
   submitHandler = (e) => {
     e.preventDefault();
-    this.setState({ otp: false });
+    // this.setState({ otp: false });
     axios
-      .post("http://35.154.86.59/api/user/signup", this.state)
+      .post("http://35.154.134.118/api/user/signup", this.state)
       .then((response) => {
         console.log(response);
-        // localStorage.setItem("token", response.data.token);
+        localStorage.setItem("token", response.data.token);
         this.setState({
           token: response.data.token,
         });
-        //this.props.history.push("/");
+        this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error.response);
       });
 
-    axios
-      .post("http://35.154.86.59/api/user/sendotp", {
-        mobile: this.state.mobile,
-        //customer_email: this.state.email,
-      })
-      .then((response) => {
-        console.log(response);
-        // localStorage.setItem("token", response.data.token);
-        // this.props.history.push("/");
-      })
-      .catch((error) => {
-        console.log(error.response);
-      });
+    // axios
+    //   .post("http://35.154.134.118/api/user/sendotp", {
+    //     mobile: this.state.mobile,
+    //     //customer_email: this.state.email,
+    //   })
+    //   .then((response) => {
+    //     console.log(response);
+    //     // localStorage.setItem("token", response.data.token);
+    //     // this.props.history.push("/");
+    //   })
+    //   .catch((error) => {
+    //     console.log(error.response);
+    //   });
   };
   render() {
-    console.log(this.state.otp);
+    // console.log(this.state.otp);
     return (
       <Fragment>
         <MetaTags>
@@ -143,7 +146,7 @@ export default class LoginRegister extends Component {
             <div className="container">
               <div className="row d-flex align-items-center justify-content-center">
                 <div className="col-lg-7 col-md-12 ml-auto mr-auto">
-                  {this.state.otp ? (
+                  {/* {this.state.otp ? ( */}
                     <div className="login-register-wrapper">
                       <Tab.Container defaultActiveKey="login">
                         <Nav
@@ -255,29 +258,29 @@ export default class LoginRegister extends Component {
                         </Tab.Content>
                       </Tab.Container>
                     </div>
-                  ) : (
+                  {/* ) : ( */}
                     <>
                       <div className="login-form-container">
                         <div className="login-register-form">
-                          <form onSubmit={this.otpHandler}>
-                            <input
+                          {/* <form onSubmit={this.otpHandler}> */}
+                            {/* <input
                               type="number"
                               name="otpnumber"
                               placeholder="OTP No"
                               value={this.state.otpnumber}
                               onChange={this.handlechange}
-                            />
+                            /> */}
                             <div className="button-box">
                               <div className="login-toggle-btn"></div>
-                              <Button type="submit">
+                              {/* <Button type="submit">
                                 <span>Verify</span>
-                              </Button>
+                              </Button> */}
                             </div>
-                          </form>
+                          {/* </form> */}
                         </div>
                       </div>
                     </>
-                  )}
+                  {/* )} */}
                 </div>
               </div>
             </div>

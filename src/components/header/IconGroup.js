@@ -18,6 +18,12 @@ const IconGroup = ({
     e.currentTarget.nextSibling.classList.toggle("active");
   };
 
+  const handleLogout = (e) => {
+    window.localStorage.clear()
+    window.location.reload()
+  };
+
+
   const triggerMobileMenu = () => {
     const offcanvasMobileMenu = document.querySelector(
       "#offcanvas-mobile-menu"
@@ -29,7 +35,7 @@ const IconGroup = ({
   //const { id } = useParams();
   const fetchcarts = async (token) => {
     const { data } = await Axios.get(
-      `http://35.154.86.59/api/admin/cartbycustomer`,
+      `http://35.154.134.118/api/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -50,7 +56,7 @@ const IconGroup = ({
   const [wish, setWish] = useState([]);
   const fetchWish = async () => {
     const { data } = await Axios.get(
-      "http://35.154.86.59/api/admin/getallwishlist",
+      "http://35.154.134.118/api/admin/getallwishlist",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -85,7 +91,7 @@ const IconGroup = ({
           </form>
         </div>
       </div> */}
-      <div className="same-style account-setting  d-lg-block">
+      <div className="same-style account-setting d-none d-lg-block">
         <button
           className="account-setting-active"
           onClick={(e) => handleClick(e)}
@@ -127,9 +133,13 @@ const IconGroup = ({
                 </li>
                 <li>
                   <Link to={process.env.PUBLIC_URL + "/"}
-                    onClick={(e) =>
-                      window.localStorage.removeItem("auth-token")
-                    }
+                    // onClick={(e) =>{(
+                    //   window.localStorage.clear()
+                      
+                    //   //localStorage.removeItem("auth-token","userInfo")
+                    // )}
+                    onClick = {(e) => handleLogout()}
+                    //}
                   >
                     Logout
                   </Link>
