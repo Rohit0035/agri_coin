@@ -86,7 +86,7 @@ export default class LoginRegister extends Component {
         
         //localStorage.setItem("authec", response.data.token);
         localStorage.setItem("auth-token", response.data.token);
-        localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        //localStorage.setItem("userInfo", JSON.stringify(userInfo));
         this.props.history.push("/");
       })
       .catch((error) => {
