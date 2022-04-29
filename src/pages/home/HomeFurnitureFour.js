@@ -11,7 +11,6 @@ import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNin
 import ByCategory from "../../wrappers/content-home/ByCategory";
 import ServiceAgricoin from "../../components/agricoinpage/ServiceAgricoin";
 import HomeCategory from "../../components/agricoinpage/HomeCategory";
-import SoxyPayTab from "../../components/agricoinpage/SoxyPayTab";
 
 // import SecondSection from "../../wrappers/content-home/SecondSection";
 
@@ -44,7 +43,7 @@ const HomeFurnitureFour = () => {
         <ServiceAgricoin/>
 
         <ByCategory /> 
-        <SoxyPayTab/>
+       
 
         {/* video popup */}
         {/* <VideoPopupTwo /> */}
