@@ -71,19 +71,10 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
                           <div className="soxiservice-box">
-                                 <Link to={process.env.PUBLIC_URL + "/electricity"}>
-                                  {string["electricity"]}
-                                   <i className="pe-7s-cash" />
-                                     <h4>Fastag</h4>
-                                 </Link> 
-                          </div>
-                      </div>
-                      <div className="col-lg-3 col-md-3 col-sm-6">
-                          <div className="soxiservice-box">
                                  <Link to={process.env.PUBLIC_URL + "/mobilerecharge"}>
                                   {string["electricity"]}
                                    <i className="pe-7s-phone" />
-                                     <h4>Mobile Balance</h4>
+                                     <h4>Mobile Recharge</h4>
                                  </Link> 
                           </div>
                       </div>
@@ -98,10 +89,20 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
                           <div className="soxiservice-box">
+                                 <Link to={process.env.PUBLIC_URL + "/electricity"}>
+                                  {string["electricity"]}
+                                   <i className="pe-7s-clock" />
+                                     <h4>Airtime</h4>
+                                 </Link> 
+                          </div>
+                      </div>
+                      
+                      <div className="col-lg-3 col-md-3 col-sm-6">
+                          <div className="soxiservice-box">
                                  <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
                                   {string["electricity"]}
-                                   <i className="pe-7s-home" />
-                                     <h4>Hospital Bill</h4>
+                                   <i className="pe-7s-ticket" />
+                                     <h4>Train</h4>
                                  </Link> 
                           </div>
                       </div>
@@ -109,8 +110,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           <div className="soxiservice-box">
                                  <Link to={process.env.PUBLIC_URL + "/electricity"}>
                                   {string["electricity"]}
-                                   <i className="pe-7s-clock" />
-                                     <h4>Municipality</h4>
+                                   <i className="pe-7s-ticket" />
+                                     <h4>Bus</h4>
                                  </Link> 
                           </div>
                       </div>

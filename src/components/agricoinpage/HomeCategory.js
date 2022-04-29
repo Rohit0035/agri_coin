@@ -111,21 +111,15 @@ class HomeCategory extends React.Component {
                     <p>Broadband Bill</p>
                   </Link>
                 </li>
-                <li className="st-1">
-                  <Link>
-                    <i className="pe-7s-cash circle-1" />
-                    <p>Emi Pay</p>
-                  </Link>
-                </li>
                
                 <li className="st-1">
                   <Link to={process.env.PUBLIC_URL + "/mobilerecharge"}>
                     {string["mobilerecharge"]} 
                     <i className="pe-7s-phone circle-1 active" />
-                    <p>Mobile Balance</p>
+                    <p>Mobile Recharge</p>
                   </Link>
                 </li>
-                
+
                 <li className="st-1">
                   <Link to={process.env.PUBLIC_URL + "/internetbill"}>
                     {string["internetbill"]}
@@ -133,21 +127,30 @@ class HomeCategory extends React.Component {
                     <p>DTH</p>
                   </Link>
                 </li>
+
+                <li className="st-1">
+                  <Link>
+                    <i className="pe-7s-clock circle-1" />
+                    <p>Airtime</p>
+                  </Link>
+                </li>
+                
                 <li className="st-1">
                   <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
                     {string["shoppingbill"]}
-                    <i className="pe-7s-diamond circle-1" />
-                    <p>Digi Gold</p>
+                    <i className="pe-7s-ticket circle-1" />
+                    <p>Train Ticket</p>
                   </Link>
                 </li>
                 <li className="st-1">
                   <Link>
-                    <i className="pe-7s-gift circle-1" />
-                    <p>Giftcard</p>
+                    <i className="pe-7s-ticket circle-1" />
+                    <p>Bus Ticket</p>
                   </Link>
                 </li>
                 <li className="st-1">
-                  <Link>
+                  <Link to={process.env.PUBLIC_URL + "/soxiservice"}>
+                    {string["soxiservice"]}
                     <i className="pe-7s-more circle-1" />
                     <p> More</p>
                   </Link>

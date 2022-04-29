@@ -518,7 +518,10 @@ const NavMenu = ({ strings, menuWhiteClass, sidebarMenu }) => {
             </Link>
           </li>
           <li>
-             <Link className="darktext">Seller Login</Link>
+             <a className="darktext" href="http://seller.soxypay.com">
+               {/* <Link className="darktext" >Seller Login</Link> */}
+               Seller Login
+            </a>
           </li>
         </ul>
       </nav>

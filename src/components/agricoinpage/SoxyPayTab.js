@@ -1,15 +1,60 @@
+/* eslint-disable no-unused-expressions */
+/* eslint-disable array-callback-return */
 import React from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
-
+import axios from "axios";
+import { Link } from "react-router-dom";
 class SoxyPayTab extends React.Component {
-
-    render() {
-    return (
-        <div
+  constructor(props) {
+    super(props);
+    this.state = {
+   
+      responseData : {},
+   
+      CODE:"14",
+      isCode : false,
+      code: "RJP",
+      circle_code: ""
+      //  number : 9748876319
+    };
+  }
+  componentDidMount = () =>{
+    console.log('@props@@@@@',this.props.plans)
+  }
+  onRechargeSubmit = (e) =>{
          
-        >
+    console.log('@@@@',this.state.CODE)
+    if(this.state.CODE === '' || this.state.CODE === 0 ){
+     this.setState({ isCode : true });
+     return true;
+    } else{
+     let payload = {
+       
+      code : this.state.CODE, //parseInt(this.state.number)
+         circle_code : this.state.responseData?.code,
+
+        //  number : this.state.number //parseInt(this.state.number)
+     
+     }
+//  axios
+//    .post(`http://35.154.134.118/api/admin/Plans/`, payload)
+//    .then((response) => {
+//      console.log(response.data);
+//      console.log(response.data.STATUSMSG);
+//      this.setState({ responseData : response.data })
+//    })
+//    .catch((error) => {
+//      console.log(error.response);
+//    });
+    }
+   } 
+     
+    render() {
+     const {plans} = this.props;
+    return (
+        <div>
           <div className="container">
             {/* section title */}
             <Tab.Container defaultActiveKey="bestSeller">
@@ -63,23 +108,43 @@ class SoxyPayTab extends React.Component {
                         </thead>
                         <tbody>
                          
-                              <tr >
-                                <td className="product-thumbnail">
-                                 ghghhgh
-                                </td>
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
 
-                                <td className="product-name">
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
                                   ghghghghg
-                                </td>
+                                </td> */}
 
-                                <td className="product-price-cart">
+                                {/* <td className="product-price-cart">
                                  ggghghggh
-                                </td>
+                                </td> */}
 
-                                <td className="product-quantity">
+                                {/* <td className="product-quantity">
                                  hghghghghgh
-                                </td>
-                              </tr>
+                                </td> */}
+
+ 
+                                                           
                         </tbody>
                       </table>
                     </div>
@@ -87,27 +152,282 @@ class SoxyPayTab extends React.Component {
                 </Tab.Pane>
                 <Tab.Pane eventKey="bt-2">
                   <div className="row">
-                   bnbmnmnmnm
+                  <div className="table-content table-responsive cart-table-content tt-1">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Talktime</th>
+                            <th>Validity</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
+
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
+                                  ghghghghg
+                                </td> */}
+
+                                {/* <td className="product-price-cart">
+                                 ggghghggh
+                                </td> */}
+
+                                {/* <td className="product-quantity">
+                                 hghghghghgh
+                                </td> */}
+
+ 
+                                                           
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bt-3">
                   <div className="row">
-                   nnmnmnmmn
+                  <div className="table-content table-responsive cart-table-content tt-1">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Talktime</th>
+                            <th>Validity</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
+
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
+                                  ghghghghg
+                                </td> */}
+
+                                {/* <td className="product-price-cart">
+                                 ggghghggh
+                                </td> */}
+
+                                {/* <td className="product-quantity">
+                                 hghghghghgh
+                                </td> */}
+
+ 
+                                                           
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bt-4">
                   <div className="row">
-                   nnmnmnmmnyyyyyyy
+                  <div className="table-content table-responsive cart-table-content tt-1">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Talktime</th>
+                            <th>Validity</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
+
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
+                                  ghghghghg
+                                </td> */}
+
+                                {/* <td className="product-price-cart">
+                                 ggghghggh
+                                </td> */}
+
+                                {/* <td className="product-quantity">
+                                 hghghghghgh
+                                </td> */}
+
+ 
+                                                           
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bt-5">
                   <div className="row">
-                   nnmnmnmmnuuuuuuuuuuuu
+                  <div className="table-content table-responsive cart-table-content tt-1">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Talktime</th>
+                            <th>Validity</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
+
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
+                                  ghghghghg
+                                </td> */}
+
+                                {/* <td className="product-price-cart">
+                                 ggghghggh
+                                </td> */}
+
+                                {/* <td className="product-quantity">
+                                 hghghghghgh
+                                </td> */}
+
+ 
+                                                           
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </Tab.Pane>
                 <Tab.Pane eventKey="bt-6">
                   <div className="row">
-                   nnmnmnmmnaaaaaaaaaaaaaaa
+                  <div className="table-content table-responsive cart-table-content tt-1">
+                      <table>
+                        <thead>
+                          <tr>
+                            <th>Talktime</th>
+                            <th>Validity</th>
+                            <th>Description</th>
+                            <th>Price</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                         
+                              {/* <tr > */}
+                              {
+                         (this.props.plans !==undefined ? this.props.plans.map(function(item, i){
+                            return  <>
+                                  <tr>
+                                  <td className="product-thumbnail">{item.talktime}</td>
+                                  <td className="product-thumbnail">{item.validity}</td>
+                                  <td className="product-thumbnail">{item.planDescription}</td>
+                                   <td className="product-thumbnail">
+                                     <Link className="st-amt">
+                                        {item.amount}
+                                    </Link>
+                                    </td>
+                                  </tr>
+                                  </>
+                                  
+                                }) : null)
+                              }
+
+                               {/* <td className="product-thumbnail">
+                              {this.state.plans?.talktime}
+                              </td> */}
+
+                                {/* <td className="product-name">
+                                  ghghghghg
+                                </td> */}
+
+                                {/* <td className="product-price-cart">
+                                 ggghghggh
+                                </td> */}
+
+                                {/* <td className="product-quantity">
+                                 hghghghghgh
+                                </td> */}
+
+ 
+                                                           
+                        </tbody>
+                      </table>
+                    </div>
                   </div>
                 </Tab.Pane>
               </Tab.Content>

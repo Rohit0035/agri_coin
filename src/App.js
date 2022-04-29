@@ -382,7 +382,7 @@ const App = (props) => {
                 />
                 
                 <Route
-                  path={process.env.PUBLIC_URL + "/tablehistory"}
+                  path={process.env.PUBLIC_URL + "/tablehistory/:id"}
                   component={TableHistory}
                 />
                 <Route

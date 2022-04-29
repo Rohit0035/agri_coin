@@ -13,28 +13,57 @@ class Wallet extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      data: {},
+    
+      walletAmount: 0,
+      responseData:{},
+      table:{},
     };
   } 
 
   componentDidMount() {
+  let { id } = this.props.match.params;
     
-     let { id } = this.props.match.params;
+    let userInfo ={};
+    userInfo = JSON.parse( localStorage.getItem('userInfo') );
+  console.log('@@@@@',userInfo)
+   if(userInfo === null){
+        
+   } else{
     axios
-      .get(`http://35.154.134.118/api/admin/getone/${id}`)
-      .then((response) => {
-         console.log(response.data.data);
-         this.setState({ amount: response.data.data });
-      })
-      .catch((error) => {
-        console.log(error);
-      });
+    .get(`http://35.154.134.118/api/admin/getone/`+userInfo._id)
+    .then((response) => {
+       console.log(response.data);
+      this.setState({responseData: response.data.data});
+      this.setState({ walletAmount: response.data.data.amount });
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+   }
+    
+    userInfo = JSON.parse( localStorage.getItem('userInfo') );
+  console.log('@@@@@',userInfo)
+   if(userInfo === null){
+        
+   } else{
+    axios
+    .get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
+    .then((response) => {
+       console.log(response.data);
+      this.setState({table: response.data});
+    })
+    .catch((error) => {
+      console.log(error.response);
+    });
+   }
+    
     }
 
     changeHandler = (e) => {
       this.setState({ [e.target.name]: e.target.value });
     };
   render() {
+    const {table} = this.state;
   return (
     <LayoutOne>
       <Container fluid className="mb-4">
@@ -61,7 +90,7 @@ class Wallet extends React.Component {
             <div className="sr-3">
               <h4 className="sr-h">Wallet Details </h4>
                 <ul className="sr-ul">
-                  <li  className="sr-li dr">Available Wallet Balance : <span  className="sr-span">INR:{this.state.data.amount}</span></li>
+                  <li  className="sr-li dr">Available Wallet Balance : <span  className="sr-span">INR:{this.state.walletAmount}</span></li>
                 </ul>
                 <div className="sr-div">
                   <Link to="/depositform">
@@ -78,7 +107,7 @@ class Wallet extends React.Component {
         <Col md="6">
           <div className="sr-3">
             <h4 className="sr-h">Recent Transaction </h4>
-              <TableHistory/>
+              <TableHistory table={table}/>
           </div>
         </Col>
       </Row>

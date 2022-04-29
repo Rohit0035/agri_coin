@@ -15,7 +15,7 @@ class WalletHeader extends React.Component {
 
   componentDidMount() {
     
-     //let { id } = this.props.match.params;
+    //  let { id } = this.props.match.params;
      //let userInfo = localStorage.getItem( JSON.parse("userInfo"));
      let userInfo ={};
       userInfo = JSON.parse( localStorage.getItem('userInfo') );

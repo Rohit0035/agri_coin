@@ -18,10 +18,10 @@ const IconGroup = ({
     e.currentTarget.nextSibling.classList.toggle("active");
   };
 
-  // const handleLogout = (e) => {
-  //   // window.localStorage.clear()
-  //   // window.location.reload("/")
-  // };
+  const handleLogout = (e) => {
+    window.localStorage.clear()
+    window.location.reload()
+  };
 
 
   const triggerMobileMenu = () => {
@@ -133,10 +133,13 @@ const IconGroup = ({
                 </li>
                 <li>
                   <Link to={process.env.PUBLIC_URL + "/"}
-                    onClick={(e) =>{(
-                      localStorage.removeItem("auth-token")(window.location.href="/")(window.location.reload())
-                    )}
-                    }
+                    // onClick={(e) =>{(
+                    //   window.localStorage.clear()
+                      
+                    //   //localStorage.removeItem("auth-token","userInfo")
+                    // )}
+                    onClick = {(e) => handleLogout()}
+                    //}
                   >
                     Logout
                   </Link>
@@ -225,7 +228,3 @@ const mapDispatchToProps = (dispatch) => {
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(IconGroup);
-
-
-
-//localStorage.removeItem("auth-token", "userInfo")
