@@ -1,102 +1,60 @@
-// import PropTypes from "prop-types";
+
 import React from "react";
-import LayoutOne from "../../layouts/LayoutOne";
-import Cloth from "../../assets/img/Cloth.jpg";
-import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstrap";
-import axios from "axios";
-// import swal from 'sweetalert';
+import { Container, Row } from "reactstrap";
 class TableHistory extends React.Component {
  constructor(props) {
    super(props)
- 
-   this.state = {
-   }
- }
- componentDidMount(){
-   console.log("hello",this.props.table)
- }
-//  componentDidMount() {
-//   let { id } = this.props.match.params;
-    
-//     let userInfo ={};
-//     userInfo = JSON.parse( localStorage.getItem('userInfo') );
-//   console.log('@@@@@',userInfo)
-//    if(userInfo === null){
-        
-//    } else{
-//     axios
-//     .get(`http://35.154.134.118/api/admin/getusertransaction/`+userInfo._id)
-//     .then((response) => {
-//        console.log(response.data);
-//       this.setState({wallet: response.data.data});
-//     })
-//     .catch((error) => {
-//       console.log(error.response);
-//     });
-//    }
-    
-    
-//     }
+ this.state={
 
+ }
+   
+ }
 render() {
 const {table} = this.props;
+
   return (
 
   <section style={{margin:"30px 0px"}}>
           <Container>
               <Row>
                   <div className="col-12">
-                    <div className="table-content table-responsive cart-table-content">
+                    <div className="table-content table-responsive cart-table-content usert-list">
                       <table>
                         <thead>
                           <tr>
-                            <th>ORDER ID</th>
-                            <th>Image</th>
-                            <th>Product Name</th>
-                            <th>QUANTITY</th>
+                            <th>CUSTOMER ID</th>
+                            <th>IMAGE</th>
+                            <th>PAY METHOD</th>
+                            <th>BILLER CODE</th>
                             <th>AMOUNT</th>
-                            {/* <th>Unit Price</th> */}
-                            <th>Order Status</th>
-                            <th>action</th>
+                            <th>MOBILE</th>
+                            <th>STATUS</th>
+                            {/* <th>action</th> */}
                           </tr>
                         </thead>
-                        <tbody>
-                        {/* {this.props.table?.map((wtable) =>(
-                              <tr key={wtable._id}>
-                                <td className="product-price-cart">
-                                  <span className="amount">
-                                   ghhh
-                                  </span>
-                                </td>
+                        
+                       {this.props.table.length > 0 ? this.props.table.map((table) =>{
+
+
+                                return<>
+                                <tr>
+                                <td className="product-thumbnail">{table.walletId.customer}</td>
+                  
+                  
+                                <td className="product-thumbnail"><img style={{width:"40px",height:"40px"}} src={table.walletId.depsite_file}/></td>
+                                <td className="product-thumbnail">{table.walletId.pay_method}</td>
+                                <td className="product-thumbnail">{table.amount}</td>
+                                <td className="product-thumbnail">{table.biller_code}</td>
+                                <td className="product-thumbnail">{table.number}</td>
                                 <td className="product-thumbnail">
-                                 ghhh
-                                </td>
-
-                                <td className="product-name text-center">
-                                  
-                                 fgfffg
-                                </td>
-
-                                <td className="product-price-cart">
-                                  <span className="amount">
-                                    ghh
-                                  </span>
-                                </td>
-
-                                <td className="product-price-cart">
-                                  <span className="amount"></span>
-                                 ffgfgfg
-                                </td>
-                                <td className="product-price-cart">
-                                  <span className="amount"></span>
-                                 gggggggf
-                                </td>
-
-
-                              </tr>
-                              ))} */}
-                          
-                        </tbody>
+                                  <p className="tb-status">
+                                    {table.status}
+                                  </p>
+                                  </td>
+                                </tr>
+                        
+                      </> }): null} 
+                              
                       </table>
                     </div>
                   </div>

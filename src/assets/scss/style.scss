@@ -459,12 +459,26 @@ a.st-amt {
     border-radius: 4px;
 }
  
+// transaction table wallet page
+
+.table-content.table-responsive.cart-table-content.usert-list {
+    text-align: center;
+    height: 260px;
+}
+p.tb-status {
+    color: #ffffff !important;
+    background: #20d66e;
+    width: fit-content;
+    padding: 6px;
+    border-radius: 4px;
+    display: inline-block;
+}
+
 
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {
 
-   
     li.st-1 {
         display: inline-block;
         text-align: center;
