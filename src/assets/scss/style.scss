@@ -465,6 +465,11 @@ a.st-amt {
     text-align: center;
     height: 260px;
 }
+.table-content.table-responsive.cart-table-content.usert-list tr td {
+    line-height: 50px !important;
+    padding: 6px;
+    border-bottom: 1px solid #cccccc52;
+}
 p.tb-status {
     color: #ffffff !important;
     background: #20d66e;
