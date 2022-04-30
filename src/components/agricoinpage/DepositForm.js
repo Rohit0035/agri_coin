@@ -14,15 +14,16 @@ import swal from 'sweetalert';
   constructor(props) {
     super(props);
     this.state = {
-      customer:"623c7682b337ee04c3bf19af",
+      walletId:"",
+      data: {},
       amount:"",
       depsite_file:"",
       pay_method:"",
-      // customerId:"",
-      // firstname:"",
+    // customerId:"",
+    firstname:"",
       // lastname:"",
-      // email:"",
-      // mobile:"",
+      email:"",
+      mobile:"",
       // password:"",
       // cnfrmPassword:"",
       selectedFile: undefined,
@@ -30,6 +31,27 @@ import swal from 'sweetalert';
       // status: ""
     };
   }
+  componentDidMount() {
+    //  let { id } = this.props.match.params;
+    axios
+    .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
+      
+      .then((response) => {
+        // console.log(response.data);
+        console.log(response.data.data.walletId);
+
+        this.setState({ data: response.data.data,
+          walletId: response.data.data.walletId,
+          firstname:response.data.data.customer.firstname,
+          email:response.data.data.customer.email,
+          mobile:response.data.data.customer.mobile,
+          amount:response.data.data.amount,
+        });
+      })
+      .catch((error) => {
+        console.log(error.response);
+      });
+    }
   onChangeHandler = (event) => {
     this.setState({ selectedFile: event.target.files[0] });
     this.setState({ selectedName: event.target.files[0].name });
@@ -103,11 +125,11 @@ render() {
                    <div className="col-lg-12 mb-3">
                      <input
                          className="form-control"
-                         placeholder="USER ID"
-                         type="number"
-                         name="customerId"
+                         placeholder="WALLET ID"
+                         type="text"
+                         name="walletId"
                          required
-                         value={this.state.customerId}
+                         value={this.state.walletId}
                          onChange={this.changeHandler}
                       />
                     </div> 
@@ -145,7 +167,7 @@ render() {
                      <input
                          name="amount"
                          placeholder="HASHTAG*"
-                         type="number"
+                         type="taxt"
                          required
                          value={this.state.amount}
                          onChange={this.changeHandler}

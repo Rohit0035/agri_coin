@@ -24,8 +24,7 @@ class MobileRecharge extends React.Component {
     super(props);
     this.state = {
     
-
-      walletId:"6262684d6c20184b80fc80fd",
+      walletId:"626cd66f105abd6719d4c1fb",
       circle_name:"",
       circle_code:"",
       circleN:[],
@@ -38,7 +37,8 @@ class MobileRecharge extends React.Component {
       biller_code : "IDP",
       AMTNO:'',
       plans:[],
-      isPostpaidLn: true
+      isPostpaidLn: true,
+      status:""
       //  number : 9748876319
     };
   }
@@ -152,7 +152,7 @@ class MobileRecharge extends React.Component {
         return true;
        } else{
         let payload = {
-          
+          walletId :this.state.walletId,
             amount : this.state.AMTNO, //parseInt(this.state.number)
             biller_code : this.state.responseData?.code,
             number : this.state.number //parseInt(this.state.number)
@@ -174,6 +174,10 @@ class MobileRecharge extends React.Component {
       });
        }
       } 
+
+      updateItem = (e) => {
+        console.log('Selected Value::',e);
+    } 
 
   render() {
      let { isPostpaidLn } = this.state;
@@ -247,7 +251,6 @@ class MobileRecharge extends React.Component {
                     
                 ))} 
                 </Input> */}
-                <br></br>
           <Col md="12">
             <Input type="number"
                   name="CUSTNO"
@@ -260,9 +263,7 @@ class MobileRecharge extends React.Component {
             <span style={{color : 'red'}}>{this.state.isMobile ? 'Please enter 10 digits mobile number' : null}</span>
           </Col>
             <small style={{color:"red",}}>(Subscriber ID starts with 1 and is 10 digits long. To locate it, press the home button on remote.)</small>
-         
-         <br></br>
-         <br></br>
+          <br></br>
                   
         <Col md="12">
           <Input
@@ -354,8 +355,8 @@ class MobileRecharge extends React.Component {
   </Col>
   <Col md="7">
     <div className="sr-3">
-      <h4 className="sr-h">Airtel - Madhya Pradesh Chhattisgarh</h4>
-        <SoxyPayTab plans={plans}/>
+      <h4 className="sr-h">Plan Details</h4>
+        <SoxyPayTab plans={plans} selectedTask={() => this.updateItem}/>
       </div>
     </Col>
   </Row>
