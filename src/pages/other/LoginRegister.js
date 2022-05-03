@@ -35,7 +35,7 @@ export default class LoginRegister extends Component {
   //   e.preventDefault();
   //   console.log(this.state);
   //   axios
-  //     .post("http://35.154.86.59/api/user/verifyotp", {
+  //     .post("http://35.154.134.118/api/user/verifyotp", {
   //       mobile: this.state.mobile,
   //       //customer_email: this.state.email,
   //       otp: this.state.otpnumber,
