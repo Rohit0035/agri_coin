@@ -7,9 +7,24 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import BlogPagination from "../../wrappers/blog/BlogPagination";
 import BlogPostsNoSidebar from "../../wrappers/blog/BlogPostsNoSidebar";
 import { Col, Container } from "reactstrap";
+import moment from "moment";
+import axios from "axios";
 
-const OrderRecharge = ({ location }) => {
-  const { pathname } = location;
+class OrderRecharge extends React.Component {
+  
+  constructor(props) {
+    super(props)
+  this.state={
+ 
+  }
+    
+  }  
+
+  render() { 
+
+    const {table} = this.props;
+
+ 
 
   return (
     <Fragment>
@@ -21,8 +36,8 @@ const OrderRecharge = ({ location }) => {
         />
       </MetaTags>
       <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
-      <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
-        Order
+      <BreadcrumbsItem to={process.env.PUBLIC_URL + "/Orderrecharge"}>
+        Recharge List
       </BreadcrumbsItem>
       <LayoutOne headerTop="visible">
         {/* breadcrumb */}
@@ -36,75 +51,62 @@ const OrderRecharge = ({ location }) => {
                     {/* order */}
                     
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                      
                         <div className="order-box">
                             <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
+                                <li>Transaction ID : <span>656565</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                       <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
                             </ul>
                         </div>
                     </div>
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                         <div className="order-box">
                             <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
                             </ul>
                         </div>
                     </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div className="order-box">
-                            <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div className="order-box">
-                            <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div className="order-box">
-                            <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div className="order-box">
-                            <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
-                        <div className="order-box">
-                            <ul>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                                <li>mobile no. <span>323233</span></li>
-                            </ul>
-                        </div>
-                    </div>
+                  
                    
                   </div>
 
@@ -120,8 +122,6 @@ const OrderRecharge = ({ location }) => {
   );
 };
 
-OrderRecharge.propTypes = {
-  location: PropTypes.object
-};
+}
 
 export default OrderRecharge;

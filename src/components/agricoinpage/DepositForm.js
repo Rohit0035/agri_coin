@@ -32,12 +32,12 @@ import swal from 'sweetalert';
     };
   }
   componentDidMount() {
-    //  let { id } = this.props.match.params;
+     let { id } = this.props.match.params;
     axios
     .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
       
       .then((response) => {
-        // console.log(response.data);
+        console.log("aaaaa",response.data);
         console.log(response.data.data.walletId);
 
         this.setState({ data: response.data.data,
@@ -62,9 +62,7 @@ import swal from 'sweetalert';
     this.setState({ selectedName: event.target.files.name });
     console.log(event.target.files);
   };
-  // changeHandler1 = (e) => {
-  //   this.setState({ status: e.target.value });
-  // };
+
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -72,10 +70,14 @@ import swal from 'sweetalert';
   submitHandler = (e) => {
     e.preventDefault();
     const data = new FormData();
+   
+    // data.append("walletId", this.state.walletId);
+
     data.append("customer", this.state.customer);
     data.append("pay_method", this.state.pay_method);
+    data.append("email", this.state.email);
     data.append("amount", this.state.amount);
-    // data.append("status", this.state.status);
+    
     for (const file of this.state.selectedFile) {
       if (this.state.selectedFile !== null) {
         data.append("depsite_file", file, file.name);
@@ -87,7 +89,7 @@ import swal from 'sweetalert';
   for (var key of data.keys()) {
     console.log(key);
   }
-  //  let { id } = this.props.match.params;
+  
   axios.post(`http://35.154.134.118/api/admin/deposite_wallet`, data)
     .then((response) => {
     console.log(response);
@@ -122,7 +124,7 @@ render() {
                 <img src= {Logo}   style={{width:150}} />
               </div>
               <Form className="m-1" onSubmit={this.submitHandler}>
-                   <div className="col-lg-12 mb-3">
+                   {/* <div className="col-lg-12 mb-3">
                      <input
                          className="form-control"
                          placeholder="WALLET ID"
@@ -132,7 +134,7 @@ render() {
                          value={this.state.walletId}
                          onChange={this.changeHandler}
                       />
-                    </div> 
+                    </div>  */}
                     <div className="col-lg-12 mb-3">
                      <input
                          name="firstname"
@@ -175,12 +177,14 @@ render() {
                     </div>
                     <div className="col-lg-12 mb-3">
                      <select className="form-control select-st"
-                         name="pay_method"   required
+                         name="pay_method" 
+                          required
                          value={this.state.pay_method}
                          onChange={this.changeHandler}>
                          <option>SELECT PAYMENT METHOD</option>
                          <option>USDT</option>
                          <option>TRX</option>
+                         <option>soxypay</option>
                       </select>
                     </div> 
                     <div className="qr-box">

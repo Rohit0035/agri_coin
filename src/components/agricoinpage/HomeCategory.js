@@ -115,7 +115,7 @@ class HomeCategory extends React.Component {
                 <li className="st-1">
                   <Link to={process.env.PUBLIC_URL + "/mobilerecharge"}>
                     {string["mobilerecharge"]} 
-                    <i className="pe-7s-phone circle-1 active" />
+                    <i className="pe-7s-phone circle-1 " />
                     <p>Mobile Recharge</p>
                   </Link>
                 </li>

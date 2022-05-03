@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 
 class WalletHeader extends React.Component {
   
@@ -10,32 +10,33 @@ class WalletHeader extends React.Component {
     this.state = {
     amount: 0,
     responseData:{}
+   
     };
   } 
 
   componentDidMount() {
-    
-    //  let { id } = this.props.match.params;
+  // let { id } = this.props.match.params;
+;
      //let userInfo = localStorage.getItem( JSON.parse("userInfo"));
-     let userInfo ={};
-      userInfo = JSON.parse( localStorage.getItem('userInfo') );
-    console.log('@@@@@',userInfo)
-     if(userInfo === null){
-            // const history = useHistory();
-            // //history.push("/cart");
-            // history.push("/login-register");
-     } else{
+    //  let userInfo ={};
+    //   userInfo = JSON.parse( localStorage.getItem('userInfo') );
+    // console.log('@@@@@',userInfo)
+    //  if(userInfo === null){
+    //         // const history = useHistory();
+    //         // //history.push("/cart");
+    //         // history.push("/login-register");
+    //  } else{
       axios
       .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
       .then((response) => {
-         console.log(response.data);
+         console.log('walletqqqqqqq####',response.data);
         this.setState({responseData: response.data.data});
         this.setState({ amount: response.data.data.amount });
       })
       .catch((error) => {
         console.log(error);
       });
-     }
+    //  }
     
     }
   

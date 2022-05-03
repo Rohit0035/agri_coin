@@ -63,7 +63,7 @@ class SoxyPayTab extends React.Component {
                 className="sttt"
               >
                 <Nav.Item>
-                  <Nav.Link eventKey="bt-1" className="ftt-1">
+                  <Nav.Link eventKey="bt-1" className="ftt-1 active">
                     <p className="ftt-2">Popular</p>
                   </Nav.Link>
                 </Nav.Item>
@@ -94,7 +94,7 @@ class SoxyPayTab extends React.Component {
                 </Nav.Item>
               </Nav>
               <Tab.Content className="ftt-3">
-                <Tab.Pane eventKey="bt-1">
+                <Tab.Pane eventKey="bt-1" className="active">
                   <div className="row">
                   <div className="table-content table-responsive cart-table-content tt-1">
                       <table>

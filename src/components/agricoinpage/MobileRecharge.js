@@ -24,7 +24,7 @@ class MobileRecharge extends React.Component {
     super(props);
     this.state = {
     
-      walletId:"626cd66f105abd6719d4c1fb",
+      walletId:"",
       circle_name:"",
       circle_code:"",
       circleN:[],
@@ -345,10 +345,7 @@ class MobileRecharge extends React.Component {
         </Button>
         )}
       </Form>
-   
-             
-              
-                
+           
     </div>
   </Row>
 </div>

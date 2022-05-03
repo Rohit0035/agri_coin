@@ -305,14 +305,18 @@ i.pe-7s-phone.circle-1.active {
     border: 1px solid #f9bd1f;
     margin: 10px 0px;
     background: #f9f9f9;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
     ul{
         padding: 0px;
     }
     li{
        line-height: 25px;
+       font-weight: 500;
     }
     span{
-       float: right;
+        float: right;
+        color: #f9aa21;
+        font-weight: 600;
     }
 }
 // hederbtn

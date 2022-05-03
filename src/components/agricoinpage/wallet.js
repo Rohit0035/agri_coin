@@ -21,7 +21,7 @@ class Wallet extends React.Component {
   } 
 
   componentDidMount() {
-  let { id } = this.props.match.params;
+   let { id } = this.props.match.params;
     
     let userInfo ={};
     userInfo = JSON.parse( localStorage.getItem('userInfo') );
@@ -30,17 +30,20 @@ class Wallet extends React.Component {
         
    } else{
     axios
-    .get(`http://35.154.134.118/api/admin/getone/`+userInfo._id)
+    // .get(`http://35.154.134.118/api/admin/getone/`+userInfo._id)
+    .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
     .then((response) => {
-       console.log(response.data);
+       console.log('wallet@2getone2@@@@@@@',response.data);
       this.setState({responseData: response.data.data});
-      this.setState({ walletAmount: response.data.data.amount });
+      this.setState({ walletAmount: response.data.data.amount});
+      this.setState({walletId: response.data.data.walletId});
     })
     .catch((error) => {
       console.log(error);
     });
-    
-    axios.get(`http://35.154.134.118/api/admin/getusertransaction/6262684d6c20184b80fc80fd`)
+    // let { id } = this.props.match.params;
+     axios.get(`http://35.154.134.118/api/admin/getusertransaction/6262684d6c20184b80fc80fd`)
+    // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
     .then((response) => {
        console.log('@@@@transaction API',response.data.data);
       this.setState({table: response.data.data});
@@ -90,11 +93,11 @@ class Wallet extends React.Component {
                   <button className="sr-btn1" >Deposit to Wallet</button>
                 </Link>
               </div>
-              <div className="sr-div">
+              {/* <div className="sr-div">
                 <Link to="/walletwithdraw">
                 <button className="sr-btn1">Withdraw to Wallet</button>
               </Link>
-            </div>
+            </div> */}
           </div>
         </Col>
         <Col md="6">

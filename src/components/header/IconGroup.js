@@ -123,7 +123,7 @@ const IconGroup = ({
                     {string["wallet"]}Wallet</Link>
                 </li>
                 <li>
-                  <Link to={process.env.PUBLIC_URL + "/KycVerification"}>Kyc Verification</Link>
+                  <Link to={process.env.PUBLIC_URL + "/orderrecharge"}>Recharge</Link>
                 </li>
               
                 <li>
