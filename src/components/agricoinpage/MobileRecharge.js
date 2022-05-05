@@ -1,30 +1,20 @@
 import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
-import { Container, Row,  Col, Input, InputGroup, Form,Button, CustomInput } from "reactstrap";
+import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
 import axios from "axios";
 import SoxyPayTab from "../agricoinpage/SoxyPayTab";
-import FormControlLabel from "@mui/material/FormControlLabel";
-import Checkbox from "@mui/material/Checkbox";
-import Select from 'react-select';
-import { Radio } from "react-feather";
+
 import swal from 'sweetalert';
-// import FormGroup from "@mui/material/FormGroup";
-// import swal from 'sweetalert';
-const stateOptions = [];
-const options = [
-  { value: 'chocolate', label: 'Chocolate' },
-  { value: 'strawberry', label: 'Strawberry' },
-  { value: 'vanilla', label: 'Vanilla' },
-];
+
+
 
 class MobileRecharge extends React.Component {
-// const MobileRecharge = ({ data, spaceBottomClass }) => {
+
   constructor(props) {
     super(props);
     this.state = {
-    
-      walletId:"",
+     walletId:"",
       circle_name:"",
       circle_code:"",
       circleN:[],
@@ -33,16 +23,21 @@ class MobileRecharge extends React.Component {
       isAmount : false,
       isAmountVal : false,
       responseData : {},
-      amount : 10,
-      biller_code : "IDP",
+      amount : "",
+      biller_code : "",
       AMTNO:'',
       plans:[],
       isPostpaidLn: true,
-      status:""
+      status:"",
       //  number : 9748876319
+      userData:{},
     };
   }
   componentDidMount() {
+    
+    let user = JSON.parse(localStorage.getItem("userInfo"))
+    this.setState({userData:user})
+    //console.log(user);
     axios
       .get("http://35.154.134.118/api/admin/getcircles")
       .then((response) => {
@@ -152,7 +147,8 @@ class MobileRecharge extends React.Component {
         return true;
        } else{
         let payload = {
-          walletId :this.state.walletId,
+          
+          walletId :this.state.userData.walletId,
             amount : this.state.AMTNO, //parseInt(this.state.number)
             biller_code : this.state.responseData?.code,
             number : this.state.number //parseInt(this.state.number)
@@ -180,6 +176,8 @@ class MobileRecharge extends React.Component {
     } 
 
   render() {
+const userData = this.state;
+console.log(this.state.userData.walletId);
      let { isPostpaidLn } = this.state;
 
     const {plans} =this.state;

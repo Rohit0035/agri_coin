@@ -17,17 +17,17 @@ class WalletHeader extends React.Component {
   componentDidMount() {
   // let { id } = this.props.match.params;
 ;
-     //let userInfo = localStorage.getItem( JSON.parse("userInfo"));
-    //  let userInfo ={};
-    //   userInfo = JSON.parse( localStorage.getItem('userInfo') );
-    // console.log('@@@@@',userInfo)
-    //  if(userInfo === null){
-    //         // const history = useHistory();
-    //         // //history.push("/cart");
-    //         // history.push("/login-register");
-    //  } else{
+    //  let userInfo = localStorage.getItem( JSON.parse("userInfo"));
+     let userInfo ={};
+      userInfo = JSON.parse( localStorage.getItem('userInfo') );
+    console.log('@@@@@',userInfo)
+     if(userInfo === null){
+            // const history = useHistory();
+            // //history.push("/cart");
+            // history.push("/login-register");
+     } else{
       axios
-      .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
+      .get(`http://35.154.134.118/api/admin/getone/`+userInfo.walletId)
       .then((response) => {
          console.log('walletqqqqqqq####',response.data);
         this.setState({responseData: response.data.data});
@@ -36,7 +36,7 @@ class WalletHeader extends React.Component {
       .catch((error) => {
         console.log(error);
       });
-    //  }
+     }
     
     }
   

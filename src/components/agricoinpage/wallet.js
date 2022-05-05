@@ -30,8 +30,8 @@ class Wallet extends React.Component {
         
    } else{
     axios
-    // .get(`http://35.154.134.118/api/admin/getone/`+userInfo._id)
-    .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
+
+    .get(`http://35.154.134.118/api/admin/getone/`+userInfo.walletId)
     .then((response) => {
        console.log('wallet@2getone2@@@@@@@',response.data);
       this.setState({responseData: response.data.data});

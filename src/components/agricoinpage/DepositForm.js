@@ -14,39 +14,59 @@ import swal from 'sweetalert';
   constructor(props) {
     super(props);
     this.state = {
-      walletId:"",
-      data: {},
-      amount:"",
-      depsite_file:"",
-      pay_method:"",
-    // customerId:"",
+      // walletId:"",
+      wData:{},
+       amount:"",
+       depsite_file:"",
+       pay_method:"",
+    customer:"",
     firstname:"",
       // lastname:"",
       email:"",
       mobile:"",
-      // password:"",
-      // cnfrmPassword:"",
       selectedFile: undefined,
       selectedName: "",
       // status: ""
+      user:{},
     };
   }
-  componentDidMount() {
-     let { id } = this.props.match.params;
-    axios
-    .get(`http://35.154.134.118/api/admin/getone/626cd66f105abd6719d4c1fb`)
-      
-      .then((response) => {
-        console.log("aaaaa",response.data);
-        console.log(response.data.data.walletId);
 
-        this.setState({ data: response.data.data,
-          walletId: response.data.data.walletId,
-          firstname:response.data.data.customer.firstname,
-          email:response.data.data.customer.email,
-          mobile:response.data.data.customer.mobile,
-          amount:response.data.data.amount,
-        });
+  
+
+  async componentDidMount() {
+    
+   let user = JSON.parse( localStorage.getItem("userInfo") );
+  console.log(user)
+      //  let { id } = this.props.match.params;
+       axios
+       .get(`http://35.154.134.118/api/user/getonecustomer`, {
+        headers: {
+          "auth-token": localStorage.getItem("auth-token"),
+        },
+      }).then((response) => {
+            //console.log(response.data);
+            console.log(response.data.data);
+            this.setState({ wData: response.data.data,
+              customer:response.data.data.customer,
+            firstname:response.data.data.firstname,
+            email:response.data.data.email,
+            mobile:response.data.data.mobile,
+            amount:response.data.data.amount
+          });           
+            console.log(this.state.wData._id)
+            
+         })
+         .catch((error) => {
+           console.log(error.response);
+         });
+       
+
+
+    axios
+    .get(`http://35.154.134.118/api/admin/getone/`+user)
+      .then((response) => {
+         console.log(response.data);
+        
       })
       .catch((error) => {
         console.log(error.response);
@@ -62,7 +82,9 @@ import swal from 'sweetalert';
     this.setState({ selectedName: event.target.files.name });
     console.log(event.target.files);
   };
-
+  // changeHandler1 = (e) => {
+  //   this.setState({ status: e.target.value });
+  // };
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
@@ -70,14 +92,11 @@ import swal from 'sweetalert';
   submitHandler = (e) => {
     e.preventDefault();
     const data = new FormData();
-   
-    // data.append("walletId", this.state.walletId);
-
-    data.append("customer", this.state.customer);
+    data.append("firstname", this.state.firstname);
     data.append("pay_method", this.state.pay_method);
-    data.append("email", this.state.email);
+    data.append("mobile", this.state.mobile);
     data.append("amount", this.state.amount);
-    
+     data.append("customer",this.state.wData._id);
     for (const file of this.state.selectedFile) {
       if (this.state.selectedFile !== null) {
         data.append("depsite_file", file, file.name);
@@ -89,12 +108,12 @@ import swal from 'sweetalert';
   for (var key of data.keys()) {
     console.log(key);
   }
-  
+  //  let { id } = this.props.match.params;
   axios.post(`http://35.154.134.118/api/admin/deposite_wallet`, data)
     .then((response) => {
     console.log(response);
     swal("Successful!", "You clicked the button!", "success");
-    this.props.history.push("/");
+  this.props.history.push("/wallet");
   })
     .catch((error) => {
       console.log(error.response);
@@ -104,6 +123,7 @@ import swal from 'sweetalert';
 
 
 render() { 
+
   return (
 
     <LayoutOne>
@@ -124,17 +144,7 @@ render() {
                 <img src= {Logo}   style={{width:150}} />
               </div>
               <Form className="m-1" onSubmit={this.submitHandler}>
-                   {/* <div className="col-lg-12 mb-3">
-                     <input
-                         className="form-control"
-                         placeholder="WALLET ID"
-                         type="text"
-                         name="walletId"
-                         required
-                         value={this.state.walletId}
-                         onChange={this.changeHandler}
-                      />
-                    </div>  */}
+               
                     <div className="col-lg-12 mb-3">
                      <input
                          name="firstname"

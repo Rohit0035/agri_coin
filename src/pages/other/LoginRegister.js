@@ -20,9 +20,13 @@ export default class LoginRegister extends Component {
       email: "",
       mobile: "",
       password: "",
+      cnfrmPassword:"",
+
       // otp: true,
+      // walletId:"",
+
       // otpnumber: "",
-      token: "",
+      // token: "",
     };
     // this.state = {
     //   email: "",
@@ -106,7 +110,7 @@ export default class LoginRegister extends Component {
       .post("http://35.154.134.118/api/user/signup", this.state)
       .then((response) => {
         console.log(response);
-        localStorage.setItem("token", response.data.token);
+        localStorage.setItem("auth-token", response.data.token);
         this.setState({
           token: response.data.token,
         });
@@ -190,6 +194,7 @@ export default class LoginRegister extends Component {
                                     value={this.state.password}
                                     onChange={this.handlechange}
                                   />
+                              
                                   <div className="button-box">
                                     <div className="login-toggle-btn"></div>
                                     <button type="submit">
@@ -244,6 +249,13 @@ export default class LoginRegister extends Component {
                                     name="password"
                                     placeholder="Password"
                                     value={this.state.password}
+                                    onChange={this.changeHandler}
+                                  />
+                                               <input
+                                    type="password"
+                                    name="cnfrmPassword"
+                                    placeholder="Confrim Password"
+                                    value={this.state.cnfrmPassword}
                                     onChange={this.changeHandler}
                                   />
                                   <div className="button-box">

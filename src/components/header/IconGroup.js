@@ -20,7 +20,10 @@ const IconGroup = ({
 
   const handleLogout = (e) => {
     window.localStorage.clear()
-    window.location.reload()
+    // window.location.reload()
+    // window.location.replace("http://localhost:3000/");
+     window.location.replace("http://soxypay.com/");
+
   };
 
 
