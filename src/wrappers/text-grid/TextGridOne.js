@@ -17,7 +17,7 @@ const TextGridOne = ({ spaceBottomClass }) => {
             <div className="col-sm-12">
               <h2>About us</h2>
               <p>
-                Agricoin – Your one-stop solution to quench your shopping needs!
+                Soxycoin – Your one-stop solution to quench your shopping needs!
               </p>
               <p>
                 Say goodbye to the days of perpetually waiting for the apparel
@@ -77,7 +77,7 @@ const TextGridOne = ({ spaceBottomClass }) => {
               </p>
               <p>
                 We think this can be changed only through some disruption in the
-                system! Agricoin steps in as a group of young people from the
+                system! Soxycoin steps in as a group of young people from the
                 “City of Joy – Kolkata” to alter the condition of the local
                 Indian apparel stores. We aim to make an impact by
                 revolutionizing the customer’s shopping experience by

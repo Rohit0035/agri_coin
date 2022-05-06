@@ -11,6 +11,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import { Toast, ToastBody, ToastHeader } from "reactstrap";
 import { ToastContainer } from "react-bootstrap";
 import { Button } from "reactstrap";
+import swal from "sweetalert";
 export default class LoginRegister extends Component {
   constructor(props) {
     super(props);
@@ -91,11 +92,13 @@ export default class LoginRegister extends Component {
         //localStorage.setItem("authec", response.data.token);
         localStorage.setItem("auth-token", response.data.token);
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
+        swal("Success!", "You clicked the button!", "success");
         this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error);
         console.log(error.response);
+        swal("Error!", " Wrong UserName or Password", "error");
       });
   };
   // otp = true;
@@ -114,10 +117,12 @@ export default class LoginRegister extends Component {
         this.setState({
           token: response.data.token,
         });
+        swal("Success!", " You clicked the button!", "success");
         this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error.response);
+          swal("Error!", " Wrong UserName or Password", "error");
       });
 
     // axios
@@ -139,7 +144,7 @@ export default class LoginRegister extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Buynaa | Login</title>
+          <title>Soxypay</title>
           <meta
             name="description"
             content="Compare page of flone react minimalist eCommerce template."
@@ -176,6 +181,7 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="text"
                                     name="email"
+                                    required
                                     placeholder="Email / Mobile"
                                     value={this.state.email}
                                     onChange={this.handlechange}
@@ -219,6 +225,7 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="text"
                                     name="firstname"
+                                    required
                                     placeholder="Enter Your Firstname"
                                     value={this.state.firstname}
                                     onChange={this.changeHandler}
@@ -233,6 +240,7 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="email"
                                     name="email"
+                                    required
                                     placeholder="Enter Your Email"
                                     value={this.state.email}
                                     onChange={this.changeHandler}
@@ -240,6 +248,7 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="number"
                                     name="mobile"
+                                    required
                                     placeholder="Enter Your Mobile No."
                                     value={this.state.mobile}
                                     onChange={this.changeHandler}
@@ -247,13 +256,15 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="password"
                                     name="password"
+                                    required
                                     placeholder="Password"
                                     value={this.state.password}
                                     onChange={this.changeHandler}
                                   />
-                                               <input
+                                   <input
                                     type="password"
                                     name="cnfrmPassword"
+                                    required
                                     placeholder="Confrim Password"
                                     value={this.state.cnfrmPassword}
                                     onChange={this.changeHandler}

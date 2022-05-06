@@ -483,6 +483,26 @@ p.tb-status {
     display: inline-block;
 }
 
+// depositpage 
+
+.st-posit{
+    text-align: center;
+}
+.st-posit h3{
+    font-size: 36px;
+    padding: 0px 250px;
+    line-height: 50px;
+    font-weight: 400;
+}
+a.backdeposit {
+    background: #f7b011;
+    color: #fff;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 16px;
+}
 
 // media query css 17/3/22
 

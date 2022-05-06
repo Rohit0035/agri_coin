@@ -112,14 +112,13 @@ import swal from 'sweetalert';
   axios.post(`http://35.154.134.118/api/admin/deposite_wallet`, data)
     .then((response) => {
     console.log(response);
-    swal("Successful!", "You clicked the button!", "success");
-  this.props.history.push("/wallet");
+    // swal("Successful!", "You clicked the button!", "success");
+    this.props.history.push("/DepositPending");
   })
     .catch((error) => {
       console.log(error.response);
     });
   };
-
 
 
 render() { 
