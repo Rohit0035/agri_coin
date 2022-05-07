@@ -11,29 +11,29 @@ import moment from "moment";
 import axios from "axios";
 class OrderRecharge extends React.Component {
   
-  // constructor(props) {
-  //   super(props)
-  //   this.state = {
-  //     table:[],
-  //   };
-    
-  // }  
-
-    // componentDidMount() {
-    //   axios.get(`http://35.154.134.118/api/admin/getusertransaction/6262684d6c20184b80fc80fd`)
-    //   // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
-    //   .then((response) => {
-    //      console.log('@@@@transaction API',response.data.data);
-    //     this.setState({table: response.data.data});
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response);
-
-    //   });
-    // }
+  constructor(props) {
+    super(props)
+     this.state = {
+      agent_id:"" ,
+      orderList:[],
+     
+       
+   }  
+  }
+    componentDidMount() {
+      axios.get(`http://35.154.134.118/api/admin/getusertransaction/6262684d6c20184b80fc80fd`)
+    // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
+    .then((response) => {
+       console.log('@@@@transaction API',response.data.data);
+      this.setState({orderList:response.data.data});
+    })
+    .catch((error) => {
+      console.log(error.response);
+    });
+     }
 
   render() { 
-    //const {table} = this.props;
+    const {orderList} = this.state;
   return (
     <Fragment>
       <MetaTags>
@@ -61,12 +61,14 @@ class OrderRecharge extends React.Component {
                     <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
                        
                          <div className="order-box">
-                            <ul>
-                                <li>Transaction ID : <span>565565</span></li>
+                            <ul >
+                           
+                                <li>Transaction ID : <span>{orderList.agent_id}</span></li>
                                 <li>Date : <span>05/02/2022</span></li>
-                                <li>Amount : <span>120</span></li>
+                                <li>Amount : <span></span></li>
                                 <li>Service Name : <span>mobile recharge</span></li>
                                 <li>operator : <span>Airtel</span></li>
+                              
                             </ul>
                         </div> 
                     </div>

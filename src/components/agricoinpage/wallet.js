@@ -42,10 +42,10 @@ class Wallet extends React.Component {
       console.log(error);
     });
     // let { id } = this.props.match.params;
-     axios.get(`http://35.154.134.118/api/admin/getusertransaction/6262684d6c20184b80fc80fd`)
+     axios.get(`http://35.154.134.118:8000/admin/usersuccess_depositelist/626cd66f105abd6719d4c1fb`)
     // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
     .then((response) => {
-       console.log('@@@@transaction API',response.data.data);
+       console.log('@@@@depositelist',response.data.data);
       this.setState({table: response.data.data});
     })
     .catch((error) => {
@@ -102,7 +102,7 @@ class Wallet extends React.Component {
         </Col>
         <Col md="6">
           <div className="sr-3">
-            <h4 className="sr-h">Recent Transaction </h4>
+            <h4 className="sr-h">Deposit Transaction </h4>
               <TableHistory table={table.length > 0 ? table : []}/>
           </div>
         </Col>

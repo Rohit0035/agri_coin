@@ -24,7 +24,7 @@ const {table} = this.props;
                       <table>
                         <thead>
                           <tr>
-                            <th>Transaction ID</th>
+                            <th>Wallet ID</th>
                             <th>Amount</th>
                             <th>Date</th>
                             {/* <th>BILLER CODE</th>
@@ -40,12 +40,12 @@ const {table} = this.props;
 
                                 return<>
                                 <tr>
-                                <td className="product-thumbnail">{table.agent_id}</td>
+                                <td className="product-thumbnail">{table.walletId._id}</td>
                   
                   
                                 {/* <td className="product-thumbnail"><img style={{width:"40px",height:"40px"}} src={table.walletId.depsite_file}/></td> */}
                                 {/* <td className="product-thumbnail">{table.walletId.pay_method}</td> */}
-                                <td className="product-thumbnail">{table.amount}</td>
+                                <td className="product-thumbnail">{table.add_amount}</td>
                                 {/* <td className="product-thumbnail">{table.biller_code}</td> */}
                                 <td className="product-thumbnail">{moment(table.createdAt).format("ll")}</td>
                                 {/* moment('createdAt').format('MMMM Do YYYY') */}
