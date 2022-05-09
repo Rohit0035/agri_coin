@@ -27,7 +27,11 @@ class WalletHeader extends React.Component {
             // history.push("/login-register");
      } else{
       axios
-      .get(`http://35.154.134.118/api/admin/getone/`+userInfo.walletId)
+      .get(`http://35.154.134.118/api/admin/getone/`, {
+        headers: {
+          "auth-token": localStorage.getItem("auth-token"),
+        },
+      })
       .then((response) => {
          console.log('walletqqqqqqq####',response.data);
         this.setState({responseData: response.data.data});

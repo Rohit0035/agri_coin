@@ -21,8 +21,9 @@ class SoxyPayTab extends React.Component {
     };
   }
   componentDidMount = () =>{
-    console.log('@props@@@@@',this.props.plans)
+    console.log('@props@@@@@',this.props)
   }
+
   onRechargeSubmit = (e) =>{
          
     console.log('@@@@',this.state.CODE)
@@ -52,7 +53,7 @@ class SoxyPayTab extends React.Component {
    } 
      
     render() {
-     const {plans} = this.props;
+     const {plans,selectedTask} = this.props;
     return (
         <div>
           <div className="container">
@@ -120,6 +121,7 @@ class SoxyPayTab extends React.Component {
                                      <Link className="st-amt">
                                         {item.amount}
                                     </Link>
+                                    {/* onClick= {() => selectedTask(item.amount)} */}
                                     </td>
                                   </tr>
                                   </>

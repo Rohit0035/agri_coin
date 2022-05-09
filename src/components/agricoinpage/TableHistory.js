@@ -40,7 +40,7 @@ const {table} = this.props;
 
                                 return<>
                                 <tr>
-                                <td className="product-thumbnail">{table.walletId._id}</td>
+                                <td className="product-thumbnail">{table._id}</td>
                   
                   
                                 {/* <td className="product-thumbnail"><img style={{width:"40px",height:"40px"}} src={table.walletId.depsite_file}/></td> */}
@@ -48,13 +48,9 @@ const {table} = this.props;
                                 <td className="product-thumbnail">{table.add_amount}</td>
                                 {/* <td className="product-thumbnail">{table.biller_code}</td> */}
                                 <td className="product-thumbnail">{moment(table.createdAt).format("ll")}</td>
-                                {/* moment('createdAt').format('MMMM Do YYYY') */}
+                             
 
-                                {/* <td className="product-thumbnail">
-                                  <p className="tb-status">
-                                    {table.status}
-                                  </p>
-                                  </td> */}
+                              
                                 </tr>
                         
                       </> }): null} 

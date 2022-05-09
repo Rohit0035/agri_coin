@@ -63,7 +63,11 @@ import swal from 'sweetalert';
 
 
     axios
-    .get(`http://35.154.134.118/api/admin/getone/`+user)
+    .get(`http://35.154.134.118/api/admin/getone/`, {
+      headers: {
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    })
       .then((response) => {
          console.log(response.data);
         

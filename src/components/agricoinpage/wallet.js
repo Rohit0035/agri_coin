@@ -21,7 +21,7 @@ class Wallet extends React.Component {
   } 
 
   componentDidMount() {
-   let { id } = this.props.match.params;
+  //  let { id } = this.props.match.params;
     
     let userInfo ={};
     userInfo = JSON.parse( localStorage.getItem('userInfo') );
@@ -31,7 +31,11 @@ class Wallet extends React.Component {
    } else{
     axios
 
-    .get(`http://35.154.134.118/api/admin/getone/`+userInfo.walletId)
+    .get(`http://35.154.134.118/api/admin/getone/`, {
+      headers: {
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    })
     .then((response) => {
        console.log('wallet@2getone2@@@@@@@',response.data);
       this.setState({responseData: response.data.data});
@@ -42,10 +46,10 @@ class Wallet extends React.Component {
       console.log(error);
     });
     // let { id } = this.props.match.params;
-     axios.get(`http://35.154.134.118:8000/admin/usersuccess_depositelist/626cd66f105abd6719d4c1fb`)
+     axios.get(`http://35.154.134.118/api/admin/usersuccess_depositelist/`+userInfo.walletId)
     // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
     .then((response) => {
-       console.log('@@@@depositelist',response.data.data);
+       console.log('@@@@transaction API',response.data.data);
       this.setState({table: response.data.data});
     })
     .catch((error) => {
@@ -102,7 +106,7 @@ class Wallet extends React.Component {
         </Col>
         <Col md="6">
           <div className="sr-3">
-            <h4 className="sr-h">Deposit Transaction </h4>
+            <h4 className="sr-h">Recent Transaction </h4>
               <TableHistory table={table.length > 0 ? table : []}/>
           </div>
         </Col>

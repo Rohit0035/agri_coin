@@ -171,8 +171,8 @@ class MobileRecharge extends React.Component {
        }
       } 
 
-      updateItem = (e) => {
-        console.log('Selected Value::',e);
+    updateItem = (value) => {
+       console.log('Selected Value::',value); 
     } 
 
   render() {
