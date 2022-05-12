@@ -35,7 +35,7 @@ class WalletHeader extends React.Component {
       .then((response) => {
          console.log('walletqqqqqqq####',response.data);
         this.setState({responseData: response.data.data});
-        this.setState({ amount: response.data.data.amount });
+        this.setState({amount: response.data.data.amount});
       })
       .catch((error) => {
         console.log(error);

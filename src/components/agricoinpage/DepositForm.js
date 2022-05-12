@@ -14,12 +14,13 @@ import swal from 'sweetalert';
   constructor(props) {
     super(props);
     this.state = {
+  
       // walletId:"",
       wData:{},
-       amount:"",
+      reqamount :"",
        depsite_file:"",
        pay_method:"",
-    customer:"",
+       customer:"",
     firstname:"",
       // lastname:"",
       email:"",
@@ -51,7 +52,7 @@ import swal from 'sweetalert';
             firstname:response.data.data.firstname,
             email:response.data.data.email,
             mobile:response.data.data.mobile,
-            amount:response.data.data.amount
+            reqamount :response.data.data.reqamount 
           });           
             console.log(this.state.wData._id)
             
@@ -99,7 +100,7 @@ import swal from 'sweetalert';
     data.append("firstname", this.state.firstname);
     data.append("pay_method", this.state.pay_method);
     data.append("mobile", this.state.mobile);
-    data.append("amount", this.state.amount);
+    data.append("reqamount", this.state.reqamount);
      data.append("customer",this.state.wData._id);
     for (const file of this.state.selectedFile) {
       if (this.state.selectedFile !== null) {
@@ -153,7 +154,8 @@ render() {
                          name="firstname"
                          placeholder="USERNAME*"
                          type="text"
-                         required
+                         readOnly
+                        
                          value={this.state.firstname}
                          onChange={this.changeHandler}
                         />
@@ -163,7 +165,7 @@ render() {
                          name="email"
                          placeholder="EMAIL ID*"
                          type="email"
-                         required
+                         readOnly
                          value={this.state.email}
                          onChange={this.changeHandler}
                         />
@@ -173,18 +175,18 @@ render() {
                          name="mobile"
                          placeholder="PHONE NUMBER*"
                          type="number"
-                         required
+                         readOnly
                          value={this.state.mobile}
                          onChange={this.changeHandler}
                         />
                     </div>
                     <div className="col-lg-12 mb-3">
                      <input
-                         name="amount"
+                         name="reqamount"
                          placeholder="HASHTAG*"
-                         type="taxt"
+                         type="number"
                          required
-                         value={this.state.amount}
+                         value={this.state.reqamount}
                          onChange={this.changeHandler}
                         />
                     </div>

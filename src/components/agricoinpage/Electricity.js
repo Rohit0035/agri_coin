@@ -2,6 +2,7 @@
 import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
+import electrimg from '../../assets/img/electrimg.png';
 import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstrap";
 import axios from "axios";
 // import swal from 'sweetalert';
@@ -87,6 +88,7 @@ render() {
     <Container>
       <Row>
         <Col md="6">
+         <div className="text-box">
           <Row>
             <h4 className="sr-h4">Pay For Electricity</h4>
             <div className="sr-1">
@@ -144,20 +146,13 @@ render() {
                       )}
                   </Form>
                 </div>
-              </Row>
-            </Col>
+          </Row>
+          </div>
+         </Col>
+       
             <Col md="6">
-              <div className="sr-3">
-                <h4 className="sr-h">Consumer Details</h4>
-                  <ul className="sr-ul">
-                    <li className="sr-li">Consumer Number: <span className="sr-span">44545</span></li>
-                    <li  className="sr-li">State: <span  className="sr-span">MP</span></li>
-                    <li  className="sr-li">Amount: <span  className="sr-span">100rs</span></li>
-                    <li  className="sr-li dr">Amount: <span  className="sr-span">Rs:100</span></li>
-                  </ul>
-                  <div className="sr-div">
-                    <button className="sr-btn1">Make Payment</button>
-                  </div>
+               <div className="sr-3 text-center">
+                   <img src= {electrimg}  alt="image" />
                 </div>
               </Col>
             </Row>  

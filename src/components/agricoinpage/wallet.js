@@ -106,7 +106,7 @@ class Wallet extends React.Component {
         </Col>
         <Col md="6">
           <div className="sr-3">
-            <h4 className="sr-h">Recent Transaction </h4>
+            <h4 className="sr-h">Deposit Transaction </h4>
               <TableHistory table={table.length > 0 ? table : []}/>
           </div>
         </Col>

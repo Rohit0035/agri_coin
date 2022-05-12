@@ -31,7 +31,7 @@ class OrderRecharge extends React.Component {
         // //history.push("/cart");
         // history.push("/login-register");
  } else{
-  axios.get(`http://35.154.134.118/api/admin/getusertransaction/`+userInfo.walletId)
+  axios.get(`http://35.154.134.118:8000/admin/getusertransaction/`+userInfo.walletId)
   // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
   .then((response) => {
      console.log('@@@@transaction API',response.data.data);
@@ -59,7 +59,9 @@ class OrderRecharge extends React.Component {
         <li>Transaction ID : <span>{t.agent_id}</span></li>
         <li>Date : <span>{moment(table.createdAt).format("ll")}</span></li>
         <li>Amount : <span>{t.amount}</span></li>
-        <li>Service Name : <span>{t.recharge_type}</span></li>
+         {/* <li>Service Name : <span>{t.recharge_type}</span></li> */}
+        <li>Mobile Recharge : <span>{t.number}</span></li>
+        
         <li>operator : <span>{t.biller_code}</span></li>
         </ul>
        </div></div> 
@@ -102,10 +104,50 @@ class OrderRecharge extends React.Component {
                             {/* </ul> */}
                         {/* </div> 
                     </div> */}
-                   
-                   
-                   
-                   
+                    {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                     <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div> */}
+                    {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                    <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div> */}
+                    {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                       <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div> */}
+                    {/* <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">
+                        <div className="order-box">
+                            <ul>
+                                <li>Transaction ID : <span>323233</span></li>
+                                <li>Date : <span>05/02/2022</span></li>
+                                <li>Amount : <span>120</span></li>
+                                <li>Service Name : <span>mobile recharge</span></li>
+                                <li>operator : <span>Airtel</span></li>
+                            </ul>
+                        </div>
+                    </div> */}
                   
                    
                   </div>

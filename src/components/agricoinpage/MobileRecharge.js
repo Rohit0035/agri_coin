@@ -14,7 +14,7 @@ class MobileRecharge extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-     walletId:"",
+    //  walletId:"",
       circle_name:"",
       circle_code:"",
       circleN:[],
@@ -29,7 +29,7 @@ class MobileRecharge extends React.Component {
       plans:[],
       isPostpaidLn: true,
       status:"",
-      //  number : 9748876319
+      
       userData:{},
     };
   }
@@ -128,7 +128,6 @@ class MobileRecharge extends React.Component {
           console.log(response.data.STATUSMSG);
 
           this.setState({ responseData : response.data })
-          // swal("Successful!", "You clicked the button!", "success");
 
         })
         .catch((error) => {
@@ -162,11 +161,14 @@ class MobileRecharge extends React.Component {
         console.log(response.data);
         console.log(response.data.STATUSMSG);
         this.setState({ responseData : response.data })
-        swal("Successful!", "You clicked the button!", "success");
+        swal("Successful!", "Recharge Successful!", "success");
         this.props.history.push("/orderrecharge"); 
       })
+      
       .catch((error) => {
+        
         console.log(error.response);
+        swal("Error!", "Invalid!", "error");
       });
        }
       } 
@@ -176,7 +178,7 @@ class MobileRecharge extends React.Component {
     } 
 
   render() {
-const userData = this.state;
+// const userData = this.state;
 console.log(this.state.userData.walletId);
      let { isPostpaidLn } = this.state;
 
@@ -217,41 +219,14 @@ console.log(this.state.userData.walletId);
        <label    condition={!isPostpaidLn}>
              <button>Postpaid</button>
              </label>
-                  {/* {isPostpaidLn ? <Checkbox>Prepaid</Checkbox> : <Checkbox>Postpaid</Checkbox>} */}
-                    {/* <FormControlLabel
-                      control={<Checkbox defaultChecked />}
-                      label="Prepaid"
-                    />
-                  </div>
-                  <div className="int-box">
-                    <FormControlLabel control={<Checkbox />} label="Postpaid" /> */}
+               
                   </div>
                   <Col md="12"> 
-                    {/* <Input type="text"
-                        className="form-control"
-                        placeholder="Select Operator"
-                        /> */}
-                    {/* <Input
-                          type="select"
-                          name="service"
-                          value={this.state.service}
-                          onChange={this.changeHandler}
-                          defaultValue='jio'
-                        >
-                {this.state.allService.map((service) => (
-                  <>
-                    <option
-                      value={service.isoName}
-                      key={service.isoName}>
-                      {service.service + '('+ service.callingCodes[0]+')'+service.isoName}
-                    </option>
-                  </>
-                    
-                ))} 
-                </Input> */}
+                 
           <Col md="12">
-            <Input type="number"
+            <Input type="text"
                   name="CUSTNO"
+                  maxLength="10"
                   required
                   value={this.state.CUSTNO}
                   onChange={this.changeHandler}
@@ -281,18 +256,7 @@ console.log(this.state.userData.walletId);
         <br></br>
       </Col>
         <br></br>
-          {/* <Col md="12">
-            <Input 
-                className="form-control"
-                placeholder="Circle"
-                name="Circle"
-                type="text"
-                required
-                value={this.state.responseData?.state}
-                onChange={this.changeHandler}
-              />
-          </Col>
-          <br></br> */}
+      
           <Col md="12">     
             <select
                   type="select"
@@ -310,11 +274,7 @@ console.log(this.state.userData.walletId);
                   ))}
             </select> 
           </Col>
-          {/* <Select
-        //defaultValue={selectedOption}
-        //onChange={setSelectedOption}
-        options={options}
-      />   */}
+      
         <br></br>
         <Col md="12">
           <InputGroup>

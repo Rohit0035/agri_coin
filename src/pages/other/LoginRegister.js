@@ -92,7 +92,7 @@ export default class LoginRegister extends Component {
         //localStorage.setItem("authec", response.data.token);
         localStorage.setItem("auth-token", response.data.token);
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
-        swal("Success!", "Welcome to Soxycoin Services!", "success");
+        swal("Success!", "You clicked the button!", "success");
         this.props.history.push("/");
       })
       .catch((error) => {
@@ -117,27 +117,15 @@ export default class LoginRegister extends Component {
         this.setState({
           token: response.data.token,
         });
-        swal("Success!", "Welcome to Soxycoin Services", "success");
+        swal("Success!", " Register Successful Done!", "success");
         this.props.history.push("/");
       })
       .catch((error) => {
         console.log(error.response);
-          swal("Error!", " Wrong UserName or Password", "error");
+          swal("Error!", "Something went wrong", "error");
       });
 
-    // axios
-    //   .post("http://35.154.134.118/api/user/sendotp", {
-    //     mobile: this.state.mobile,
-    //     //customer_email: this.state.email,
-    //   })
-    //   .then((response) => {
-    //     console.log(response);
-    //     // localStorage.setItem("token", response.data.token);
-    //     // this.props.history.push("/");
-    //   })
-    //   .catch((error) => {
-    //     console.log(error.response);
-    //   });
+   
   };
   render() {
     // console.log(this.state.otp);
@@ -186,15 +174,10 @@ export default class LoginRegister extends Component {
                                     value={this.state.email}
                                     onChange={this.handlechange}
                                   />
-                                  {/* <input
-                                    type="number"
-                                    name="mobile"
-                                    placeholder="Mobile No"
-                                    value={this.state.mobile}
-                                    onChange={this.handlechange}
-                                  /> */}
+                                 
                                   <input
                                     type="password"
+                                    maxLength="8"
                                     name="password"
                                     placeholder="Password"
                                     value={this.state.password}
@@ -248,6 +231,7 @@ export default class LoginRegister extends Component {
                                   <input
                                     type="number"
                                     name="mobile"
+                                    maxLength="12"
                                     required
                                     placeholder="Enter Your Mobile No."
                                     value={this.state.mobile}
@@ -255,6 +239,7 @@ export default class LoginRegister extends Component {
                                   />
                                   <input
                                     type="password"
+                                    maxLength="8"
                                     name="password"
                                     required
                                     placeholder="Password"
@@ -264,6 +249,7 @@ export default class LoginRegister extends Component {
                                    <input
                                     type="password"
                                     name="cnfrmPassword"
+                                    maxLength="8"
                                     required
                                     placeholder="Confrim Password"
                                     value={this.state.cnfrmPassword}

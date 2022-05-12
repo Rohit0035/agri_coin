@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
+import alldth from '../../assets/img/alldth.png';
 import { Container, Row,  Col, Input, InputGroup, Form } from "reactstrap";
 import { Button } from "react-scroll";
 
@@ -31,6 +32,7 @@ const InternetBill = ({ data, spaceBottomClass }) => {
         <Container>
         <Row>
             <Col md="6">
+              <div className="text-box">
                 <Row>
                   <h4 className="sr-h4">DTH Recharge</h4>
                   <div className="sr-1">
@@ -65,19 +67,11 @@ const InternetBill = ({ data, spaceBottomClass }) => {
                     </Form>
                   </div>
                 </Row>
+              </div>
             </Col>
             <Col md="6">
-                <div className="sr-3">
-                   <h4 className="sr-h">Consumer Details</h4>
-                      <ul className="sr-ul">
-                      <li className="sr-li">DTH Number: <span className="sr-span">44545</span></li>
-                      <li  className="sr-li">Operator: <span  className="sr-span">Vodafone</span></li>
-                      <li  className="sr-li">Amount: <span  className="sr-span">100rs</span></li>
-                      <li  className="sr-li dr">Amount: <span  className="sr-span">Rs:100</span></li>
-                    </ul>
-                    <div className="sr-div">
-                        <button className="sr-btn1">Make Payment</button>
-                    </div>
+                <div className="sr-3 text-center">
+                    <img src= {alldth}  alt="image" />
                 </div>
             </Col>
         </Row>

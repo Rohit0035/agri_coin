@@ -16,9 +16,6 @@ export default class MyAccount extends Component {
     this.state = {
       firstname: "",
       lastname: "",
-      //email: "",
-      //mobile: "",
-
       address: "",
       locality: "",
       pincode: "",
