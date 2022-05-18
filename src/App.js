@@ -153,6 +153,7 @@ const HideShowDiv = lazy(() => import("./components/agricoinpage/HideShowDiv.js"
 const SoxyPayTab = lazy(() => import("./components/agricoinpage/SoxyPayTab.js"));
 const DepositList = lazy(() => import("./components/agricoinpage/DepositList.js"));
 const DepositPending = lazy(() => import("./components/agricoinpage/DepositPending.js"));
+const ComingSoon = lazy(() => import("./components/agricoinpage/ComingSoon.js"));
 
 
 
@@ -448,6 +449,10 @@ const App = (props) => {
                   <Route
                        path={process.env.PUBLIC_URL + "/DepositPending"}
                        component={DepositPending}
+                  />
+                   <Route
+                       path={process.env.PUBLIC_URL + "/ComingSoon"}
+                       component={ComingSoon}
                   />
                
                 {/* Shop pages */}

@@ -11,16 +11,15 @@ class Electricity extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-       code :"MAE",
+      code :"",
       account: "",
       AMTNO:'',
+      isElecBill : false,
+      isAmount : false,
       responseData : {},
-      
-  
-      
-      billAmount:"",
-  
+      billAmount:0,
       serviceR:[],
+      isCode:false
      
   };
 }
@@ -29,97 +28,102 @@ componentDidMount() {
     .get("http://35.154.134.118:8000/admin/electricity_operator/")
     .then((response) => {
     console.log(response.data.data);
+
     this.setState({ serviceR: response.data.data});
     })
       .catch((error) => {
-        console.log(error);
+        console.log(error.response);
       });
     }
     changeHandler = (e) => {
+      
       let inputtxt = 0;
       this.setState({ [e.target.name]: e.target.value });
-      
-      if(e.target.name === 'AMTNO'){
+
+      if(e.target.name === 'account'){
         inputtxt = e.target.value;
-
-        if (/^[1234][0-9]{9}$/.test(inputtxt)) {
-          this.setState({ isE_Bill : false, number : inputtxt });
-          
-          let payload = {
-            number : inputtxt
+        console.log(inputtxt)
+         if (/^[1234][0-9]{9}$/.test(inputtxt)) {
+          console.log('####',e.target.value)
+          this.setState({ isElecBill : false, account : inputtxt });
+          if(this.state.code === ""){
+            this.setState({ isCode : true })
+            return true;
           }
-   
-  //   axios
-  //   .post(`http://35.154.134.118:8000/admin/elec_paybill`)
-  //   .then((response) => {
-  //     console.log(response.data.data);
-  //     console.log(response.data.STATUSMSG);
-  //     if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
-  //        swal("Success!", "Recharge SuccessFull!", "success");
-  //      }
-  //      else {
-  //        swal("Error!", "Recharge UnsuccssFull!", "error");
-  //      }
-  //   })
-  // .catch((error) => {
-  //   console.log(error.response);
-  //  });
-axios
-.post(`http://35.154.134.118:8000/admin/fetch_Bill/`,payload)
-.then((response) => {
-  console.log(response.data.data);
-   console.log(response.data.STATUSMSG);
-   this.setState({ responseData : response.data,billAmount:response.data?.state })
-   
+          let payload = {
+            account : inputtxt,
+            code:this.state.code
+          }
+          axios
+          .post('http://35.154.134.118:8000/admin/fetch_Bill',payload)
+          
+          .then((response) => {
+            console.log(response.data);
+           
+            if(response.data.status === 'success'){
+              console.log(response.data.billAmount);
+              this.setState({billAmount : response.data.billAmount})
+            } else {
+              swal("Warning!", response.data.errortext, "warning");
+            }
+           
+
+          })
+          .catch((error) => {
+            console.log(error.response);
+          });
+  
+            return true;
+        }else{
+          this.setState({ isElecBill : true });        
+          return false;
+        }}
+    };
 
 
-})
-.catch((error) => {
-console.log(error.response);
-});
-
-return true;
-}else{
-  this.setState({ isE_Bill : true });        
-  return false;
-}}
-  };
-  onRechargeSubmit = (e) =>{
-    if(this.state.AMTNO === '' || this.state.AMTNO === 0 ){
-     this.setState({ isAmountVal : true });
-     return true;
-    } else{
-     let payload = {
-       
-       walletId :this.state.userData.walletId,
-         amount : this.state.AMTNO, //parseInt(this.state.number)
-         biller_code : this.state.responseData?.code,
-         number : this.state.number //parseInt(this.state.number)
-     
-     }
-     axios
-      .post(`http://35.154.134.118:8000/admin/fetch_Bill
-      `, payload)
-      
-      .then((response) => {
-        console.log(response.data);
-        console.log(response.data.STATUSMSG);
-        this.setState({ responseData : response.data })
-        swal("Successful!", "Recharge Successful!", "success");
-        this.props.history.push("/orderrecharge"); 
-      })
-      
-      .catch((error) => {
+    onRechargeSubmit =() => {
+      // if(this.state.AMTNO === '' || this.state.AMTNO === 0 ){
+      //   this.setState({ isAmountVal : true });
+      //   return true;
+      //  } else{
+      let payload = {
         
-        console.log(error.response);
-        swal("Error!", "Invalid!", "error");
-      });
-       }
-      } 
+        walletId :this.state.userData.walletId,
+        email : this.state.email,
+        account : this.state.account,
+        electricity_code : this.state.electricity_code,
+        code:this.state.code,
+        amount : this.state.amount
+      }
 
-    updateItem = (value) => {
-       console.log('Selected Value::',value); 
-    } 
+    
+     
+    axios
+    .post(`http://35.154.134.118:8000/admin/elec_paybill/`,payload)
+    .then((response) => {
+      console.log(response.data.data);
+      console.log(response.data.STATUSMSG);
+      if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
+         swal("Success!", "Recharge SuccessFull!", "success");
+       }
+       else {
+         swal("Error!", "Recharge UnsuccssFull!", "error");
+       }
+    })
+  .catch((error) => {
+    console.log(error.response);
+   });
+
+// }
+} 
+
+updateItem = (value) => {
+ console.log('Selected Value::',value); 
+} 
+
+
+
+
 render() {
 
   return (
@@ -149,33 +153,35 @@ render() {
           <Row>
             <h4 className="sr-h4">Pay For Electricity</h4>
             <div className="sr-1">
-            <Form className="m-1" onSubmit={this.submitHandler}>
+            <Form className="m-1">
               <Col md="12">
                 <Input
                   type="select"
                   className="st-select"
-                  name="SERCODE"
-                  value={this.state.SERCODE}
+                  name="code"
+                  value={this.state.code}
                   onChange={this.changeHandler}>
                   <option>Choose an operator</option>
                   {this.state.serviceR?.map((servicep) => (
                   <option value={servicep.code} key={servicep._id}>
                   {servicep.service}
                   </option>))}
-                </Input>   
+                </Input> 
+                <span style={{color : 'red'}}>{this.state.isCode ? 'Please select operator' : null}</span>  
                 </Col>
                 <br></br>
                 <Col md="12">
                   <Input type="number"
-                    name="CUSTNO"
+                    name="account"
                     required
-                    value={this.state.CUSTNO}
+                    value={this.state.account}
                     onChange={this.changeHandler}
                     className="form-control"
                     placeholder="Consumer Number"
                   />
-                   <span style={{color : 'red'}}>{this.state.isE_Bill ? 'Please enter 10 digits IVRS number' : null}</span>
+                   <span style={{color : 'red'}}>{this.state.isElecBill ? 'Please enter 10 digits IVRS number' : null}</span>
                 </Col>
+
                 <small style={{color:"red",}}>(Subscriber ID starts with 1 and is 10 digits long. To locate it, press the home button on remote.)</small>
                 <br></br>
                 <br></br>
@@ -186,10 +192,12 @@ render() {
                       <Input
                         className="form-control"
                         placeholder="Amount"
+                        value={this.state.billAmount}
                         name="AMTNO"
+                        type="number"
                         onChange={this.changeHandlerAmount}
                       />
-                    
+                      <span style={{color : 'red'}}>{this.state.isAmountVal ? 'Please enter recharge amount' : null}</span>
             
                   </InputGroup>
                 </Col>

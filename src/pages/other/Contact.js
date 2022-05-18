@@ -67,12 +67,12 @@ const Contact = ({ location }) => {
                     <div className="contact-info-dec">
                       <p>
                         <a href="mailto:yourname@email.com">
-                          yourname@email.com
+                        support@gynysys.com
                         </a>
                       </p>
                       <p>
                         <a href="https://yourwebsitename.com">
-                          yourwebsitename.com
+                        support@gynysys.com
                         </a>
                       </p>
                     </div>
@@ -83,7 +83,9 @@ const Contact = ({ location }) => {
                     </div>
                     <div className="contact-info-dec">
                       <p>Address goes here, </p>
-                      <p>street, Crossroad 123.</p>
+                      <h6>Corporate Office</h6>
+                      <p>
+10, Glasford Street, Tooting Broadway, London-SW179HN,United Kingdom.</p>
                     </div>
                   </div>
                   <div className="contact-social text-center">

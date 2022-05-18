@@ -91,22 +91,28 @@ class HomeCategory extends React.Component {
                   </Link>
                 </li>
                 <li className="st-1">
-                  <Link to={process.env.PUBLIC_URL + "/gass"}>
-                    {string["gass"]}
+                  {/* <Link to={process.env.PUBLIC_URL + "/gass"}>
+                    {string["gass"]} */}
+                    <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-safe circle-1" />
-                    <p>Gass</p>
+                    <p>Gas</p>
                   </Link>
                 </li>
                 <li className="st-1">
-                  <Link  to={process.env.PUBLIC_URL + "/water"}>
-                    {string["water"]}
+                  {/* <Link  to={process.env.PUBLIC_URL + "/water"}>
+                    {string["water"]} */}
+                    <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-paint-bucket circle-1" />
                     <p>Water</p>
                   </Link>
                 </li>
                 <li className="st-1">
-                  <Link to={process.env.PUBLIC_URL + "/internet"}>
-                  {string["internet"]}
+                  {/* <Link to={process.env.PUBLIC_URL + "/internet"}>
+                  {string["internet"]} */}
+                   <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-global circle-1" />
                     <p>Broadband Bill</p>
                   </Link>
@@ -129,21 +135,25 @@ class HomeCategory extends React.Component {
                 </li>
 
                 <li className="st-1">
-                  <Link>
+                <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-clock circle-1" />
                     <p>Airtime</p>
                   </Link>
                 </li>
                 
                 <li className="st-1">
-                  <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
-                    {string["shoppingbill"]}
+                  {/* <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
+                    {string["shoppingbill"]} */}
+                     <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-ticket circle-1" />
                     <p>Train Ticket</p>
                   </Link>
                 </li>
                 <li className="st-1">
-                  <Link>
+                <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
+                    {string["ComingSoon"]}
                     <i className="pe-7s-ticket circle-1" />
                     <p>Bus Ticket</p>
                   </Link>

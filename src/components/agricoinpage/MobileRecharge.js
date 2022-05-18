@@ -179,7 +179,7 @@ class MobileRecharge extends React.Component {
 
   render() {
 // const userData = this.state;
-console.log(this.state.userData.walletId);
+// console.log(this.state.userData.walletId);
      let { isPostpaidLn } = this.state;
 
     const {plans} =this.state;

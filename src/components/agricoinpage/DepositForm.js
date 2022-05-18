@@ -199,7 +199,7 @@ render() {
                          <option>SELECT PAYMENT METHOD</option>
                          <option>USDT</option>
                          <option>TRX</option>
-                         <option>soxypay</option>
+                         <option>SOXY</option>
                       </select>
                     </div> 
                     <div className="qr-box">

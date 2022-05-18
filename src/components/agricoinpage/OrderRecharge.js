@@ -59,8 +59,11 @@ class OrderRecharge extends React.Component {
         <li>Transaction ID : <span>{t.agent_id}</span></li>
         <li>Date : <span>{moment(table.createdAt).format("ll")}</span></li>
         <li>Amount : <span>{t.amount}</span></li>
+        <li>Type : <span>{t.electricity_code?.type}</span></li>
+
+
          {/* <li>Service Name : <span>{t.recharge_type}</span></li> */}
-        <li>Mobile Recharge : <span>{t.number}</span></li>
+        {/* <li> Recharge : <span>{t.number}</span></li> */}
         
         <li>operator : <span>{t.biller_code}</span></li>
         </ul>

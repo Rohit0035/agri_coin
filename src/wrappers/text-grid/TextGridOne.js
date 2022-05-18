@@ -16,48 +16,40 @@ const TextGridOne = ({ spaceBottomClass }) => {
           <Jumbotron className="shadow p-4 mb-5 bg-white rounded mt-50">
             <div className="col-sm-12">
               <h2>About us</h2>
+             
               <p>
-                Soxycoin – Your one-stop solution to quench your shopping needs!
-              </p>
-              <p>
-                Say goodbye to the days of perpetually waiting for the apparel
-                you set your eyes on! Festival, dates, weddings, or simply a
-                casual get-away, be at your best from the purely desi lanes! We
-                are a cutting-edge platform for customers to rediscover the
-                local Indian apparel markets. True to our name, “Buynaa”, we
-                also deliver an e-commerce marketplace for you to shop online
-                seamlessly and get your clothes delivered to you on the same day
-                or the next! The essence of buying clothes is much better when
-                you can touch and feel the softness of cotton or satin, and
-                more! Hence, we have designed our marketplace to help you visit
-                the local stores for a mesmerizing experience. The ease of
-                returns and refunds are just a cherry on top of the unique
-                shopping experience we intend to provide to you!
+              SOXY COIN is not only an emerging crypto currency platform that is built on TRC 20 (Tron Smart chain) and BEP-20 (Binance Chain) but also has features of transparency and Initial coin distribution which we believe is crucial for the long-term feasibility and decentralization. SOXY COIN is complete all in one ecosystem that contains the Staking, Launchpad, NFT marketplace, and swapping facility under an umbrella. SOXY COIN is also using in utility services for over 4r5 countries in phase wise offering through SOXY COIN. SOXY also bringing exchange services. SOXY COIN used block chain technology to make its NFT marketplace Unique. Community members are also involved in decision making to make feel true ownership of their asset. To connect the different block chain platform under an umbrella SOXY COIN started a platform SOXYBRIDGE & By using SOXY SWAP digital asset can be converted into desired form.
+Martin Dewis & Williams are the founders of Soxy. Both together have decided to develop the community through Gynysys partner program. Martin is an experienced market analyst with 10years of traditional   business and crypto currency portfolio management. Martin has done his Masters in Computer science with specialization in blockchain technology. With very rich experience in blockchain and      crypto, he turned into an expert in crypto trading.
+Williams has done his masters in Cyber Security and is experienced in researching, execution of innovative new products in Block Chain & Crypto currency for the last 9 years. William’s passion is transformation of life through technology. Moved by confidence and trusted team and as the crypto is the future, both the founders have planned to provide financial freedom for each and every one through crypto currency in many countries. Martin has decided to make SOXY household name worldwide.
               </p>
               <p></p>
             </div>
           </Jumbotron>
           <div className="row">
-            <div className="col-sm-6 ">
+            <div className="col-sm-12 ">
                <div className="shadow p-4 mb-5 mr-2 bg-white rounded">
               <h2>Our Vision</h2>
               <p>
-                We aim to become India’s one stop platform for all the apparel
-                needs be it products or services.
+             
+              <p>
+              We aspire to put “crypto currency in every portfolio.”
+              </p> We envision a world where
+wealth-building strategies that were once only accessible to affluent individuals
+become available to everyone, transferring the power over our financial systems back to the people. SOXY COIN is going to create a revolutionary ecosystem to bring more people into digital assets, helping to earn a passive income through redistribution / reflection, by holding the Lift token long term, along with maintaining their privacy, security, power, and autonomy.
+We strive to create an ecosystem based on sound monetary policies, with a sound and solid decentralized foundation, that should be expected with the Lift coin digital asset
               </p>
               </div>
             </div>
-            <div className="col-sm-6">
+            <div className="col-sm-12">
                <div className=" shadow p-4 mb-5 mr-2 bg-white rounded">
               <h2>Our Mission</h2>
               <p>
-                We are on a mission to provide a solution for a hassle-free
-                shopping experience by knitting 
+              SOXY utility will become a powerful weapon for normal household people globally for utilizing day to day needs .
               </p>
                </div>
             </div>
           </div>
-          <div className="row">
+          {/* <div className="row">
             <div className="col-sm-12 shadow p-4 mb-5 bg-white rounded">
               <h2>Our Story From Scratch</h2>
               <p>
@@ -85,7 +77,7 @@ const TextGridOne = ({ spaceBottomClass }) => {
                 they deserve.
               </p>
             </div>
-          </div>
+          </div> */}
         </div>
         {/* <div className="row" >
           {textGridData &&

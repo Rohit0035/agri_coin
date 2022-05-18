@@ -44,17 +44,19 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/gass"}>
+                         {/* <Link to={process.env.PUBLIC_URL + "/gass"}> */}
+                         <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                             <div className="soxiservice-box">
                                     {string["electricity"]}
                                     <i className="pe-7s-safe " />
-                                    <h4>Gass</h4>
+                                    <h4>Gas</h4>
                                   
                             </div>
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/water"}>
+                         {/* <Link to={process.env.PUBLIC_URL + "/water"}> */}
+                         <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                           <div className="soxiservice-box">
                                   {string["electricity"]}
                                    <i className="pe-7s-paint-bucket " />
@@ -63,7 +65,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/internet"}>
+                         {/* <Link to={process.env.PUBLIC_URL + "/internet"}> */}
+                         <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                           <div className="soxiservice-box">
                                   {string["electricity"]}
                                    <i className="pe-7s-global" />
@@ -82,7 +85,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/internetbill"}>
+                         <Link to={process.env.PUBLIC_URL + "/internetbill"}> 
+                         
                             <div className="soxiservice-box">
                                     {string["electricity"]}
                                     <i className="pe-7s-airplay" />
@@ -92,7 +96,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/electricity"}>
+                         {/* <Link to={process.env.PUBLIC_URL + "/electricity"}> */}
+                         <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                               <div className="soxiservice-box">
                                       {string["electricity"]}
                                       <i className="pe-7s-clock" />
@@ -102,7 +107,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                       </div>
                       
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/shoppingbill"}>
+                         {/* <Link to={process.env.PUBLIC_URL + "/shoppingbill"}> */}
+                         <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                               <div className="soxiservice-box">
                                       {string["electricity"]}
                                       <i className="pe-7s-ticket" />
@@ -111,7 +117,8 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                        <Link to={process.env.PUBLIC_URL + "/electricity"}>
+                        {/* <Link to={process.env.PUBLIC_URL + "/electricity"}> */}
+                        <Link to={process.env.PUBLIC_URL + "/ComingSoon"}>
                           <div className="soxiservice-box">
                                   {string["electricity"]}
                                    <i className="pe-7s-ticket" />

@@ -92,7 +92,7 @@ export default class LoginRegister extends Component {
         //localStorage.setItem("authec", response.data.token);
         localStorage.setItem("auth-token", response.data.token);
         localStorage.setItem("userInfo", JSON.stringify(userInfo));
-        swal("Success!", "You clicked the button!", "success");
+        swal("Success!", "Login Successful Done!", "success");
         this.props.history.push("/");
       })
       .catch((error) => {
