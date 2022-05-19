@@ -87,7 +87,7 @@ class Wallet extends React.Component {
       <Container>
         <Row>
           <Col md="6">
-            <div className="sr-3">
+            <div className="sr-3 mb-4">
               <h4 className="sr-h">Wallet Details </h4>
                 <ul className="sr-ul">
                   <li  className="sr-li dr">Available Wallet Balance : <span  className="sr-span">INR:{this.state.walletAmount}</span></li>

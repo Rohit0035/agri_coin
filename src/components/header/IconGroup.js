@@ -13,6 +13,7 @@ const IconGroup = ({
   compareData,
   deleteFromCart,
   iconWhiteClass,
+  
 }) => {
   const handleClick = (e) => {
     e.currentTarget.nextSibling.classList.toggle("active");
@@ -75,6 +76,27 @@ const IconGroup = ({
       fetchWish();
     }
   }, []);
+  
+// account
+const [customer, setCustomer] = useState([]);
+const fetchCustomer = async () => {
+  const { data } = await Axios.get(
+    "http://35.154.134.118/api/user/getonecustomer",
+    {
+      headers: {
+        "auth-token": localStorage.getItem("auth-token"),
+      },
+    }
+  );
+  const customer = data.data;
+  setCustomer(customer);
+  console.log(customer);
+};
+useEffect(() => {
+  if (localStorage.getItem("auth-token")) {
+    fetchCustomer();
+  }
+}, []);
 
   return (
     <div
@@ -96,10 +118,11 @@ const IconGroup = ({
       </div> */}
       <div className="same-style account-setting  d-lg-block">
         <button
-          className="account-setting-active"
+          className="account-setting-active usricon"
           onClick={(e) => handleClick(e)}
         >
-          <i className="pe-7s-user-female" />
+           <i className="pe-7s-user usn-1" />
+          <span> {customer.firstname}</span>
         </button>
         <div className="account-dropdown">
           <ul>

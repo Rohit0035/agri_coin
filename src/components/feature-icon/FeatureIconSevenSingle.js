@@ -3,7 +3,7 @@ import React from "react";
 
 const FeatureIconSevenSingle = ({ data, spaceBottomClass, textAlignClass }) => {
   return (
-    <div className="col-md-4 mb-2">
+    <div className="col-md-4 mb-4">
       <div className="icon-features">
       <div
         className={`support-wrap-6 support-shape ${
@@ -11,8 +11,8 @@ const FeatureIconSevenSingle = ({ data, spaceBottomClass, textAlignClass }) => {
         } ${textAlignClass ? textAlignClass : ""}`}
       >
         <div className="support-content-6">
-          <img src={process.env.PUBLIC_URL + data.image} alt="" />
-          <h5>{data.title}</h5>
+          <img src={process.env.PUBLIC_URL + data.image} className="coinimg"  alt="" width={100}  />
+          <h5 className="trx-bold">{data.title}</h5>
           <p>{data.subtitle}</p>
         </div>
       </div>

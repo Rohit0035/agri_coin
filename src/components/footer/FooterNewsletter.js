@@ -19,7 +19,7 @@ const FooterNewsletter = ({
         <h3>SUBSCRIBE</h3>
       </div> */}
       <div className={`subscribe-style ${colorClass ? colorClass : ""}`}>
-        <p>Get E-mail updates about our latest shop and special offers.</p>
+        <p>10, Glasford Street, Tooting Broadway, London-SW179HN,United Kingdom.</p>
         {/* subscribe email */}
         {/* <SubscribeEmail mailchimpUrl="" /> */}
       </div>

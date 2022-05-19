@@ -112,14 +112,14 @@ export default class MyAccount extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Flone | My Account</title>
+          <title>Soxycoin</title>
           <meta
             name="description"
             content="Compare page of flone react minimalist eCommerce template."
           />
         </MetaTags>
         <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>
-          Home
+          Home/ My Account
         </BreadcrumbsItem>
         {/* <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
         My Account
@@ -190,7 +190,6 @@ export default class MyAccount extends Component {
                                 <div className="billing-info">
                                   <label>Mobile Number</label>
                                   <input
-                                    readOnly
                                     type="number"
                                     name="mobile"
                                     value={this.state.mobile}
@@ -209,7 +208,7 @@ export default class MyAccount extends Component {
                       </Card.Body>
                       {/* </Accordion.Collapse> */}
                     </Card>
-                    <Card className="single-my-account mb-20">
+                    {/* <Card className="single-my-account mb-20">
                       <Card.Body>
                         <Form onSubmit={this.addAddress}>
                           <div className="myaccount-info-wrapper">
@@ -286,9 +285,9 @@ export default class MyAccount extends Component {
                           </div>
                         </Form>
                       </Card.Body>
-                      {/* </Accordion.Collapse> */}
-                    </Card>
-                    <Card className="single-my-account mb-20">
+                       </Accordion.Collapse>
+                    </Card> */}
+                    {/* <Card className="single-my-account mb-20">
                       <Card.Body>
                         <Form onSubmit={this.addAddress}>
                           <div className="myaccount-info-wrapper">
@@ -304,8 +303,8 @@ export default class MyAccount extends Component {
                           </div>
                         </Form>
                       </Card.Body>
-                      {/* </Accordion.Collapse> */}
-                    </Card>
+                       </Accordion.Collapse>
+                    </Card> */}
                   </div>
                 </div>
               </div>

@@ -295,7 +295,7 @@ i.pe-7s-phone.circle-1.active {
   }
  span {
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 800;
    }
 }
 
@@ -501,7 +501,38 @@ a.backdeposit {
     padding: 12px 24px;
     border-radius: 4px;
     display: inline-block;
-    margin-top: 16px;
+    margin-top: 20px;
+}
+// feature icon logo 
+h5.trx-bold {
+    font-size: 25px !important;
+    font-weight: 700 !important;
+}
+
+@keyframes spin {
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+  
+  img.coinimg:hover {
+    animation-name: spin;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  button.account-setting-active.usricon {
+    background: #000000  !important;
+    color: #fff;
+    font-weight: 500;
+    padding: 6px 8px;
+    border-radius: 100px;
+    margin-top: -12px;
+    font-size: 20px !important;
+}
+.header-right-wrap .same-style:hover > a, .header-right-wrap .same-style:hover > button {
+    color: #fff;
 }
 
 // media query css 17/3/22
@@ -553,13 +584,16 @@ a.backdeposit {
     img.stbrand {
         margin-top: 0px;
     }
-    .col-xl-3.col-lg-3.col-md-6.col-8.ts-2 {
+    .col-xl-4.col-lg-3.col-md-6.col-8.ts-2 {
         width: 100%;
     }
     .stick .logo, .stick .wt-text {
         margin-top: 0px;
     }
     .sr-3 img{
+        width: 100%;
+    }
+    .header-right-wrap {
         width: 100%;
     }
 }

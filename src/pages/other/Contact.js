@@ -57,7 +57,7 @@ const Contact = ({ location }) => {
                     </div>
                     <div className="contact-info-dec">
                       <p>+012 345 678 102</p>
-                      <p>+012 345 678 102</p>
+                      {/* <p>+012 345 678 102</p> */}
                     </div>
                   </div>
                   <div className="single-contact-info">
@@ -66,15 +66,15 @@ const Contact = ({ location }) => {
                     </div>
                     <div className="contact-info-dec">
                       <p>
-                        <a href="mailto:yourname@email.com">
+                        <a href="mailto:support@gynysys.com">
                         support@gynysys.com
                         </a>
                       </p>
-                      <p>
+                      {/* <p>
                         <a href="https://yourwebsitename.com">
                         support@gynysys.com
                         </a>
-                      </p>
+                      </p> */}
                     </div>
                   </div>
                   <div className="single-contact-info">
@@ -85,7 +85,7 @@ const Contact = ({ location }) => {
                       <p>Address goes here, </p>
                       <h6>Corporate Office</h6>
                       <p>
-10, Glasford Street, Tooting Broadway, London-SW179HN,United Kingdom.</p>
+                          10, Glasford Street, Tooting Broadway, London-SW179HN,United Kingdom.</p>
                     </div>
                   </div>
                   <div className="contact-social text-center">
