@@ -8,6 +8,7 @@ import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import { Form } from "reactstrap";
 import axios from "axios";
+import swal from "sweetalert";
 
 export default class MyAccount extends Component {
   constructor(props) {
@@ -21,6 +22,9 @@ export default class MyAccount extends Component {
       pincode: "",
       city: "",
       state: "",
+      password:"",
+      cnfrmPassword:""
+     
     };
   }
 
@@ -80,12 +84,20 @@ export default class MyAccount extends Component {
         },
       })
       .then((response) => {
-        console.log(response);
+        console.log(response.data.STATUSMSG);
+        if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
+          swal("Success!", "Account  Updated ", "success");
+        }
+        else {
+          swal("Error!", "Account Not Updated", "error");
+        }
       })
       .catch((error) => {
         console.log(error.response);
       });
+
   };
+
 
   addAddress = (e) => {
     e.preventDefault();
@@ -104,9 +116,28 @@ export default class MyAccount extends Component {
       });
   };
 
+  // editPassword = (e) => {
+  //   e.preventDefault();
+  //   console.log(this.state);
+  //   axios
+  //     .post("35.154.134.118:/api/user/changepass_user", this.state, {
+  //       headers: {
+  //         "auth-token": localStorage.getItem("auth-token"),
+  //       },
+  //     })
+  //     .then((response) => {
+  //       console.log(response);
+  //     })
+  //     .catch((error) => {
+  //       console.log(error.response);
+  //     });
+  // };
+
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
   };
+
+ 
 
   render() {
     return (
@@ -146,7 +177,7 @@ export default class MyAccount extends Component {
                         <Form onSubmit={this.submitHandler}>
                           <div className="myaccount-info-wrapper">
                             <div className="account-info-wrapper">
-                              <h4>My Account Information</h4>
+                              <h3>My Account Information</h3>
                             </div>
                             <div className="row">
                               <div className="col-lg-6 col-md-6">
@@ -200,7 +231,7 @@ export default class MyAccount extends Component {
                             </div>
                             <div className="billing-back-btn">
                               <div className="billing-btn">
-                                <button type="submit">Continue</button>
+                                <button type="submit">Submit</button>
                               </div>
                             </div>
                           </div>
@@ -208,6 +239,49 @@ export default class MyAccount extends Component {
                       </Card.Body>
                       {/* </Accordion.Collapse> */}
                     </Card>
+
+                    {/* <Card className="single-my-account mb-20">
+                      <Card.Body>
+                        <Form onSubmit={this.editPassword}>
+                          <div className="myaccount-info-wrapper">
+                            <div className="account-info-wrapper">
+                              <h3>Change Password</h3>
+                            </div>
+                            <div className="row">
+                              <div className="col-lg-6 col-md-6">
+                                <div className="billing-info">
+                                  <label>New Password</label>
+                                  <input
+                                    type="pasword"
+                                    name="password"
+                                    value={this.state.password}
+                                    onChange={this.changeHandler}
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-lg-6 col-md-6">
+                                <div className="billing-info">
+                                  <label>Confirm Password</label>
+                                  <input
+                                    type="password"
+                                    name="cnfrmPassword"
+                                    value={this.state.cnfrmPassword}
+                                    onChange={this.changeHandler}
+                                  />
+                                </div>
+                              </div>
+                             
+                            </div>
+                            <div className="billing-back-btn">
+                              <div className="billing-btn">
+                                <button type="submit">Submit</button>
+                              </div>
+                            </div>
+                          </div>
+                        </Form>
+                      </Card.Body>
+                      </Card>
+                   */}
                     {/* <Card className="single-my-account mb-20">
                       <Card.Body>
                         <Form onSubmit={this.addAddress}>

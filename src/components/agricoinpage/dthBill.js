@@ -69,10 +69,7 @@ class DthtBill extends React.Component {
                 console.log(response.data);
                 console.log(response.data.STATUSMSG);
               
-               
-            
               
-    
               })
               .catch((error) => {
                 console.log(error.response);
@@ -106,7 +103,6 @@ class DthtBill extends React.Component {
       
       .then((response) => {
         console.log(response.data.STATUSMSG);
-
         this.setState({ responseData : response.data })
 
       })
@@ -125,7 +121,7 @@ class DthtBill extends React.Component {
   
 
 
-        onRechargeSubmit =() => {
+    onRechargeSubmit =() => {
      
           if(this.state.AMTNO === '' || this.state.AMTNO === 0 ){
             this.setState({ isAmountVal : true });
@@ -133,8 +129,6 @@ class DthtBill extends React.Component {
            } else{
             let payload = {
         
-     
-      
         walletId :this.state.userData.walletId,
         dth_code :this.state.responseData?.dth_code,
         amount: this.state.AMTNO,
