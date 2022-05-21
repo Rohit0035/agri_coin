@@ -535,6 +535,11 @@ h5.trx-bold {
     color: #fff;
 }
 
+// dth logo
+
+img.dthlogo {
+    margin-top: 28px;
+}
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {
@@ -596,4 +601,9 @@ h5.trx-bold {
     .header-right-wrap {
         width: 100%;
     }
+    ul.sr-ul {
+        padding: 50px 20px;
+        line-height: 30px;
+    }
+       
 }

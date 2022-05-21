@@ -127,8 +127,8 @@ class HomeCategory extends React.Component {
                 </li>
 
                 <li className="st-1">
-                  <Link to={process.env.PUBLIC_URL + "/internetbill"}>
-                    {string["internetbill"]}
+                  <Link to={process.env.PUBLIC_URL + "/dthbill"}>
+                    {string["dthbill"]}
                     <i className="pe-7s-airplay circle-1" />
                     <p>DTH</p>
                   </Link>

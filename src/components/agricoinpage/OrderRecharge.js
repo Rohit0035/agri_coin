@@ -12,8 +12,11 @@ import { Col, Container } from "reactstrap";
 
 import moment from "moment";
 import axios from "axios";
+import { Link } from "react-router-dom";
+
 class OrderRecharge extends React.Component {
   
+
   constructor(props) {
     super(props)
     this.state = {
@@ -22,7 +25,7 @@ class OrderRecharge extends React.Component {
     
   }  
 
-    componentDidMount() {
+ componentDidMount() {
       let userInfo ={};
       userInfo = JSON.parse( localStorage.getItem('userInfo') );
 
@@ -42,9 +45,9 @@ class OrderRecharge extends React.Component {
 
   });
  }
+   
+ }
 
-      
-    }
 
   render() { 
     const {table} = this.state;
@@ -156,7 +159,8 @@ class OrderRecharge extends React.Component {
                   </div>
 
                   {/* blog pagination */}
-                  <BlogPagination />
+                   <BlogPagination />
+             
                 </div>
               </div>
             </div>

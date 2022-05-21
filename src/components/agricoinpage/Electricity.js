@@ -149,7 +149,7 @@ render() {
     <Container>
       <Row>
         <Col md="6">
-         <div className="text-box">
+         <div className="text-box mb-30">
           <Row>
             <h4 className="sr-h4">Pay For Electricity</h4>
             <div className="sr-1">

@@ -131,7 +131,7 @@ const Checkout = lazy(() => import("./pages/other/Checkout"));
 const NotFound = lazy(() => import("./pages/other/NotFound"));
 
 // agricoinpages
-const InternetBill = lazy(() => import("./components/agricoinpage/InternetBill.js"));
+const DthBill = lazy(() => import("./components/agricoinpage/dthBill.js"));
 const Electricity = lazy(() => import("./components/agricoinpage/Electricity.js"));
 const Gass = lazy(() => import("./components/agricoinpage/gass.js"));
 const Internet = lazy(() => import("./components/agricoinpage/Internet.js"));
@@ -359,9 +359,10 @@ const App = (props) => {
                 {/* agriconpagesroute */}
 
                 <Route
-                  path={process.env.PUBLIC_URL + "/internetbill"}
-                  component={InternetBill}
+                  path={process.env.PUBLIC_URL + "/dthbill"}
+                  component={DthBill}
                 />
+               
                  <Route
                   path={process.env.PUBLIC_URL + "/shoppingbill"}
                   component={shoppingBill}

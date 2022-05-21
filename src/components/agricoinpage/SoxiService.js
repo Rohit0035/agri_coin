@@ -85,7 +85,7 @@ const SoxiService = ({ data, spaceBottomClass }) => {
                           </Link> 
                       </div>
                       <div className="col-lg-3 col-md-3 col-sm-6">
-                         <Link to={process.env.PUBLIC_URL + "/internetbill"}> 
+                         <Link to={process.env.PUBLIC_URL + "/dthbill"}> 
                          
                             <div className="soxiservice-box">
                                     {string["electricity"]}
