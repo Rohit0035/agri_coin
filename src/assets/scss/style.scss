@@ -87,7 +87,7 @@ li.st-1 {
       transform: rotateZ(0);
     }
   }
-  
+
 .circle-1:hover{
     background-color: #000;
     color: #fff;
@@ -534,17 +534,32 @@ h5.trx-bold {
     font-weight: 700 !important;
 }
 
-@keyframes spin {
-    100% {
-      transform: rotate(360deg);
+@keyframes wiggleq {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
     }
   }
   
-  img.coinimg:hover {
-    animation-name: spin;
-    animation-duration: 0.5s;
-    animation-timing-function: linear;
-    animation-iteration-count: infinite;
+  img.coinimg {
+    animation: wiggleq 5s linear infinite;
   }
 
   button.account-setting-active.usricon {
