@@ -61,8 +61,33 @@ li.st-1 {
     padding: 6px;
     font-weight: 600;
     margin-bottom: 10px;
-   
+    animation: wiggle 2s linear infinite;
 }
+
+@keyframes wiggle {
+    0%, 7% {
+      transform: rotateZ(0);
+    }
+    15% {
+      transform: rotateZ(-15deg);
+    }
+    20% {
+      transform: rotateZ(10deg);
+    }
+    25% {
+      transform: rotateZ(-10deg);
+    }
+    30% {
+      transform: rotateZ(6deg);
+    }
+    35% {
+      transform: rotateZ(-4deg);
+    }
+    40%, 100% {
+      transform: rotateZ(0);
+    }
+  }
+  
 .circle-1:hover{
     background-color: #000;
     color: #fff;
