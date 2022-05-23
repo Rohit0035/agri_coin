@@ -118,6 +118,8 @@ const faqPage = lazy(() => import("./wrappers/myPage/FaqPage"));
 const privacyPolicy = lazy(() => import("./wrappers/myPage/privacyPolicy"));
 const MyAccount = lazy(() => import("./pages/other/MyAccount"));
 const LoginRegister = lazy(() => import("./pages/other/LoginRegister"));
+const ForgotPassword = lazy(() => import("./pages/other/ForgotPassword"));
+const PinForgotpass = lazy(() => import("./pages/other/PinForgotpass"));
 const Step = lazy(() => import("./pages/other/Step"));
 const Phone = lazy(() => import("./pages/other/Phone"));
 const Otp = lazy(() => import("./pages/other/Otp"));
@@ -584,6 +586,14 @@ const App = (props) => {
                 <Route
                   path={process.env.PUBLIC_URL + "/login-register"}
                   component={LoginRegister}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/ForgotPassword"}
+                  component={ForgotPassword}
+                />
+                <Route
+                  path={process.env.PUBLIC_URL + "/PinForgotpass"}
+                  component={PinForgotpass}
                 />
                 <Route
                   path={process.env.PUBLIC_URL + "/step"}

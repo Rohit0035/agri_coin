@@ -142,6 +142,11 @@ useEffect(() => {
             ) : (
               <>
                 <li>
+                  <Link>
+                    UserId :  <span className="usid">{customer.customerId}</span>
+                  </Link>
+                </li>
+                <li>
                   <Link to={process.env.PUBLIC_URL + "/myOrder"}>My Order</Link>
                 </li>
                 <li>

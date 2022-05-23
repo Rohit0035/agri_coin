@@ -26,7 +26,7 @@ const ServiceAgricoin = ({ data, spaceBottomClass }) => {
                         </Col>
                         <Col md="10">
                            <h3>Digital Service</h3>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores soluta et debitis facere architecto fugit. Quod, minus earum. Dolore veritatis tempora..</p>
+                           <p>SOXY introduced digital services worldwide through SOXY Crypto currency for using various kinds of Day-to-day digital Services. Enhanced APi were used to fetch accurate information at a quicker response were enabled. </p>
                         </Col>
                      </Row>
                  </Card>
@@ -41,7 +41,7 @@ const ServiceAgricoin = ({ data, spaceBottomClass }) => {
                         </Col>
                         <Col md="10">
                            <h3>EMI Payments</h3>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores soluta et debitis facere architecto fugit. Quod, minus earum. Dolore veritatis tempora..</p>
+                           <p>SOXY can also be used to paying EMI payments of Housing Loan EMI’s, Vehicle loan EMI’s, General Loans EMI’s. This will make user to utilize the SOXY crypto currency very effectively. Thus, making entire world EMI Services at a single click with SOXY. </p>
                         </Col>
                      </Row>
                  </Card>
@@ -56,7 +56,7 @@ const ServiceAgricoin = ({ data, spaceBottomClass }) => {
                         </Col>
                         <Col md="10">
                            <h3>Bill Payments</h3>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores soluta et debitis facere architecto fugit. Quod, minus earum. Dolore veritatis tempora..</p>
+                           <p>Billpayments:  with the use of SOXY Crypto currency user can pay various bill payments like Electricity, Gas, etc….and much more. All relevant user details based on their Unique number; the required outstanding’s will be displayed. Thus, make user hassle free to utilise the services.</p>
                         </Col>
                      </Row>
                  </Card>
@@ -71,7 +71,7 @@ const ServiceAgricoin = ({ data, spaceBottomClass }) => {
                         </Col>
                         <Col md="10">
                            <h3>Phone Recharge And DTH</h3>
-                           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores soluta et debitis facere architecto fugit. Quod, minus earum. Dolore veritatis tempora..</p>
+                           <p>SOXY introduced Mobile Recharge Services for both prepaid and post-paid worldwide through SOXY Crypto currency for using various kinds of mobile payments. DTH API were also developed to fetch accurate information for paying DTH Bills operator wise. Thus, gives soxy user a comfortness of paying Mobile bills and DTH bills.</p>
                         </Col>
                      </Row>
                  </Card>

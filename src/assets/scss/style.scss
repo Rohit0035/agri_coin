@@ -144,6 +144,7 @@ section.srevicegrid p{
     border: none;
     margin-top: 20px;
     box-shadow: 0 25px 70px rgba(176, 218, 166, 0.5);
+    height: 280px;
 }   
 
 .st-card.card h3{
@@ -580,6 +581,31 @@ h5.trx-bold {
 img.dthlogo {
     margin-top: 28px;
 }
+
+// forgetpassword
+a.login-toggle-btn.fgtbtn {
+    float: right;
+    background: #f2f2f2;
+    padding: 8px !important;
+    color: #000;
+    border-radius: 3px;
+}
+.resetpass {
+    width: 50%;
+    text-align: center;
+    margin: 0 auto;
+    background: #cccccc26;
+    box-shadow: 0 4px 8px 0 rgb(0 0 0 / 20%), 0 6px 20px 0 rgb(0 0 0 / 19%);
+    padding: 30px;
+
+    h3{
+       margin-bottom: 20px;
+    }
+}
+span.usid {
+    font-weight: 700;
+}
+
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {
@@ -644,6 +670,12 @@ img.dthlogo {
     ul.sr-ul {
         padding: 50px 20px;
         line-height: 30px;
+    }
+    .st-card.card{
+        height: auto;
+    }
+    .resetpass {
+        width: 100%;
     }
        
 }

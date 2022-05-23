@@ -177,7 +177,7 @@ export default class LoginRegister extends Component {
                                  
                                   <input
                                     type="password"
-                                    maxLength="8"
+                                    maxLength={8}
                                     name="password"
                                     placeholder="Password"
                                     value={this.state.password}
@@ -189,6 +189,9 @@ export default class LoginRegister extends Component {
                                     <button type="submit">
                                       <span>Login</span>
                                     </button>
+                                    <Link to="/PinForgotpass" className="login-toggle-btn fgtbtn">
+                                         Forget Password   
+                                     </Link>
                                   </div>
                                 </form>
                               </div>
@@ -239,7 +242,8 @@ export default class LoginRegister extends Component {
                                   />
                                   <input
                                     type="password"
-                                    maxLength="8"
+                                    minLength={6}
+                                    maxLength={8}
                                     name="password"
                                     required
                                     placeholder="Password"

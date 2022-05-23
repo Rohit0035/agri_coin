@@ -183,7 +183,7 @@ render() {
                     <div className="col-lg-12 mb-3">
                      <input
                          name="reqamount"
-                         placeholder="HASHTAG*"
+                         placeholder="Deposit Crypto Amount*"
                          type="number"
                          required
                          value={this.state.reqamount}

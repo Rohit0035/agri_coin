@@ -9,6 +9,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import { Form } from "reactstrap";
 import axios from "axios";
 import swal from "sweetalert";
+// import { Button } from "react-scroll";
 
 export default class MyAccount extends Component {
   constructor(props) {
@@ -23,8 +24,8 @@ export default class MyAccount extends Component {
       city: "",
       state: "",
       password:"",
-      cnfrmPassword:""
-     
+      cnfrmPassword:"",
+      oldPassword:""
     };
   }
 
@@ -43,6 +44,7 @@ export default class MyAccount extends Component {
           lastname: response.data.data.lastname,
           email: response.data.data.email,
           mobile: response.data.data.mobile,
+
         });
         // this.state
         console.log(this.state);
@@ -116,22 +118,29 @@ export default class MyAccount extends Component {
       });
   };
 
-  // editPassword = (e) => {
-  //   e.preventDefault();
-  //   console.log(this.state);
-  //   axios
-  //     .post("35.154.134.118:/api/user/changepass_user", this.state, {
-  //       headers: {
-  //         "auth-token": localStorage.getItem("auth-token"),
-  //       },
-  //     })
-  //     .then((response) => {
-  //       console.log(response);
-  //     })
-  //     .catch((error) => {
-  //       console.log(error.response);
-  //     });
-  // };
+   editPassword = (e) => {
+    e.preventDefault();
+     console.log(this.state);
+     axios
+       .post("http://35.154.134.118/api/user/updatePassword", this.state, {
+        headers: {
+          "auth-token": localStorage.getItem("auth-token"),
+         },
+       })
+      .then((response) => {
+        console.log(response.data.STATUSMSG);
+        if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
+          swal("Success!", "Password Updated Successfully.. ", "success");
+        }
+        else {
+          swal("Error!", "Password Not Updated", "error");
+        }
+      })
+       .catch((error) => {
+        console.log(error.response);
+        swal("Error!", "Password Not Match...", "error");
+      });
+  };
 
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -228,6 +237,7 @@ export default class MyAccount extends Component {
                                   />
                                 </div>
                               </div>
+                             
                             </div>
                             <div className="billing-back-btn">
                               <div className="billing-btn">
@@ -240,7 +250,7 @@ export default class MyAccount extends Component {
                       {/* </Accordion.Collapse> */}
                     </Card>
 
-                    {/* <Card className="single-my-account mb-20">
+                     <Card className="single-my-account mb-20">
                       <Card.Body>
                         <Form onSubmit={this.editPassword}>
                           <div className="myaccount-info-wrapper">
@@ -250,9 +260,20 @@ export default class MyAccount extends Component {
                             <div className="row">
                               <div className="col-lg-6 col-md-6">
                                 <div className="billing-info">
+                                  <label>Old Password</label>
+                                  <input
+                                    type="password"
+                                    name="oldPassword"
+                                    value={this.state.oldPassword}
+                                    onChange={this.changeHandler}
+                                  />
+                                </div>
+                              </div>
+                              <div className="col-lg-6 col-md-6">
+                                <div className="billing-info">
                                   <label>New Password</label>
                                   <input
-                                    type="pasword"
+                                    type="password"
                                     name="password"
                                     value={this.state.password}
                                     onChange={this.changeHandler}
@@ -281,7 +302,7 @@ export default class MyAccount extends Component {
                         </Form>
                       </Card.Body>
                       </Card>
-                   */}
+                   
                     {/* <Card className="single-my-account mb-20">
                       <Card.Body>
                         <Form onSubmit={this.addAddress}>
