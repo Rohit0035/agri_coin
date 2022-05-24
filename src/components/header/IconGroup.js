@@ -122,7 +122,7 @@ useEffect(() => {
           onClick={(e) => handleClick(e)}
         >
            <i className="pe-7s-user usn-1" />
-          <span> {customer.firstname}</span>
+          <span> {customer?.firstname}</span>
         </button>
         <div className="account-dropdown">
           <ul>

@@ -86,6 +86,7 @@ export default class MyAccount extends Component {
         },
       })
       .then((response) => {
+        console.log(response.data);
         console.log(response.data.STATUSMSG);
         if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
           swal("Success!", "Account  Updated ", "success");
@@ -118,7 +119,7 @@ export default class MyAccount extends Component {
       });
   };
 
-   editPassword = (e) => {
+  editPassword = (e) => {
     e.preventDefault();
      console.log(this.state);
      axios
@@ -126,21 +127,20 @@ export default class MyAccount extends Component {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
          },
-       })
+        })
       .then((response) => {
-        console.log(response.data.STATUSMSG);
+         console.log(response.data.STATUSMSG);
         if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
-          swal("Success!", "Password Updated Successfully.. ", "success");
+           swal("Success!", "Password Updated Successfully.. ", "success");
         }
-        else {
-          swal("Error!", "Password Not Updated", "error");
+         else {
+         swal("Error!", "Password Not Updated", "error");
         }
       })
-       .catch((error) => {
-        console.log(error.response);
-        swal("Error!", "Password Not Match...", "error");
+        .catch((error) => {
+         console.log(error.response);
       });
-  };
+   };
 
   changeHandler = (e) => {
     this.setState({ [e.target.name]: e.target.value });
@@ -301,7 +301,7 @@ export default class MyAccount extends Component {
                           </div>
                         </Form>
                       </Card.Body>
-                      </Card>
+                      </Card> 
                    
                     {/* <Card className="single-my-account mb-20">
                       <Card.Body>

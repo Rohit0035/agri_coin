@@ -1,10 +1,12 @@
 // import PropTypes from "prop-types";
 import React from "react";
-import LayoutOne from "../../layouts/LayoutOne";
 import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstrap";
 import axios from "axios";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
+import codeimg from "../../assets/img/codeimg.png"
+import Logo from '../../assets/img/logo/logo.png';
+
 // import swal from 'sweetalert';
 class PinForgotPass extends React.Component {
  
@@ -33,9 +35,13 @@ class PinForgotPass extends React.Component {
             },
           })
           .then((response) => {
-            console.log(response.data.STATUSMSG);
-            if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
-              swal("Success!", " Pin Submitted ", "success");
+            console.log(response.data);
+            console.log(response.data.token);
+            if(response.data.token !== "" && response.data.token !== null && response.data.token !== undefined){
+              localStorage.setItem("auth-token" , response.data.token)
+            }
+            if(response.data.msg == "otp verified"  && response.data.msg === "otp verified" ){
+              swal("Success!", " UserID Submitted Successful..", "success");
               this.props.history.push("/ForgotPassword");
             }
             else {
@@ -43,7 +49,8 @@ class PinForgotPass extends React.Component {
             }
           })
           .catch((error) => {
-            console.log(error.response);
+            console.log(error.response.msg == "incorrect code" && error.response.msg === "incorrect code");
+            swal("Error!", "Invalid UserID", "error");
           });
     
       };
@@ -55,20 +62,27 @@ class PinForgotPass extends React.Component {
 render() {
 
   return (
-    <LayoutOne>
   
        <section style={{margin:"70px 0px"}}>
          <Container>
            <Row>
               <Col md="12">
                    <div className="resetpass">
-                       <h3>Forgot Password Pin</h3>
+                        <div className="headbox">
+                           <Link to="/login-register">
+                               <img src= {Logo}   style={{width:200}} />
+                           </Link>
+                        </div>
+                        <img src= {codeimg}   style={{width:200}} />
+                        <br></br>
+                        <br></br>
+                       <h3>Enter Your UserID</h3>
                        <br></br>
                        <Form onSubmit={this.submitHandler}>
                           <Input
                               type="number"
                               required
-                              placeholder="Enter Your Pin"
+                              placeholder="Enter Your UserID"
                               name="customerId"
                               value={this.state.customerId}
                               onChange={this.handlechange}
@@ -86,7 +100,6 @@ render() {
             </Row>  
           </Container> 
         </section>
-      </LayoutOne>
     );
   }
 }
