@@ -132,9 +132,11 @@ export default class MyAccount extends Component {
          console.log(response.data.STATUSMSG);
         if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
            swal("Success!", "Password Updated Successfully.. ", "success");
+           this.props.history.push("/");
         }
          else {
          swal("Error!", "Password Not Updated", "error");
+          // swal("Warning!", response.data.errortext, "warning");
         }
       })
         .catch((error) => {
