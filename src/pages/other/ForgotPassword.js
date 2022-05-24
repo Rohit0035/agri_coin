@@ -30,7 +30,7 @@ class ForgotPassword extends React.Component {
           .then((response) => {
             localStorage.removeItem("auth-token")
             console.log(response.data.STATUSMSG);
-            if(response.data.STATUSMSG !== "Failed" && response.data.STATUSMSG !== "Failed" ){
+            if(response.data.msg == "success"  && response.data.msg === "success"){
               swal("Success!", " Password Change Successfully ", "success");
               this.props.history.push("/login-register");
             }
@@ -39,7 +39,8 @@ class ForgotPassword extends React.Component {
             }
           })
           .catch((error) => {
-            console.log(error.response);
+            console.log(error.response.msg == "error" && error.response.msg === "error");
+            swal("Error!", "Password not matched", "error");
           });
     
       };
