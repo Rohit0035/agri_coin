@@ -35,11 +35,11 @@ export default class TermsOfUse extends Component {
                   and does not require any physical or digital signature.
                 </h3>
                 <p>
-                  The site www.Soxycoin.com (hereinafter referred to as "Website")
+                  The site www.Soxypay.com (hereinafter referred to as "Website")
                   is owned by Brizebond Technologies Private Limited, a company
                   incorporated under the Companies Act, 1956 with its registered
                   office at 1/18, East Mall Road, Dum Dum, Kolkata-700080
-                  (hereinafter referred to as "Company/Soxycoin").
+                  (hereinafter referred to as "Company/Soxypay").
                 </p>
                 <p>
                   We are the operators of the Website, associated web
@@ -55,9 +55,9 @@ export default class TermsOfUse extends Component {
                   the following terms and conditions ("Terms of Use") as
                   applicable to the Website including the applicable policies
                   which are incorporated herein by way of reference. By mere use
-                  of the Website, You shall be contracting with Soxycoin"). and
+                  of the Website, You shall be contracting with Soxypay"). and
                   these terms and conditions including the policies constitute
-                  Your binding obligations, with Soxycoin")..
+                  Your binding obligations, with Soxypay")..
                 </p>
                 <p>
                   For the purpose of these Terms of Use, wherever the context so
@@ -78,9 +78,9 @@ export default class TermsOfUse extends Component {
                 <h3 style={{ fontWeight: "500" }}>
                   License and Website Access
                 </h3>
-                ●General:Soxycoin grants you a limited license to access and make
+                ●General:Soxypay grants you a limited license to access and make
                 personal use of this Website and not to modify it, or any
-                portion of it, except with express written consent of Soxycoin.
+                portion of it, except with express written consent of Soxypay.
                 <br />
                 ● No license for commercial sale: This license does not include
                 any resale or commercial use of this Website or its content
@@ -91,7 +91,7 @@ export default class TermsOfUse extends Component {
                 reproduction: This Website or any portion of this Website may
                 not be reproduced, duplicated, copied, sold, visited, or
                 otherwise exploited for any commercial purpose without express
-                written consent of Soxycoin.
+                written consent of Soxypay.
               </ListGroup>
             </Row>
             <Row>
@@ -103,9 +103,9 @@ export default class TermsOfUse extends Component {
                 register as a User of the Website and shall not transact on or
                 use the Website. As a minor if you wish to use or transact on
                 the Website, such use or transaction may be made by your legal
-                guardian or parents on the Website. Soxycoin reserves the right to
+                guardian or parents on the Website. Soxypay reserves the right to
                 terminate your membership and / or refuse to provide you with
-                access to the Website if it is brought to Soxycoin 's notice or if
+                access to the Website if it is brought to Soxypay 's notice or if
                 it is discovered that you are under the age of 18 years.
               </ListGroup>
             </Row>
@@ -115,7 +115,7 @@ export default class TermsOfUse extends Component {
                   Your Account and Registration Obligations
                 </h3>
                 ●You need to create a primary account to avail the Services by
-                Soxycoin. Accurate and complete registration is required to use
+                Soxypay. Accurate and complete registration is required to use
                 our Service.
                 <br />
                 ●You are mandatorily required to submit the following details
@@ -172,13 +172,13 @@ export default class TermsOfUse extends Component {
                   account.
                 </p>
                 <p>
-                  You are mandatorily required to notify Soxycoin immediately of
+                  You are mandatorily required to notify Soxypay immediately of
                   any unauthorized use of your applicable account or password,
                   or any other breach in security, including suspected or actual
                   account of “phishing” incidents.{" "}
                 </p>
                 <p>
-                  You may be held liable for losses incurred by Soxycoin or any
+                  You may be held liable for losses incurred by Soxypay or any
                   other user of/visitor to the Website and/or App and its allied
                   Platforms due to someone else using your applicable username,
                   password or account.
@@ -197,16 +197,16 @@ export default class TermsOfUse extends Component {
                   to provide You with access to the Website.
                 </p>
                 <p>
-                Soxycoin will not be responsible for any financial loss,
+                Soxypay will not be responsible for any financial loss,
                   inconvenience or mental agony resulting from misuse of User's
                   ID/password/credit card number/account details number for
-                  using Soxycoin services.
+                  using Soxypay services.
                 </p>
                 <p>
                   The User also agrees and undertakes to immediately notify
-                  Soxycoin of any unauthorized use of the User's password or User
+                  Soxypay of any unauthorized use of the User's password or User
                   ID and to ensure that the User logs off at the end of each
-                  session at the website. Soxycoin shall not be responsible for
+                  session at the website. Soxypay shall not be responsible for
                   any, direct or indirect, loss or damage arising out of the
                   User's failure to comply with this requirement.
                 </p>
@@ -238,7 +238,7 @@ export default class TermsOfUse extends Component {
                     bottom of such e-mails sent to you by us. We use your mobile
                     numbers to send you transaction alerts and SMS alerts based
                     on your preferences. If you do not wish to receive such SMSs
-                    from us, please notify us at support@Soxycoin.com to stop
+                    from us, please notify us at support@Soxypay.com to stop
                     receiving SMSs from us. Please note that it may take about
                     14 days to process your request. Please keep in mind that we
                     will continue to notify you by email /SMS/via phone calls
@@ -253,7 +253,7 @@ export default class TermsOfUse extends Component {
                     Platform for Listing and Information
                   </h3>
                   <p>
-                    1.Soxycoin is not and cannot be a party to or control in
+                    1.Soxypay is not and cannot be a party to or control in
                     any manner any transaction between the Website's Users.
                   </p>
                   <p>
@@ -266,10 +266,10 @@ export default class TermsOfUse extends Component {
                     and services.
                   </p>
                   <p>
-                    3.Soxycoin is only a facilitator, an intermediary and is not
+                    3.Soxypay is only a facilitator, an intermediary and is not
                     and cannot be a party to or control in any manner any
                     transactions between the Vendor/Seller and the Customer.
-                    Soxycoin shall neither be responsible nor liable to mediate or
+                    Soxypay shall neither be responsible nor liable to mediate or
                     resolve any disputes or disagreements between the Users.
                   </p>
                   <p>
@@ -279,7 +279,7 @@ export default class TermsOfUse extends Component {
                     into any transactions.
                   </p>
                   <p>
-                    5.Soxycoin does not sell or retail any products and does not
+                    5.Soxypay does not sell or retail any products and does not
                     ensure that the Users shall perform their obligations in
                     respect of the transaction concluded on this Site and
                     further expressly disclaims any warranties or
@@ -288,16 +288,16 @@ export default class TermsOfUse extends Component {
                     or legality of the products listed on the Website.
                   </p>
                   <p>
-                    6.Soxycoin is not responsible for any non-performance or
+                    6.Soxypay is not responsible for any non-performance or
                     breach of any contract entered into between Customers and
-                    Sellers. Soxycoin cannot and does not guarantee that the
+                    Sellers. Soxypay cannot and does not guarantee that the
                     concerned Customers and/or Sellers will perform any
-                    transaction concluded on the Website. Soxycoin shall not and
+                    transaction concluded on the Website. Soxypay shall not and
                     is not required to mediate or resolve any dispute or
                     disagreement between Customers and Sellers.
                   </p>
                   <p>
-                    7.Soxycoin does not make any representation or warranty as to
+                    7.Soxypay does not make any representation or warranty as to
                     the item-specifics (such as legal title, creditworthiness,
                     identity, etc.) of any of its Users. You are advised to
                     independently verify the bona fides of any particular User
@@ -305,7 +305,7 @@ export default class TermsOfUse extends Component {
                     best judgment in that behalf.
                   </p>
                   <p>
-                    8.Soxycoin does not at any point of time during any
+                    8.Soxypay does not at any point of time during any
                     transaction between Customer and Seller on the Website come
                     into or take possession of any of the products or services
                     offered by Seller nor does it at any point gain title to or
@@ -313,19 +313,19 @@ export default class TermsOfUse extends Component {
                     offered by Seller to Customer.
                   </p>
                   <p>
-                    9.Soxycoin is not responsible for unsatisfactory or delayed
+                    9.Soxypay is not responsible for unsatisfactory or delayed
                     performance of services or damages or delays as a result of
                     products which are out of stock, unavailable or back
                     ordered.
                   </p>
                   <p>
-                    10.You release and indemnify Soxycoin and/or any of its
+                    10.You release and indemnify Soxypay and/or any of its
                     officers and representatives from any cost, damage,
                     liability or other consequence of any of the actions of the
                     Users of the Website and specifically waive any claims that
                     you may have in this behalf under any applicable law.
                     Notwithstanding its reasonable efforts in that behalf,
-                    Soxycoin cannot take responsibility or control the
+                    Soxypay cannot take responsibility or control the
                     information provided by other Users which is made available
                     on the Website. You may find other User's information to be
                     offensive, harmful, inconsistent, inaccurate, or deceptive.
@@ -390,8 +390,8 @@ export default class TermsOfUse extends Component {
                     statement(s) or comment(s) about Us or the brand name or
                     domain name used by Us, or otherwise engage in any conduct
                     or action that might tarnish the image or reputation, of
-                    Soxycoin or sellers on platform or otherwise tarnish or dilute
-                    any Soxycoin's trade or service marks, trade name and/or
+                    Soxypay or sellers on platform or otherwise tarnish or dilute
+                    any Soxypay's trade or service marks, trade name and/or
                     goodwill associated with such trade or service marks, as may
                     be owned or used by Us.
                   </p>
@@ -420,7 +420,7 @@ export default class TermsOfUse extends Component {
                   </p>
                   <p>
                     6.We reserve the right, but have no obligation, to monitor
-                    the materials posted on the Website. Soxycoin shall have the
+                    the materials posted on the Website. Soxypay shall have the
                     right to remove or edit any Content that in its sole
                     discretion violates, or is alleged to violate, any
                     applicable law or either the spirit or letter of these Terms

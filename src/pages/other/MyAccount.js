@@ -266,6 +266,7 @@ export default class MyAccount extends Component {
                                   <label>Old Password</label>
                                   <input
                                     type="password"
+                                    required
                                     name="oldPassword"
                                     value={this.state.oldPassword}
                                     onChange={this.changeHandler}
@@ -277,6 +278,7 @@ export default class MyAccount extends Component {
                                   <label>New Password</label>
                                   <input
                                     type="password"
+                                    required
                                     name="password"
                                     value={this.state.password}
                                     onChange={this.changeHandler}
@@ -288,6 +290,7 @@ export default class MyAccount extends Component {
                                   <label>Confirm Password</label>
                                   <input
                                     type="password"
+                                    required
                                     name="cnfrmPassword"
                                     value={this.state.cnfrmPassword}
                                     onChange={this.changeHandler}

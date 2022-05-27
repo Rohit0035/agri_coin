@@ -60,9 +60,9 @@ class OrderRecharge extends React.Component {
       <div className="order-box">
       <ul>
         <li>Transaction ID : <span>{t.agent_id}</span></li>
-        <li>Date : <span>{moment(table.createdAt).format("ll")}</span></li>
+        <li>Date : <span>{moment(t.createdAt).format("ll")}</span></li>
         <li>Amount : <span>{t.amount}</span></li>
-        <li>Type : <span>{t.electricity_code?.type}</span></li>
+        <li>Type : <span>{t.type}</span></li>
 
 
          {/* <li>Service Name : <span>{t.recharge_type}</span></li> */}
