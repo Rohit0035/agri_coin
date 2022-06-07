@@ -13,7 +13,7 @@ import { Col, Container } from "reactstrap";
 import moment from "moment";
 import axios from "axios";
 import { Link } from "react-router-dom";
-
+import deleteicon from "../../assets/img/deleteicon.png"
 class OrderRecharge extends React.Component {
   
 
@@ -58,6 +58,9 @@ class OrderRecharge extends React.Component {
       return <>
       <div className="col-lg-4 col-md-4 col-sm-6 col-xs-12">             
       <div className="order-box">
+        <Link className="delicin">
+           <img src={deleteicon} alt="" className="delimg"/>
+        </Link>
       <ul>
         <li>Transaction ID : <span>{t.agent_id}</span></li>
         <li>Date : <span>{moment(t.createdAt).format("ll")}</span></li>

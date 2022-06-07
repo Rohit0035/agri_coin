@@ -606,6 +606,17 @@ span.usid {
     font-weight: 700;
 }
 
+// deleteicon
+
+img.delimg{
+    width: 14px;
+    float: right;
+    display: inherit;
+}
+a.delicin {
+    width: 100%;
+    display: inline-block;
+}
 // media query css 17/3/22
 
 @media only screen and (max-width: 600px) {
