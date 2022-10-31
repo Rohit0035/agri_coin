@@ -9,7 +9,7 @@ import "../../assets/css/productdetail.css";
 //import RelatedProductSlider from "../../wrappers/product/RelatedProductSlider";
 import ProductDescriptionTab from "../../wrappers/product/ProductDescriptionTab";
 import ProductImageDescriptionSticky from "../../wrappers/product/ProductImageDescriptionSticky";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 export class ProductSticky extends Component {
   constructor(props) {
@@ -23,7 +23,7 @@ export class ProductSticky extends Component {
 
   componentDidMount() {
     let { id } = this.props.match.params;
-    Axios.get(`http://35.154.134.118/api/admin/getoneproduct/${id}`)
+    axiosConfig.get(`/admin/getoneproduct/${id}`)
       .then((response) => {
         console.log(response.data.data);
         this.setState({

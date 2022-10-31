@@ -3,7 +3,7 @@ import React, { Fragment, useState, useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import { useToasts } from "react-toast-notifications";
 import { getDiscountPrice } from "../../../helpers/product";
-import Axios from "axios";
+import axiosConfig from "../../../axiosConfig";
 
 const MenuCart = ({ cartData, currency, deleteFromCart }) => {
   let cartTotalPrice = 0;
@@ -16,8 +16,8 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
     console.log(id);
 
     try {
-      const response = await Axios.get(
-        `http://35.154.134.118/api/admin/remove_cart/${id}`,
+      const response = await axiosConfig.get(
+        `/admin/remove_cart/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
@@ -33,8 +33,8 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
     }
   };
   const fetchcarts = async (token) => {
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/admin/cartbycustomer`,
+    const { data } = await axiosConfig.get(
+      `/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),

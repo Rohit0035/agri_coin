@@ -18,7 +18,7 @@ import {
 } from "../../redux/actions/cartActions";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 const Cart = ({
   props,
@@ -43,8 +43,8 @@ const Cart = ({
   //const { id } = useParams();
 
   const fetchcarts = async () => {
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/admin/cartbycustomer`,
+    const { data } = await axiosConfig.get(
+      `/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -66,8 +66,8 @@ const Cart = ({
   };
 
   const fetchaddress = async () => {
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/user/viewoneuseraddress`,
+    const { data } = await axiosConfig.get(
+      `/user/viewoneuseraddress`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -90,7 +90,7 @@ const Cart = ({
     console.log(id);
 
     try {
-      const response = await Axios.get(
+      const response = await axiosConfig.get(
         `http://35.154.134.118	/api/admin/remove_cart/${id}`,
         {
           headers: {
@@ -110,8 +110,8 @@ const Cart = ({
     console.log("request remove all");
 
     try {
-      const response = await Axios.get(
-        `http://35.154.134.118/api/admin/clearCart`,
+      const response = await axiosConfig.get(
+        `/admin/clearCart`,
         {
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
@@ -134,7 +134,7 @@ const Cart = ({
   const [user, setUser] = useState("");
   useEffect(() => {
     console.log("useEffect");
-    Axios.get("http://35.154.134.118/api/user/getonecustomer", {
+    axiosConfig.get("/user/getonecustomer", {
       headers: {
         "auth-token": localStorage.getItem("auth-token"),
       },
@@ -146,7 +146,7 @@ const Cart = ({
       .catch((error) => {
         console.log(error.response);
       });
-    Axios.get(`http://35.154.134.118/api/admin/rapay/${cartTotalPrice}`)
+    axiosConfig.get(`/admin/rapay/${cartTotalPrice}`)
       .then((response) => {
         console.log(response.data);
         setOrderId(response.data?.order.id);
@@ -186,7 +186,7 @@ const Cart = ({
             payment_id: res.payment_id,
           };
           console.log(res);
-          Axios.post("http://35.154.134.118/api/admin/addordersample", data, {
+          axiosConfig.post("/admin/addordersample", data, {
             headers: {
               "auth-token": localStorage.getItem("auth-token"),
             },

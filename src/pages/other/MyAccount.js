@@ -7,7 +7,7 @@ import Accordion from "react-bootstrap/Accordion";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import { Form } from "reactstrap";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import swal from "sweetalert";
 // import { Button } from "react-scroll";
 
@@ -30,8 +30,8 @@ export default class MyAccount extends Component {
   }
 
   componentDidMount() {
-    axios
-      .get("http://35.154.134.118/api/user/getonecustomer", {
+    axiosConfig
+      .get("/user/getonecustomer", {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -53,8 +53,8 @@ export default class MyAccount extends Component {
         console.log(error.response);
       });
 
-    axios
-      .get("http://35.154.134.118/api/user/viewoneuseraddress", {
+    axiosConfig
+      .get("/user/viewoneuseraddress", {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -79,8 +79,8 @@ export default class MyAccount extends Component {
   submitHandler = (e) => {
     e.preventDefault();
     //let { id } = this.props.match.params;
-    axios
-      .post(`http://35.154.134.118/api/user/editcustomer`, this.state, {
+    axiosConfig
+      .post(`/user/editcustomer`, this.state, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -105,8 +105,8 @@ export default class MyAccount extends Component {
   addAddress = (e) => {
     e.preventDefault();
     console.log(this.state);
-    axios
-      .post("http://35.154.134.118/api/user/addcus_address", this.state, {
+    axiosConfig
+      .post("/user/addcus_address", this.state, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -122,8 +122,8 @@ export default class MyAccount extends Component {
   editPassword = (e) => {
     e.preventDefault();
      console.log(this.state);
-     axios
-       .post("http://35.154.134.118/api/user/updatePassword", this.state, {
+     axiosConfig
+       .post("/user/updatePassword", this.state, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
          },
@@ -155,7 +155,7 @@ export default class MyAccount extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Soxycoin</title>
+          <title>NEXUS PAY</title>
           <meta
             name="description"
             content="Compare page of flone react minimalist eCommerce template."

@@ -15,7 +15,7 @@ import {
 import { addToCart } from "../../redux/actions/cartActions";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 const Wishlist = ({
   location,
@@ -31,8 +31,8 @@ const Wishlist = ({
   const [wish, setWish] = useState([]);
   const fetchWish = async (token) => {
     console.log(token);
-    const { data } = await Axios.get(
-      "http://35.154.134.118/api/admin/getallwishlist",
+    const { data } = await axiosConfig.get(
+      "/admin/getallwishlist",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -46,8 +46,8 @@ const Wishlist = ({
   };
 
   const clearWishList = async () => {
-    const { data } = await Axios.get(
-      "http://35.154.134.118/api/admin/clrwishlist",
+    const { data } = await axiosConfig.get(
+      "/admin/clrwishlist",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -61,8 +61,8 @@ const Wishlist = ({
 
   const removeitemfromwishlist = async (id) => {
     console.log(id);
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/admin/delonewishlist/${id}`,
+    const { data } = await axiosConfig.get(
+      `/admin/delonewishlist/${id}`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -161,8 +161,8 @@ const Wishlist = ({
                                     <Button
                                       color="primary"
                                       onClick={() => {
-                                        Axios.post(
-                                          "http://35.154.134.118/api/admin/add_ToCart",
+                                        axiosConfig.post(
+                                          "/admin/add_ToCart",
                                           {
                                             product: wishes.product._id,
                                             product_qty: wishes.qty,
@@ -184,8 +184,8 @@ const Wishlist = ({
                                             console.log(response);
                                             console.log(wishes.product._id);
                                             //pahucha dena
-                                            Axios.get(
-                                              `http://35.154.134.118/api/admin/delonewishlist/${wishes.product._id}`,
+                                            axiosConfig.get(
+                                              `/admin/delonewishlist/${wishes.product._id}`,
                                               {
                                                 headers: {
                                                   "auth-token":

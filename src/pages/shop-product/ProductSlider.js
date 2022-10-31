@@ -11,7 +11,7 @@ import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import MetaTags from "react-meta-tags";
 import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 //import { connect } from "react-redux";
@@ -33,8 +33,8 @@ export class ProductSlider extends Component {
 
   componentDidMount() {
     let { id } = this.props.match.params;
-    axios
-      .get(`http://35.154.134.118/api/admin/getonestore/${id}`)
+    axiosConfig
+      .get(`/admin/getonestore/${id}`)
       .then((response) => {
         // console.log(response.data);
         console.log(response.data.data);
@@ -47,8 +47,7 @@ export class ProductSlider extends Component {
       });
 
     //let { id } = this.props.match.params;
-    axios
-      .get(`http://35.154.134.118/api/admin/productbystore/${id}`)
+    axiosConfig.get(`/admin/productbystore/${id}`)
       .then((response) => {
         // console.log(response.data);
         console.log(response.data.data);

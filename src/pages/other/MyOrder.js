@@ -15,7 +15,7 @@ import {
 import { addToCart } from "../../redux/actions/cartActions";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 const MyOrder = ({
   location,
@@ -30,8 +30,8 @@ const MyOrder = ({
   const { pathname } = location;
   const [order, setOrder] = useState([]);
   const fetchOrder = async (token) => {
-    const { data } = await Axios.get(
-      "http://35.154.134.118/api/admin/getorderbycustomer",
+    const { data } = await axiosConfig.get(
+      "/admin/getorderbycustomer",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -147,7 +147,7 @@ const MyOrder = ({
                                     <Button
                                       color="primary"
                                       onClick={() => {
-                                        Axios.post(
+                                        axiosConfig.post(
                                           "http://35.154.134.118/api/admin/add_ToCart",
                                           {
                                             product: orders.product._id,
@@ -170,7 +170,7 @@ const MyOrder = ({
                                             console.log(response);
                                             console.log(orders.product._id);
                                             //pahucha dena
-                                            Axios.get(
+                                            axiosConfig.get(
                                               `http://35.154.134.118/api/admin/delonewishlist/${orders.product._id}`,
                                               {
                                                 headers: {

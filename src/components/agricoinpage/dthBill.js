@@ -30,7 +30,7 @@ class DthtBill extends React.Component {
     let user = JSON.parse(localStorage.getItem("userInfo"))
     this.setState({userData:user})
     axios
-      .get("http://35.154.134.118:8000/admin/dthlist/")
+      .get("http://44.205.32.29:8000/admin/dthlist/")
       .then((response) => {
       console.log(response.data.data);
   
@@ -62,7 +62,7 @@ class DthtBill extends React.Component {
                 biller_code:this.state.biller_code
               }
               axios
-              .post(`http://35.154.134.118:8000/admin/dth_recharge
+              .post(`http://44.205.32.29:8000/admin/dth_recharge
               `,payload)
               
               .then((response) => {
@@ -98,7 +98,7 @@ class DthtBill extends React.Component {
           number : inputtxtamt
         }
     axios
-      .post(`http://35.154.134.118:8000/admin/dth_recharge
+      .post(`http://44.205.32.29:8000/admin/dth_recharge
       `, payload)
       
       .then((response) => {
@@ -137,7 +137,7 @@ class DthtBill extends React.Component {
       }
 
     axios
-    .post(`http://35.154.134.118:8000/admin/dth_recharge/`,payload)
+    .post(`http://44.205.32.29:8000/admin/dth_recharge/`,payload)
     .then((response) => {
       console.log(response.data.data);
       console.log(response.data.STATUSMSG);

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 // import { useHistory } from "react-router-dom";
 
 class WalletHeader extends React.Component {
@@ -26,8 +26,8 @@ class WalletHeader extends React.Component {
             // //history.push("/cart");
             // history.push("/login-register");
      } else{
-      axios
-      .get(`http://35.154.134.118/api/admin/getone/`, {
+      axiosConfig
+      .get(`/admin/getone/`, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },

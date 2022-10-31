@@ -11,7 +11,7 @@ import BlogPostsNoSidebar from "../../wrappers/blog/BlogPostsNoSidebar";
 import { Col, Container } from "reactstrap";
 
 import moment from "moment";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import { Link } from "react-router-dom";
 import deleteicon from "../../assets/img/deleteicon.png"
 class OrderRecharge extends React.Component {
@@ -34,8 +34,8 @@ class OrderRecharge extends React.Component {
         // //history.push("/cart");
         // history.push("/login-register");
  } else{
-  axios.get(`http://35.154.134.118:8000/admin/getusertransaction/`+userInfo.walletId)
-  // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
+  axiosConfig.get(`/admin/getusertransaction/`+userInfo.walletId)
+  // axiosConfig.get(`/admin/getusertransaction/${id}`)
   .then((response) => {
      console.log('@@@@transaction API',response.data.data);
     this.setState({table: response.data.data});
@@ -81,7 +81,7 @@ class OrderRecharge extends React.Component {
   return (
     <Fragment>
       <MetaTags>
-        <title>Soxycoin</title>
+        <title>NEXUS PAY</title>
         <meta
           name="description"
           content="Blog of flone react minimalist eCommerce template."

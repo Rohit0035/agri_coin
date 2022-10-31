@@ -4,7 +4,7 @@ import { Link, useHistory, useParams } from "react-router-dom";
 import { connect } from "react-redux";
 import MenuCart from "./sub-components/MenuCart";
 import { deleteFromCart } from "../../redux/actions/cartActions";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 const IconGroup = ({
   currency,
@@ -38,8 +38,8 @@ const IconGroup = ({
   const [carts, setCarts] = useState([]);
   //const { id } = useParams();
   const fetchcarts = async (token) => {
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/admin/cartbycustomer`,
+    const { data } = await axiosConfig.get(
+      `/admin/cartbycustomer`,
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -59,8 +59,8 @@ const IconGroup = ({
 
   const [wish, setWish] = useState([]);
   const fetchWish = async () => {
-    const { data } = await Axios.get(
-      "http://35.154.134.118/api/admin/getallwishlist",
+    const { data } = await axiosConfig.get(
+      "/admin/getallwishlist",
       {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
@@ -80,8 +80,8 @@ const IconGroup = ({
 // account
 const [customer, setCustomer] = useState([]);
 const fetchCustomer = async () => {
-  const { data } = await Axios.get(
-    "http://35.154.134.118/api/user/getonecustomer",
+  const { data } = await axiosConfig.get(
+    "/user/getonecustomer",
     {
       headers: {
         "auth-token": localStorage.getItem("auth-token"),

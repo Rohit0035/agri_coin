@@ -43,7 +43,7 @@ const ProductGridSingleTwo = ({
 
   useEffect(() => {
     async function getData() {
-      const response = await fetch("http://35.154.134.118/api/admin/getproduct");
+      const response = await fetch("http://44.205.32.29:8000/admin/getproduct");
 
       const data = await response.json();
 

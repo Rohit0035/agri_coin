@@ -1,7 +1,7 @@
 import React, { Fragment } from "react";
 import MetaTags from "react-meta-tags";
 import OtpInput from "react-otp-input";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 // import { Link } from "react-router-dom";
 // import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import Tab from "react-bootstrap/Tab";
@@ -83,7 +83,7 @@ import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
         //     status: this.state.status,
         //   };
                 
-                  axios.post("http://35.154.134.118/api/user/verifyotp",this.state)
+                  axiosConfig.post("/user/verifyotp",this.state)
             
            .then(res => {
                 console.log(res);

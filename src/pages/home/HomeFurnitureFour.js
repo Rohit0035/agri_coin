@@ -8,7 +8,7 @@ import BrandLogoSliderOne from "../../wrappers/brand-logo/BrandLogoSliderOne";
 import FeatureIconSeven from "../../wrappers/feature-icon/FeatureIconSeven";
 import CategoryFiveGrid from "../../wrappers/category/CategoryFiveGrid";
 import HeroSliderTwentyNine from "../../wrappers/hero-slider/HeroSliderTwentyNine";
-// import ByCategory from "../../wrappers/content-home/ByCategory";
+import ByCategory from "../../wrappers/content-home/ByCategory";
 import ServiceAgricoin from "../../components/agricoinpage/ServiceAgricoin";
 import HomeCategory from "../../components/agricoinpage/HomeCategory";
 
@@ -19,7 +19,7 @@ const HomeFurnitureFour = () => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Soxycoin</title>
+        <title>NEXUS PAY</title>
         <meta
           name="description"
           content="Furniture home of flone react minimalist eCommerce template."
@@ -42,7 +42,7 @@ const HomeFurnitureFour = () => {
 
         <ServiceAgricoin/>
 
-        {/* <ByCategory />  */}
+         <ByCategory />
        
 
         {/* video popup */}

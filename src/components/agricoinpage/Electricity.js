@@ -25,7 +25,7 @@ class Electricity extends React.Component {
 }
 componentDidMount() {
   axios
-    .get("http://35.154.134.118:8000/admin/electricity_operator/")
+    .get("http://44.205.32.29:8000/admin/electricity_operator/")
     .then((response) => {
     console.log(response.data.data);
 
@@ -55,7 +55,7 @@ componentDidMount() {
             code:this.state.code
           }
           axios
-          .post('http://35.154.134.118:8000/admin/fetch_Bill',payload)
+          .post('http://44.205.32.29:8000/admin/fetch_Bill',payload)
           
           .then((response) => {
             console.log(response.data);
@@ -99,7 +99,7 @@ componentDidMount() {
     
      
     axios
-    .post(`http://35.154.134.118:8000/admin/elec_paybill/`,payload)
+    .post(`http://44.205.32.29:8000/admin/elec_paybill/`,payload)
     .then((response) => {
       console.log(response.data.data);
       console.log(response.data.STATUSMSG);

@@ -12,7 +12,7 @@ import { addToCart } from "../../redux/actions/cartActions";
 import { addToWishlist } from "../../redux/actions/wishlistActions";
 import { addToCompare } from "../../redux/actions/compareActions";
 import Rating from "../../components/product/sub-components/ProductRating";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import { Button, Radio, ButtonGroup } from "reactstrap";
 import "./ProductImageDescriptionStickycss.css";
 import { useHistory } from "react-router-dom";
@@ -309,8 +309,8 @@ const ProductImageDescriptionSticky = ({
                         size: selectedSize,
                       });
                       if (localStorage.getItem("auth-token")) {
-                        Axios.post(
-                          "http://35.154.134.118/api/admin/add_ToCart",
+                        axiosConfig.post(
+                          "/admin/add_ToCart",
                           {
                             product: state._id,
                             product_qty: quantityCount,
@@ -351,8 +351,8 @@ const ProductImageDescriptionSticky = ({
                     }
                     onClick={() => {
                       console.log("btn clicked");
-                      Axios.post(
-                        "http://35.154.134.118/api/admin/addwishlist",
+                      axiosConfig.post(
+                        "/admin/addwishlist",
                         {
                           product: state._id,
                           color: selectedColor,

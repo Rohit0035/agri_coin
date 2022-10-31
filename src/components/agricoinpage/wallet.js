@@ -5,7 +5,7 @@ import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col } from "reactstrap";
 import TableHistory from "../agricoinpage/TableHistory"
 import { Link } from "react-router-dom";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 // import { Button } from "react-scroll";
 class Wallet extends React.Component {
@@ -29,9 +29,9 @@ class Wallet extends React.Component {
    if(userInfo === null){
         
    } else{
-    axios
+    axiosConfig
 
-    .get(`http://35.154.134.118/api/admin/getone/`, {
+    .get(`/admin/getone/`, {
       headers: {
         "auth-token": localStorage.getItem("auth-token"),
       },
@@ -46,8 +46,8 @@ class Wallet extends React.Component {
       console.log(error);
     });
     // let { id } = this.props.match.params;
-     axios.get(`http://35.154.134.118/api/admin/usersuccess_depositelist/`+userInfo.walletId)
-    // axios.get(`http://35.154.134.118/api/admin/getusertransaction/${id}`)
+     axiosConfig.get(`/admin/usersuccess_depositelist/`+userInfo.walletId)
+    // axiosConfig.get(`/admin/getusertransaction/${id}`)
     .then((response) => {
        console.log('@@@@transaction API',response.data.data);
       this.setState({table: response.data.data});

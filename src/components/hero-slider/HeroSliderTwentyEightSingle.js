@@ -3,7 +3,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { Input, Button } from "reactstrap";
 import banner from "../../assets/img/banner.jpg";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import Select from "react-select";
 
 const options = [
@@ -25,8 +25,8 @@ export class HeroSliderTwentyEightSingle extends Component {
   search = async (val) => {
     this.setState({ loading: true });
     console.log(this.state);
-    axios
-      .post(`http://35.154.134.118/api/admin/searchinputproduct`, {
+    axiosConfig
+      .post(`/admin/searchinputproduct`, {
         oneinput: this.state.value,
       })
       .then((response) => {

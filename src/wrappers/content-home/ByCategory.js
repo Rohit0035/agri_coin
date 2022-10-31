@@ -7,14 +7,14 @@ import men from "../../assets/img/team/men.jpg";
 import women from "../../assets/img/women.jpg";
 import kid from "../../assets/img/kid.jpg";
 import { Link } from "react-router-dom";
-
+import axiosConfig from "../../axiosConfig"
 class ByCategory extends React.Component {
   state = {
     ByCategoryList: [],
   };
   componentDidMount() {
-    axios
-      .get(`http://35.154.134.118/api/admin/getproductCategory/`)
+    axiosConfig
+      .get(`/admin/getproductCategory/`)
       .then((res) => {
         console.log(res);
         this.setState({ ByCategoryList: res.data.data });

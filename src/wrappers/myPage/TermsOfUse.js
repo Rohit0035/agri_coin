@@ -424,7 +424,7 @@ export default class TermsOfUse extends Component {
                     right to remove or edit any Content that in its sole
                     discretion violates, or is alleged to violate, any
                     applicable law or either the spirit or letter of these Terms
-                    of Use. In no event shall SoxycoinNAA assume or have any
+                    of Use. In no event shallNEXUS PAY oinNAA assume or have any
                     responsibility or liability for any Content posted or for
                     any claims, damages or losses resulting from use of Content
                     and/or appearance of Content on the Website. You hereby

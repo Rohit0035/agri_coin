@@ -7,7 +7,7 @@ import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstra
 import {CopyToClipboard} from 'react-copy-to-clipboard';
 import Qrcode from '../../assets/img/qr-code.jpeg';
 import Logo from '../../assets/img/logo/logo.png';
-import axios from "axios"; 
+import axiosconfig from "../../axiosConfig"; 
 import swal from 'sweetalert';
 // class DepositForm extends React.Component {
   export default class DepositForm extends Component{
@@ -39,8 +39,8 @@ import swal from 'sweetalert';
    let user = JSON.parse( localStorage.getItem("userInfo") );
   console.log(user)
       //  let { id } = this.props.match.params;
-       axios
-       .get(`http://35.154.134.118/api/user/getonecustomer`, {
+       axiosconfig
+       .get(`/user/getonecustomer`, {
         headers: {
           "auth-token": localStorage.getItem("auth-token"),
         },
@@ -63,8 +63,8 @@ import swal from 'sweetalert';
        
 
 
-    axios
-    .get(`http://35.154.134.118/api/admin/getone/`, {
+    axiosconfig
+    .get(`/admin/getone/`, {
       headers: {
         "auth-token": localStorage.getItem("auth-token"),
       },
@@ -114,7 +114,7 @@ import swal from 'sweetalert';
     console.log(key);
   }
   //  let { id } = this.props.match.params;
-  axios.post(`http://35.154.134.118/api/admin/deposite_wallet`, data)
+  axiosconfig.post(`/admin/deposite_wallet`, data)
     .then((response) => {
     console.log(response);
     // swal("Successful!", "You clicked the button!", "success");

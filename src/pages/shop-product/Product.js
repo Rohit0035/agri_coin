@@ -9,7 +9,7 @@ import RelatedProductSlider from "../../wrappers/product/RelatedProductSlider";
 import ProductDescriptionTab from "../../wrappers/product/ProductDescriptionTab";
 import ProductImageDescription from "../../wrappers/product/ProductImageDescription";
 
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 export class Product extends Component {
   constructor(props) {
@@ -22,8 +22,8 @@ export class Product extends Component {
 
   componentDidMount() {
     let { id } = this.props.match.params;
-    axios
-      .get(`http://35.154.134.118/api/admin/getoneproduct/${id}`)
+    axiosConfig
+      .get(`/admin/getoneproduct/${id}`)
       .then(response => {
         console.log(response.data.data);
         this.setState({ detail: response.data.data });

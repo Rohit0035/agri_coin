@@ -5,7 +5,7 @@ import FormControlLabel from "@mui/material/FormControlLabel";
 import Checkbox from "@mui/material/Checkbox";
 import { string } from "prop-types";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import swal from 'sweetalert';
 
 class CategoryFiveSingle extends React.Component {
@@ -30,8 +30,8 @@ class CategoryFiveSingle extends React.Component {
     };
   } 
   componentDidMount() {
-    axios
-      .get("http://35.154.134.118/api/admin/getOperators")
+    axiosConfig
+      .get("/admin/getOperators")
       .then((response) => {
          console.log(response.data.data);
         this.setState({ serviceR: response.data.data});
@@ -49,8 +49,8 @@ class CategoryFiveSingle extends React.Component {
   submitHandler = (e) => {
     e.preventDefault();
     // let { id } = this.props.match.params;
-    axios
-      .post(`http://35.154.134.118/api/admin/moRecharge/`, this.state)
+    axiosConfig
+      .post(`/admin/moRecharge/`, this.state)
       
       .then((response) => {
         console.log(response.data);

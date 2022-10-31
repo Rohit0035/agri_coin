@@ -7,7 +7,7 @@ import Tab from "react-bootstrap/Tab";
 // import Nav from "react-bootstrap/Nav";
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import { Form } from "reactstrap";
 // const Phone = ({ location }) => {
 //   const { pathname } = location;
@@ -36,7 +36,7 @@ export default class Phone extends Component {
 // const Continue = (e) => {
     submitHandler = (e) => {
     e.preventDefault();
-    axios.post('http://35.154.134.118/api/user/sendotp',this.state)
+    axiosConfig.post('/user/sendotp',this.state)
        
     .then((res)=>{
         console.log(res);

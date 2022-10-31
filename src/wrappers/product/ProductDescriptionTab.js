@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React, { useEffect, useState } from "react";
 import Tab from "react-bootstrap/Tab";
 import Nav from "react-bootstrap/Nav";
-import Axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import Rating from "@mui/material/Rating";
 import LinearProgress from "@mui/material/LinearProgress";
 import Card from "@mui/material/Card";
@@ -23,8 +23,8 @@ const ProductDescriptionTab = ({
   console.log(productid);
   const fetchReview = async (productid) => {
     console.log(productid);
-    const { data } = await Axios.get(
-      `http://35.154.134.118/api/admin/getonereviewproduct/${productid}`
+    const { data } = await axiosConfig.get(
+      `/admin/getonereviewproduct/${productid}`
     );
     console.log(data);
     const review = data.data;
@@ -48,8 +48,8 @@ const ProductDescriptionTab = ({
   const submitrating = (e) => {
     e.preventDefault();
     console.log({ rating: value, comment: comment, productid: productid });
-    Axios.post(
-      `http://35.154.134.118/api/admin/addreview`,
+    axiosConfig.post(
+      `/admin/addreview`,
       {
         rating: value,
         comment: comment,

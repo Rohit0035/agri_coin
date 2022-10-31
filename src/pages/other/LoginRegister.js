@@ -12,6 +12,7 @@ import { Toast, ToastBody, ToastHeader } from "reactstrap";
 import { ToastContainer } from "react-bootstrap";
 import { Button } from "reactstrap";
 import swal from "sweetalert";
+import axiosConfig from "../../axiosConfig"
 export default class LoginRegister extends Component {
   constructor(props) {
     super(props);
@@ -40,7 +41,7 @@ export default class LoginRegister extends Component {
   //   e.preventDefault();
   //   console.log(this.state);
   //   axios
-  //     .post("http://35.154.134.118/api/user/verifyotp", {
+  //     .post("/user/verifyotp", {
   //       mobile: this.state.mobile,
   //       //customer_email: this.state.email,
   //       otp: this.state.otpnumber,
@@ -76,8 +77,8 @@ export default class LoginRegister extends Component {
   loginHandler = (e) => {
     e.preventDefault();
 
-    axios
-      .post("http://35.154.134.118/api/user/login", {
+    axiosConfig
+      .post("/user/login", {
         mobile:
           parseInt(this.state.email) != NaN
             ? parseInt(this.state.email)
@@ -109,8 +110,8 @@ export default class LoginRegister extends Component {
   submitHandler = (e) => {
     e.preventDefault();
     // this.setState({ otp: false });
-    axios
-      .post("http://35.154.134.118/api/user/signup", this.state)
+    axiosConfig
+      .post("/user/signup", this.state)
       .then((response) => {
         console.log(response);
         localStorage.setItem("auth-token", response.data.token);

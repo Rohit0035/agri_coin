@@ -7,14 +7,14 @@ import Carousel from "react-bootstrap/Carousel";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/css/bootstrap.css";
 import "react-bootstrap-carousel/dist/react-bootstrap-carousel.css";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 
 export class StoreSlider extends Component {
   state = {
     StoreI: [],
   };
   componentDidMount() {
-    axios.get(`http://35.154.134.118/api/admin/getstore/`).then(res => {
+    axiosConfig.get(`/admin/getstore/`).then(res => {
       let StoreI = res.data.data;
       console.log(res);
       this.setState({ StoreI });

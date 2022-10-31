@@ -15,7 +15,7 @@ const Contact = ({ location }) => {
   return (
     <Fragment>
       <MetaTags>
-        <title>Soxycoin</title>
+        <title>NEXUS PAY</title>
         <meta
           name="description"
           content=""

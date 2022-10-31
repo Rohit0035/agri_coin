@@ -2,7 +2,7 @@ import React from "react";
 import LayoutOne from "../../layouts/LayoutOne";
 import Cloth from "../../assets/img/Cloth.jpg";
 import { Container, Row,  Col, Input, InputGroup, Form,Button } from "reactstrap";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import SoxyPayTab from "../agricoinpage/SoxyPayTab";
 
 import swal from 'sweetalert';
@@ -38,8 +38,8 @@ class MobileRecharge extends React.Component {
     let user = JSON.parse(localStorage.getItem("userInfo"))
     this.setState({userData:user})
     //console.log(user);
-    axios
-      .get("http://35.154.134.118/api/admin/getcircles")
+    axiosConfig
+      .get("/admin/getcircles")
       .then((response) => {
          console.log(response.data.data);
         this.setState({ circleN: response.data.data});
@@ -64,8 +64,8 @@ class MobileRecharge extends React.Component {
           let payload = {
             number : inputtxt
           }
-          axios
-          .post(`http://35.154.134.118/api/admin/operatorLookup/
+          axiosConfig
+          .post(`/admin/operatorLookup/
           `,payload)
           
           .then((response) => {
@@ -94,7 +94,7 @@ class MobileRecharge extends React.Component {
         code: code,
         circle_code: circle_data.circle_code
       }
-     await axios.post(`http://35.154.134.118/api/admin/Plans`,payload)  
+     await axiosConfig.post(`/admin/Plans`,payload)  
       .then((response) => {
         console.log('plan details',response.data.data);
         console.log(response.data.STATUSMSG);
@@ -120,8 +120,8 @@ class MobileRecharge extends React.Component {
           let payload = {
             number : inputtxtamt
           }
-      axios
-        .post(`http://35.154.134.118/api/admin/mobile_recharge/
+      axiosConfig
+        .post(`/admin/mobile_recharge/
         `, payload)
         
         .then((response) => {
@@ -153,8 +153,8 @@ class MobileRecharge extends React.Component {
             number : this.state.number //parseInt(this.state.number)
         
         }
-    axios
-      .post(`http://35.154.134.118/api/admin/mobile_recharge
+    axiosConfig
+      .post(`/admin/mobile_recharge
       `, payload)
       
       .then((response) => {

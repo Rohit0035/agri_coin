@@ -14,14 +14,14 @@ const FooterCopyright = ({ footerLogo, spaceBottomClass, colorClass }) => {
           <img
             alt=""
             src={process.env.PUBLIC_URL + footerLogo}
-            style={{ width: 150 }}
+            style={{ width: 180 }}
           />
         </Link>
       </div>
       <p>
         &copy; {new Date().getFullYear()}{" "}
         <a href="/" rel="noopener noreferrer" target="">
-          Soxycoin
+          NEXUS PAY
         </a>
         .<br /> All Rights Reserved
       </p>
