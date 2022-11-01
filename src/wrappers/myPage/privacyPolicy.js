@@ -28,7 +28,7 @@ export default class privacyPolicy extends Component {
               <ListGroup>
                 <h2 style={{ fontWeight: "500" }}>Privacy Policy</h2>
                 <p>
-                  Soxypay, C/O, Brizebond Technologies Private Limited (Soxypay)
+                NEXUS PAY, C/O, Brizebond Technologies Private Limited (NEXUS PAY)
                   takes your privacy very seriously. This Privacy Policy
                   (“Privacy Policy”) explains the details of our collection, use
                   and disclosure of information, including your personal
@@ -47,13 +47,13 @@ export default class privacyPolicy extends Component {
                   communications, or services.
                 </li>
                 <li>
-                  By accessing, or using the Soxypay website (“Website”), and/or
+                  By accessing, or using the NEXUS PAY website (“Website”), and/or
                   its applications (“App/Application”) you expressly agree and
                   consent to be bound by the terms of this Privacy Policy.
                 </li>
                 <li>
-                  The terms "WE", "OUR" and "US" refer to Soxypay and the terms "
-                  YOU", "YOUR" and "USER" refer to you, as a user of Soxypay.
+                  The terms "WE", "OUR" and "US" refer to NEXUS PAY and the terms "
+                  YOU", "YOUR" and "USER" refer to you, as a user of NEXUS PAY.
                 </li>
                 <li>
                   Personal Information refers to any information about a living
@@ -86,7 +86,7 @@ export default class privacyPolicy extends Component {
                   e-mails sent to you by us. We use your mobile numbers to send
                   you transaction alerts and SMS alerts based on your
                   preferences. If you do not wish to receive such SMSs from us,
-                  please notify us at support@Soxypay.com to stop receiving SMSs
+                  please notify us at support@NEXUSPAY.com to stop receiving SMSs
                   from us. Please note that it may take about 14 days to process
                   your request. Please keep in mind that we will continue to
                   notify you by email /SMS/via phone calls regarding your
@@ -100,7 +100,7 @@ export default class privacyPolicy extends Component {
                   Scope of Policy and Terms{" "}
                 </h2>
                 <p>
-                  1. This Privacy Policy applies to the Soxypay Website, or any
+                  1. This Privacy Policy applies to the NEXUS PAY Website, or any
                   online/web application that refers to or links to this Privacy
                   Policy. This Privacy Policy applies regardless of whether you
                   have downloaded or accessed the Website or Application onto
@@ -113,14 +113,14 @@ export default class privacyPolicy extends Component {
                   group of individuals.{" "}
                 </p>
                 <p>
-                  3. This Privacy Policy governs the use of any and all Soxypay
+                  3. This Privacy Policy governs the use of any and all NEXUS PAY
                   Services availed by you.{" "}
                 </p>
                 <h2 style={{ fontWeight: "500" }}>Information We Collect</h2>
                 <p>
-                  4. Soxypay collects, processes and retains information, i.e.
+                  4. NEXUS PAY collects, processes and retains information, i.e.
                   Personal Information (including Sensitive Personal
-                  Information) about you when you visit “www.Soxypay.com”. In
+                  Information) about you when you visit “www.NEXUSPAY.com”. In
                   course of your use and transactions on the Website and
                   Application, we collect the following information:
                 </p>
@@ -134,7 +134,7 @@ export default class privacyPolicy extends Component {
                   your date of birth.
                 </p>
                 <p>
-                  3. Your correspondence with Soxypay, including but not limited
+                  3. Your correspondence with NEXUS PAY, including but not limited
                   to customer support.
                 </p>
                 <p>
@@ -181,7 +181,7 @@ export default class privacyPolicy extends Component {
                 </p>
                 <p>b) Information we collect about you</p>
                 <p>
-                  Soxypay collects your Device information, including but not
+                  NEXUS PAY collects your Device information, including but not
                   limited to, IP address, browsing data, Device ID or Unique
                   identifier, device type, geo-location, computer and internet
                   information, mobile network information, statistics on page
@@ -203,7 +203,7 @@ export default class privacyPolicy extends Component {
                   Why We Collect Information{" "}
                 </h3>
                 <p>
-                  5. Soxypay collects information (including Sensitive Personal
+                  5. NEXUS PAY collects information (including Sensitive Personal
                   Information) to provide the services and for the purposes as
                   outlined below:-
                 </p>
@@ -212,7 +212,7 @@ export default class privacyPolicy extends Component {
                   Website/App.
                 </p>
                 <p>
-                  2. To provide you with access to Soxypay Services and Customer
+                  2. To provide you with access to NEXUS PAY Services and Customer
                   Support.
                 </p>
                 <p>3. To process and notify you of your transactions.</p>
@@ -242,21 +242,21 @@ export default class privacyPolicy extends Component {
                   Disclosure of your Information{" "}
                 </h3>
                 <p>
-                  6. Soxypay does not share, sell, rent or trade personal
-                  information collected through “www.Soxypay.com” with third
+                  6. NEXUS PAY does not share, sell, rent or trade personal
+                  information collected through “www.NEXUSPAY.com” with third
                   parties for their sole promotional purposes or otherwise than
                   as outlined in this Privacy Policy.
                 </p>
                 <p>
-                  7. Soxypay may share the Personal Information (and other
+                  7. NEXUS PAY may share the Personal Information (and other
                   information including Sensitive Personal Information) with
                   selected third parties as described below:-
                 </p>
                 <p>
-                  1. Members of the Soxypay corporate family, affiliates, group
+                  1. Members of the NEXUS PAY corporate family, affiliates, group
                   companies.
                 </p>
-                <p>2. Service providers under contract with Soxypay.</p>
+                <p>2. Service providers under contract with NEXUS PAY.</p>
                 <p>
                   8. We may also disclose your Personal Information (and other
                   information including Sensitive Personal Information):-
@@ -267,12 +267,12 @@ export default class privacyPolicy extends Component {
                   authority, or by other legal process.
                 </p>
                 <p>
-                  2. When Soxypay believes in good faith that disclosure is
+                  2. When NEXUS PAY believes in good faith that disclosure is
                   necessary to protect our legal rights, protect your safety or
                   the safety of others, or investigate fraud or crime.
                 </p>
                 <p>
-                  3. If Soxypay (or any of our affiliates) is involved in a
+                  3. If NEXUS PAY (or any of our affiliates) is involved in a
                   merger, acquisition, or sale of all or substantially all its
                   assets or equity.{" "}
                 </p>
@@ -291,7 +291,7 @@ export default class privacyPolicy extends Component {
                 <p>
                   10. At times, express written consent from the individual may
                   be required based on the information processing activity.
-                  Soxypay receives consent from individuals prior to:
+                  NEXUS PAY receives consent from individuals prior to:
                 </p>
                 <p>
                   1. collecting, using, or processing their personal
@@ -327,19 +327,19 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Marketing and Analytics </h3>
                 <p>
-                  14. Soxypay will send you messages and e-mails or contact you
+                  14. NEXUS PAY  will send you messages and e-mails or contact you
                   through voice call or robotic calling to carry to your
                   promotional offers.{" "}
                 </p>
                 <p>
-                  15. Soxypay and our third-party service providers, including
+                  15. NEXUS PAY and our third-party service providers, including
                   our marketing partners and analytics providers, may use mobile
                   tracking technologies and/or website cookies to distinguish
                   and/or identify you from other users of the Website or
                   Application.
                 </p>
                 <p>
-                  16. This helps Soxypay to improve the Website and Application
+                  16. This helps NEXUS PAY to improve the Website and Application
                   thereby providing you with a good experience. We may use the
                   analytics tools and software in order to develop and analyse
                   use of the Service.
@@ -373,9 +373,9 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Data Storage </h3>
                 <p>
-                  19. Soxypay may transfer your information from “www.
-                  Soxypay.com” to other databases and store it on Soxypay or other
-                  supplier systems. Soxypay ensures appropriate security controls
+                  19. NEXUS PAY  may transfer your information from “www.
+                  NEXUS PAY.com” to other databases and store it on NEXUS PAY or other
+                  supplier systems. NEXUS PAY ensures appropriate security controls
                   while storing data on its or its suppliers’ systems.
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Retention Policy</h3>
@@ -442,28 +442,28 @@ export default class privacyPolicy extends Component {
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Changes</h3>
                 <p>
-                  28.Soxypay reserves the right to change this policy from time
+                  28.NEXUS PAY reserves the right to change this policy from time
                   to time. Any changes shall be effective immediately upon the
                   posting of the revised Privacy Policy. We encourage you to
                   periodically review this page for latest information on our
                   privacy practices.
                 </p>
                 <p>
-                  29.Soxypay trusts you to be conscious of the Policy and any
+                  29.NEXUS PAY trusts you to be conscious of the Policy and any
                   changes to it at all time, thus maintaining that it cannot be
                   made liable if you misunderstand or ignore the Privacy Policy.
                 </p>
                 <h3 style={{ fontWeight: "500" }}>Grievance Redressal</h3>
                 <p>
                   30.Any queries pertaining to this Privacy Policy may be
-                  directed to Soxypay:
+                  directed to NEXUS PAY:
                 </p>
                 <table class="table">
                   <thead></thead>
                   <tbody>
                     <tr>
                       <th scope="row">Name:-</th>
-                      <td>Soxypay</td>
+                      <td>NEXUS PAY</td>
                     </tr>
                     <tr>
                       <th scope="row">Address:-</th>

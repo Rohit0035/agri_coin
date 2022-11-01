@@ -13,7 +13,7 @@ import ShopTopbar from "../../wrappers/product/ShopTopbar";
 //import ShopProducts from "../../wrappers/product/ShopProducts";
 //import ProductModal from "../../components/product/ProductModal";
 import { useToasts } from "react-toast-notifications";
-import Axios from "axios";
+// import Axios from "axios";
 import axiosConfig from "../../axiosConfig";
 const ShopGridTwoColumn = ({
   location,
@@ -202,7 +202,7 @@ const ShopGridTwoColumn = ({
   return (
     <Fragment>
       <MetaTags>
-        <title>Flone | Shop Page</title>
+        <title>NEXUS PAY</title>
         <meta
           name="description"
           content="Shop page of flone react minimalist eCommerce template."

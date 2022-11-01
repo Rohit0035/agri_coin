@@ -41,7 +41,7 @@ export class ProductSticky extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Buynaa | Product Page</title>
+          <title>NEXUS PAY</title>
           <meta
             name="description"
             content="Product page of flone react minimalist eCommerce template."

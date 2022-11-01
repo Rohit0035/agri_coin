@@ -133,7 +133,7 @@ export default class LoginRegister extends Component {
     return (
       <Fragment>
         <MetaTags>
-          <title>Soxypay</title>
+          <title>NEXUS PAY</title>
           <meta
             name="description"
             content="Compare page of flone react minimalist eCommerce template."

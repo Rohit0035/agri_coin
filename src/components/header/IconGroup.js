@@ -23,7 +23,7 @@ const IconGroup = ({
     window.localStorage.clear()
     // window.location.reload()
     // window.location.replace("http://localhost:3000/");
-     window.location.replace("http://soxypay.com/");
+     window.location.replace("http://44.205.32.29/");
 
   };
 

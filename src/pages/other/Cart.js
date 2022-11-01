@@ -207,7 +207,7 @@ const Cart = ({
           contact: contact,
         },
         notes: {
-          address: "BuyNaa Corporate Office",
+          address: "NEXUS PAY Corporate Office",
         },
         theme: { color: "#3399cc" },
       };
