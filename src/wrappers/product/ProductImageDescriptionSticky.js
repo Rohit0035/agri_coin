@@ -61,8 +61,8 @@ const ProductImageDescriptionSticky = ({
     var t1 = JSON.parse(productImage).color;
     var t2 = JSON.parse(productImage).size;
     if (t !== undefined && t !== null) setImgArr(t);
-    // if (t1 !== undefined && t1 !== null) setSelectedColor(t1[0].colorName);
-  //  if (t2 !== undefined && t2 !== null) setSelectedSize(t2[0].sizeName);
+    if (t1 !== undefined && t1 !== null) setSelectedColor(t1[0].colorName);
+    if (t2 !== undefined && t2 !== null) setSelectedSize(t2[0].sizeName);
     console.log(t1);
     console.log(t2);
     setstate(JSON.parse(productImage));

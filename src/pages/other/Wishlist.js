@@ -83,13 +83,6 @@ const Wishlist = ({
 
   return (
     <Fragment>
-      <MetaTags>
-        <title>Flone | Wishlist</title>
-        <meta
-          name="description"
-          content="Wishlist page of flone react minimalist eCommerce template."
-        />
-      </MetaTags>
 
       <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
       <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
@@ -129,7 +122,7 @@ const Wishlist = ({
                                       className="img-fluid"
                                       src={
                                         process.env.PUBLIC_URL +
-                                        wishes.product.product_img[0]
+                                        wishes.product?.product_img[0]
                                       }
                                       alt=""
                                     />
@@ -144,16 +137,16 @@ const Wishlist = ({
                                       // wishes.prodct._id
                                     }
                                   >
-                                    {wishes.product.product_name}
+                                    {wishes?.product?.product_name}
                                   </Link>
                                 </td>
 
                                 <td className="product-price-cart">
-                                  <span className="amount">{wishes.color}</span>
+                                  <span className="amount">{wishes?.color}</span>
                                 </td>
 
                                 <td className="product-price-cart">
-                                  <span className="amount">{wishes.size}</span>
+                                  <span className="amount">{wishes?.size}</span>
                                 </td>
 
                                 <td className="product-wishlist-cart">
@@ -164,11 +157,11 @@ const Wishlist = ({
                                         axiosConfig.post(
                                           "/admin/add_ToCart",
                                           {
-                                            product: wishes.product._id,
-                                            product_qty: wishes.qty,
-                                            product_price: wishes.price,
-                                            color: wishes.color,
-                                            size: wishes.size,
+                                            product: wishes.product?._id,
+                                            product_qty: wishes?.qty,
+                                            product_price: wishes?.price,
+                                            color: wishes?.color,
+                                            size: wishes?.size,
                                           },
                                           {
                                             headers: {
@@ -215,7 +208,7 @@ const Wishlist = ({
                                     onClick={(e) =>
                                       //console.log(wishes._id)
                                       removeitemfromwishlist(
-                                        wishes.product._id
+                                        wishes.product?._id
                                       )(
                                         //  deleteFromWishlist(wishes, addToast)
                                         window.location.reload(false)
