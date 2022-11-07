@@ -91,7 +91,7 @@ const Cart = ({
 
     try {
       const response = await axiosConfig.get(
-        `http://35.154.134.118	/api/admin/remove_cart/${id}`,
+        `/admin/remove_cart/${id}`,
         {
           headers: {
             "auth-token": localStorage.getItem("auth-token"),
@@ -224,13 +224,13 @@ const Cart = ({
 
   return (
     <Fragment>
-      <MetaTags>
-        <title>Flone | Cart</title>
+      {/* <MetaTags>
+        <title> | Cart</title>
         <meta
           name="description"
           content="Cart page of flone react minimalist eCommerce template."
         />
-      </MetaTags>
+      </MetaTags> */}
 
       <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
       <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>

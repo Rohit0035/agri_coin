@@ -22,7 +22,7 @@ export class ProductSticky extends Component {
 
   componentDidMount() {
     let { id } = this.props.match.params;
-       Axios.get(`http://44.205.32.29/admin/getoneproduct/${id}`)
+       Axios.get(`http://44.205.32.29:8000/admin/getoneproduct/${id}`)
       .then((response) => {
         this.setState({
           detail: response.data.data,

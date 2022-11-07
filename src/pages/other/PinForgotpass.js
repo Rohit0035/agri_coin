@@ -1,7 +1,7 @@
 // import PropTypes from "prop-types";
 import React from "react";
 import { Container, Row,  Col, Input, InputGroup, Form, Button } from "reactstrap";
-import axios from "axios";
+import axiosConfig from "../../axiosConfig";
 import swal from "sweetalert";
 import { Link } from "react-router-dom";
 import codeimg from "../../assets/img/codeimg.png"
@@ -27,8 +27,8 @@ class PinForgotPass extends React.Component {
       submitHandler = (e) => {
         e.preventDefault();
         //let { id } = this.props.match.params;
-        axios
-          .post(`http://35.154.134.118:/api/user/verifycode`, this.state, {
+        axiosConfig
+          .post(`/user/verifycode`, this.state, {
             headers: {
               "auth-token": localStorage.getItem("auth-token"),
               
