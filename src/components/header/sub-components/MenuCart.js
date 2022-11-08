@@ -9,7 +9,7 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
   let cartTotalPrice = 0;
   const { addToast } = useToasts();
   const [carts, setCarts] = useState([]);
-  const [total, setTotal] = useState([]);
+  const [ttl, setTotal] = useState([]);
   const { id } = useParams();
 
   const removeItemfromcart = async (id) => {
@@ -64,19 +64,19 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
           <ul style={{ height: 150 }}>
             {carts.map((single, key) => {
               const discountedPrice = getDiscountPrice(
-                single.price,
+                single.product_price,
                 single.discount
               );
               const finalProductPrice = (
-                single.price * currency.currencyRate
+                single.product_price * currency.currencyRate
               ).toFixed(2);
               const finalDiscountedPrice = (
                 discountedPrice * currency.currencyRate
               ).toFixed(2);
 
               discountedPrice != null
-                ? (cartTotalPrice += parseInt(single.gsttotal))
-                : (cartTotalPrice += parseInt(single.gsttotal));
+                ? (cartTotalPrice += parseInt(single.product_price))
+                : (cartTotalPrice += parseInt(single.product_price));
 
               return (
                 <li className="single-shopping-cart" key={key}>
@@ -110,7 +110,7 @@ const MenuCart = ({ cartData, currency, deleteFromCart }) => {
                     <h6>Qty: {single.product_qty}</h6>
                     <h6>Color: {single.color}</h6>
                     <h6>Size: {single.size}</h6>
-                    <h6>Price: {single.gsttotal}</h6>
+                    <h6>Price: {single.product_price}</h6>
                     <span></span>
                   </div>
                   <div className="shopping-cart-delete">

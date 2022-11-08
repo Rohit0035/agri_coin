@@ -9,6 +9,7 @@ import { BreadcrumbsItem } from "react-breadcrumbs-dynamic";
 import { connect } from "react-redux";
 import { Form, Input, Button } from "reactstrap";
 import { getDiscountPrice } from "../../helpers/product";
+import swal from "sweetalert";
 import {
   addToCart,
   decreaseQuantity,
@@ -19,6 +20,7 @@ import {
 import LayoutOne from "../../layouts/LayoutOne";
 import Breadcrumb from "../../wrappers/breadcrumb/Breadcrumb";
 import axiosConfig from "../../axiosConfig";
+import { CloudLightning } from "react-feather";
 
 const Cart = ({
   props,
@@ -36,11 +38,15 @@ const Cart = ({
   const { pathname } = location;
   let cartTotalPrice = 0;
   let gstTotalPrice = 0;
+
+  const [offer_code, setOffer_code] = useState([]);
+  const [couAmount, setCouAmount] = useState([]);
+  const [totalCouAmt, setTotalCouAmt] = useState(0);
+  const [code, setCode] = useState({});
   const [carts, setCarts] = useState([]);
   const [cartId, setCartId] = useState([]);
   const [total, setTotal] = useState([]);
   const [useraddress, setUseraddress] = useState([]);
-  //const { id } = useParams();
 
   const fetchcarts = async () => {
     const { data } = await axiosConfig.get(
@@ -53,16 +59,17 @@ const Cart = ({
     );
     const carts = data.data;
     console.log(carts);
-    var cartId = [];
+    var cartId1 = [];
     for (var i = 0; i < carts.length; i++) {
-      cartId.push(carts[i]._id);
+      cartId1.push(carts[i]._id);
     }
-    setCartId(cartId);
-    console.log(cartId);
+    setCartId(cartId1);
+    console.log(cartId1);
+
     setCarts(carts);
     console.log(carts);
 
-    setTotal(data.total);
+    //setTotal(data.total);
   };
 
   const fetchaddress = async () => {
@@ -78,13 +85,6 @@ const Cart = ({
     console.log(address);
     setUseraddress(address);
   };
-  useEffect(() => {
-    //fetchcarts();
-    if (localStorage.getItem("auth-token")) {
-      fetchcarts();
-      fetchaddress();
-    }
-  }, []);
 
   const removeItemfromcart = async (id) => {
     console.log(id);
@@ -133,6 +133,11 @@ const Cart = ({
   const [orderId, setOrderId] = useState("");
   const [user, setUser] = useState("");
   useEffect(() => {
+    console.log(cartId);
+    if (localStorage.getItem("auth-token")) {
+      fetchcarts();
+      fetchaddress();
+    }
     console.log("useEffect");
     axiosConfig.get("/user/getonecustomer", {
       headers: {
@@ -146,7 +151,7 @@ const Cart = ({
       .catch((error) => {
         console.log(error.response);
       });
-    axiosConfig.get(`/admin/rapay/${cartTotalPrice}`)
+      axiosConfig.get(`/admin/rapay/${cartTotalPrice}`)
       .then((response) => {
         console.log(response.data);
         setOrderId(response.data?.order.id);
@@ -156,17 +161,18 @@ const Cart = ({
         console.log(error.response);
       });
   }, []);
-  const handlePayment = useCallback(
-    async (
-      amount,
-      description,
-      name,
-      email,
-      contact,
 
-      payment_type
-    ) => {
+  const handlePayment = useCallback(
+    async (amount, description, name, email, contact, payment_type, cartId) => {
       if (payment_type == "COD") {
+        var data = {
+          cart: cartId,
+          payment_type,
+          status: "Pending",
+          shipping_address: useraddress._id,
+          // razorpay_payment_id: res.razorpay_payment_id,
+        };
+        console.log(cartId);
         return;
       }
       const RazorpayOptions = {
@@ -182,19 +188,27 @@ const Cart = ({
             payment_type,
             status: "Pending",
             shipping_address: useraddress._id,
-
-            payment_id: res.payment_id,
+            razorpay_payment_id: res.razorpay_payment_id,
           };
           console.log(res);
-          axiosConfig.post("/admin/addordersample", data, {
+          axiosConfig.post("admin/addordersample", data, {
             headers: {
               "auth-token": localStorage.getItem("auth-token"),
             },
           })
             .then((response) => {
-              console.log("pranay", response);
-
-              //history.push("/cart");
+              console.log(response);
+              if (
+                response.data.msg == "Product added to Order" &&
+                response.data.msg === "Product added to Order"
+              ) {
+                swal(
+                  "Success!",
+                  "Payment Success... Product Added To My Order",
+                  "success"
+                );
+              }
+              history.push("/myOrder");
             })
             .catch((error) => {
               console.log(error.response);
@@ -207,7 +221,7 @@ const Cart = ({
           contact: contact,
         },
         notes: {
-          address: "NEXUS PAY Corporate Office",
+          address: "BuyNaa Corporate Office",
         },
         theme: { color: "#3399cc" },
       };
@@ -221,16 +235,19 @@ const Cart = ({
     },
     [Razorpay]
   );
+  useEffect(() => {
+    console.log(cartId);
+  }, [cartId]);
 
   return (
     <Fragment>
-      {/* <MetaTags>
-        <title> | Cart</title>
+      <MetaTags>
+        <title>Flone | Cart</title>
         <meta
           name="description"
           content="Cart page of flone react minimalist eCommerce template."
         />
-      </MetaTags> */}
+      </MetaTags>
 
       <BreadcrumbsItem to={process.env.PUBLIC_URL + "/"}>Home</BreadcrumbsItem>
       <BreadcrumbsItem to={process.env.PUBLIC_URL + pathname}>
@@ -263,7 +280,8 @@ const Cart = ({
                         </thead>
                         <tbody>
                           {carts?.map((cartItem, key) => {
-                            cartTotalPrice += parseInt(cartItem.gsttotal);
+                            //console.log(key);
+                            cartTotalPrice += parseInt(cartItem.product_price);
                             const discountedPrice = getDiscountPrice(
                               cartItem.price,
                               cartItem.discount
@@ -283,11 +301,6 @@ const Cart = ({
                                   cartItem.product?.gstrate?.value *
                                   cartItem.product_qty);
 
-                            {
-                              /* discountedPrice != null
-                              ? (cartTotalPrice = cartItem.gsttotal)
-                              : (cartTotalPrice = cartItem.gsttotal); */
-                            }
                             return (
                               <tr key={key}>
                                 <td className="product-thumbnail">
@@ -308,7 +321,6 @@ const Cart = ({
                                     />
                                   </Link>
                                 </td>
-
                                 <td className="product-name">
                                   <Link
                                     to={
@@ -328,13 +340,11 @@ const Cart = ({
                                     ""
                                   )}
                                 </td>
-
                                 <td className="product-price-cart">
                                   <span className="amount">
                                     {cartItem?.product_price}
                                   </span>
                                 </td>
-
                                 <td className="product-quantity">
                                   <div className="cart-plus-minus">
                                     <span>{cartItem.product_qty}</span>
@@ -353,17 +363,60 @@ const Cart = ({
                                       <span>
                                         <Input
                                           type="text"
+                                          value={offer_code[key]}
                                           placeholder="Enter Code"
+                                          onChange={(e) => {
+                                            var oc1 = offer_code;
+                                            oc1[key] = e.target.value;
+                                            setOffer_code(oc1);
+                                          }}
                                         />
-                                        <Button color="primary" className="">
+                                        <Button
+                                          color="primary"
+                                          className=""
+                                          onClick={() => {
+                                            axiosConfig.post(
+                                              `/admin/verifyvalidategetdiscount/${offer_code[key]}`,
+                                              {
+                                                offer_code: offer_code[key],
+                                              }
+                                            )
+                                              .then((response) => {
+                                                const code1 = response.data;
+
+                                                var couAmt = couAmount;
+                                                couAmt[key] =
+                                                  code1.discount_amount;
+                                                setCouAmount(couAmt);
+                                                var sum = 0;
+                                                for (
+                                                  var i = 0;
+                                                  i < couAmt.length;
+                                                  i++
+                                                )
+                                                  if (couAmt[i])
+                                                    sum = sum + couAmt[i];
+                                                setTotalCouAmt(sum);
+                                                setCode(code1);
+
+                                                console.log(code1);
+                                              })
+                                              .catch(function (error) {
+                                                console.log(error);
+                                              });
+                                          }}
+                                        >
                                           Apply
                                         </Button>
                                       </span>
                                     </Form>
                                   </div>
                                 </td>
+
                                 <td className="product-subtotal">
-                                  ₹{cartItem?.gsttotal}
+                                  {couAmount[key]
+                                    ? cartItem?.product_price - couAmount[key]
+                                    : cartItem.product_price}
                                 </td>
 
                                 <td className="product-remove">
@@ -417,9 +470,6 @@ const Cart = ({
                         </h4>
                       </div>
                       <div className="tax-wrapper">
-                        {/* <h5>
-                          {useraddress?.customer?.firstname} {useraddress?.customer?.lastname},{useraddress?.address},{useraddress?.locality},{useraddress?.state},{useraddress?.pincode},
-                        </h5> */}
                         <div className="tax-select-wrapper">
                           <h4>
                             <span style={{ textTransform: "capitalize mb-2" }}>
@@ -445,30 +495,32 @@ const Cart = ({
                   <div className="col-lg-4 col-md-12">
                     <div className="grand-totall">
                       <div className="title-wrap">
-                        <h4 className="cart-bottom-title section-bg-gary-cart">
+                        <h4 className="cart-bottom-title section-bg-gary-cart m-2">
                           Cart Total
                         </h4>
                       </div>
                       <div>
-                        <h5>
-                          Total products <span>₹{total}</span>
-                        </h5>
                         <h4 className="grand-totall-title">
                           Total GST<span>₹{gstTotalPrice}</span>
                         </h4>
                         <h4 className="grand-totall-title">
-                          Grand Total <span>₹{cartTotalPrice}</span>
+                          Total Discount<span>₹{totalCouAmt}</span>
+                        </h4>
+                        <h4 className="grand-totall-title">
+                          Grand Total{" "}
+                          <span>₹{cartTotalPrice - totalCouAmt}</span>
                         </h4>
                       </div>
                       <Link
                         onClick={() =>
                           handlePayment(
-                            cartTotalPrice * 100,
+                            parseInt(cartTotalPrice - totalCouAmt) * 100,
                             "checkout",
                             user.firstname + " " + user.lastname,
                             user.email,
                             user.mobile,
-                            "ONLINE"
+                            "Online",
+                            cartId
                           )
                         }
                       >
