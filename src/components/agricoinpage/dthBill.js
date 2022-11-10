@@ -172,7 +172,6 @@ updateItem = (value) => {
           style={{
             backgroundImage: `url(${Cloth})`,
             width: "100%",
-            padding:"100px 0px",
             backgroundSize:"cover"
           }}
         >

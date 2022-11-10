@@ -272,9 +272,9 @@ const Cart = ({
                             <th>Product Name</th>
                             <th>Unit Price</th>
                             <th>Qty</th>
-                            <th>GST</th>
-                            <th>Coupon</th>
-                            <th>Subtotal(Incl Tax)</th>
+                            {/* <th>GST</th> */}
+                            {/* <th>Coupon</th> */}
+                            <th>Subtotal</th>
                             <th>action</th>
                           </tr>
                         </thead>
@@ -350,14 +350,14 @@ const Cart = ({
                                     <span>{cartItem.product_qty}</span>
                                   </div>
                                 </td>
-                                <td className="product-quantity">
+                                {/* <td className="product-quantity">
                                   <div className="cart-plus-minus">
                                     <span>
                                       {cartItem.product?.gstrate?.value}
                                     </span>
                                   </div>
-                                </td>
-                                <td className="product-quantity">
+                                </td> */}
+                                {/* <td className="product-quantity">
                                   <div className="cart-plus-minus">
                                     <Form>
                                       <span>
@@ -411,7 +411,7 @@ const Cart = ({
                                       </span>
                                     </Form>
                                   </div>
-                                </td>
+                                </td> */}
 
                                 <td className="product-subtotal">
                                   {couAmount[key]
@@ -500,12 +500,12 @@ const Cart = ({
                         </h4>
                       </div>
                       <div>
-                        <h4 className="grand-totall-title">
+                        {/* <h4 className="grand-totall-title">
                           Total GST<span>₹{gstTotalPrice}</span>
                         </h4>
                         <h4 className="grand-totall-title">
                           Total Discount<span>₹{totalCouAmt}</span>
-                        </h4>
+                        </h4> */}
                         <h4 className="grand-totall-title">
                           Grand Total{" "}
                           <span>₹{cartTotalPrice - totalCouAmt}</span>
